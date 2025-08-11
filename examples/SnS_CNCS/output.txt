@@ -1,0 +1,3467 @@
+Searching for spacegroup Pnma
+Matching spacegroup found: P n m a
+Space group with Hermann-Mauguin symbol: P n m a
+Point group with:
+Lattice system: Orthorhombic
+Crystal system: Orthorhombic
+Symbol: mmm
+Processing  1  datasets.
+Try loading MDE from /SNS/CNCS/IPTS-16687/shared/Aiden/merged_mde/SnS_295K_17meV_UBcorrected.nxs
+Loading normalization and masking file /SNS/CNCS/IPTS-16687/shared/autoreduce/van180160.nxs
+BZ cov and thresh in  4.84882664680481
+Initial BZ list:  66 [[-6, 0, 1], [-5, 0, 1], [-4, 0, 2], [-4, 0, 1], [-4, 0, 0], [-3, 0, 2], [-3, 0, -1], [-3, 0, 1], [-2, 0, 2], [-2, 0, 1], [-1, 0, 2], [-3, 0, 0], [-1, 0, 1], [-5, 0, 2], [-2, 0, -1], [0, 0, 2], [-7, 0, 1], [0, 0, 1], [-2, 0, 3], [-2, 0, 0], [-6, 0, 2], [-7, 0, 0], [-1, 0, 3], [1, 0, 2], [-1, 0, -1], [-8, 0, 0], [-6, 0, 0], [-5, 0, 0], [-3, 0, 3], [-1, 0, 0], [1, 0, 1], [-8, 0, 1], [-4, 0, 3], [0, 0, 3], [-7, 0, 2], [-4, 0, -1], [0, 0, -1], [-5, 0, 3], [1, 0, 3], [0, 0, 0], [2, 0, 2], [-9, 0, 0], [-7, -1, 1], [-6, -1, 2], [-5, -1, 2], [-4, -1, 2], [-2, -1, 3], [-1, 0, -2], [2, 0, 1], [-6, -1, 1], [-1, -1, 3], [-8, -1, 1], [-8, -1, 0], [-5, -1, 1], [-3, -1, 3], [-3, -1, 2], [-7, -1, 2], [-4, -1, 3], [-2, -1, 2], [-2, 0, -2], [-9, 0, 1], [-8, 0, 2], [-7, 0, -1], [-4, -1, 1], [0, -1, 3], [-1, -1, 2]]
+
+Checking for prior progress
+0 BZ arrays fully processed and removed:
+[]
+
+Data being processed in 66 BZs
+
+BZs: [[-6, 0, 1], [-5, 0, 1], [-4, 0, 2], [-4, 0, 1], [-4, 0, 0], [-3, 0, 2], [-3, 0, -1], [-3, 0, 1], [-2, 0, 2], [-2, 0, 1], [-1, 0, 2], [-3, 0, 0], [-1, 0, 1], [-5, 0, 2], [-2, 0, -1], [0, 0, 2], [-7, 0, 1], [0, 0, 1], [-2, 0, 3], [-2, 0, 0], [-6, 0, 2], [-7, 0, 0], [-1, 0, 3], [1, 0, 2], [-1, 0, -1], [-8, 0, 0], [-6, 0, 0], [-5, 0, 0], [-3, 0, 3], [-1, 0, 0], [1, 0, 1], [-8, 0, 1], [-4, 0, 3], [0, 0, 3], [-7, 0, 2], [-4, 0, -1], [0, 0, -1], [-5, 0, 3], [1, 0, 3], [0, 0, 0], [2, 0, 2], [-9, 0, 0], [-7, -1, 1], [-6, -1, 2], [-5, -1, 2], [-4, -1, 2], [-2, -1, 3], [-1, 0, -2], [2, 0, 1], [-6, -1, 1], [-1, -1, 3], [-8, -1, 1], [-8, -1, 0], [-5, -1, 1], [-3, -1, 3], [-3, -1, 2], [-7, -1, 2], [-4, -1, 3], [-2, -1, 2], [-2, 0, -2], [-9, 0, 1], [-8, 0, 2], [-7, 0, -1], [-4, -1, 1], [0, -1, 3], [-1, -1, 2]]
+BZ strings for match: set()
+No previous simulation data found.
+loaded data and norm for sim lens  0 0
+
+2 ('Y', 'Gamma') symmetrically equivalent path segments
+
+2 ('Gamma', 'X') symmetrically equivalent path segments
+
+2 ('X', 'Gamma2') symmetrically equivalent path segments
+
+2 ('Gamma2', 'X') symmetrically equivalent path segments
+
+2 ('X', 'Gamma') symmetrically equivalent path segments
+
+2 ('Gamma', 'Z') symmetrically equivalent path segments
+
+
+ Total expected slices: 792
+
+
+Processing BZ [-6  0  1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-6.  -0.5  1. ]  to  [-6.  0.  1.]
+
+
+Processed: 1/792 (0.13%) | Elapsed: 00:00:04 | BZ Folding estimated remaining time: 00:56:09
+
+
+Slicing  [-6.   0.5  1. ]  to  [-6.  0.  1.]
+Processing BZ [-6  0  1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-6.  0.  1.]  to  [-6.5  0.   1. ]
+Slicing  [-6.  0.  1.]  to  [-5.5  0.   1. ]
+Processing BZ [-6  0  1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-6.5  0.   1. ]  to  [-7.  0.  1.]
+Slicing  [-5.5  0.   1. ]  to  [-5.  0.  1.]
+Processing BZ [-6  0  1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-7.  0.  1.]  to  [-6.5  0.   1. ]
+Slicing  [-5.  0.  1.]  to  [-5.5  0.   1. ]
+Processing BZ [-6  0  1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-6.5  0.   1. ]  to  [-6.  0.  1.]
+Slicing  [-5.5  0.   1. ]  to  [-6.  0.  1.]
+Processing BZ [-6  0  1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-6.  0.  1.]  to  [-6.   0.   0.5]
+Slicing  [-6.  0.  1.]  to  [-6.   0.   1.5]
+
+Generating Report for BZ [-6  0  1]
+
+Combining all 0 BZ
+
+BZ [-6  0  1] done. Total time elapsed 00:01:58
+Processing BZ [-5  0  1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-5.  -0.5  1. ]  to  [-5.  0.  1.]
+Slicing  [-5.   0.5  1. ]  to  [-5.  0.  1.]
+Processing BZ [-5  0  1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-5.  0.  1.]  to  [-5.5  0.   1. ]
+Slicing  [-5.  0.  1.]  to  [-4.5  0.   1. ]
+
+
+Processed: 16/792 (2.02%) | Elapsed: 00:01:20 | BZ Folding estimated remaining time: 01:05:15
+
+
+Processing BZ [-5  0  1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-5.5  0.   1. ]  to  [-6.  0.  1.]
+Slicing  [-4.5  0.   1. ]  to  [-4.  0.  1.]
+Processing BZ [-5  0  1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-6.  0.  1.]  to  [-5.5  0.   1. ]
+Slicing  [-4.  0.  1.]  to  [-4.5  0.   1. ]
+Processing BZ [-5  0  1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-5.5  0.   1. ]  to  [-5.  0.  1.]
+Slicing  [-4.5  0.   1. ]  to  [-5.  0.  1.]
+Processing BZ [-5  0  1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-5.  0.  1.]  to  [-5.   0.   0.5]
+Slicing  [-5.  0.  1.]  to  [-5.   0.   1.5]
+
+Generating Report for BZ [-5  0  1]
+
+Combining all 1 BZ
+
+BZ [-5  0  1] done. Total time elapsed 00:03:00
+Processing BZ [-4  0  2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-4.  -0.5  2. ]  to  [-4.  0.  2.]
+Slicing  [-4.   0.5  2. ]  to  [-4.  0.  2.]
+Processing BZ [-4  0  2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-4.  0.  2.]  to  [-4.5  0.   2. ]
+Slicing  [-4.  0.  2.]  to  [-3.5  0.   2. ]
+Processing BZ [-4  0  2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-4.5  0.   2. ]  to  [-5.  0.  2.]
+Slicing  [-3.5  0.   2. ]  to  [-3.  0.  2.]
+Processing BZ [-4  0  2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-5.  0.  2.]  to  [-4.5  0.   2. ]
+Slicing  [-3.  0.  2.]  to  [-3.5  0.   2. ]
+
+
+Processed: 32/792 (4.04%) | Elapsed: 00:02:40 | BZ Folding estimated remaining time: 01:03:35
+
+
+Processing BZ [-4  0  2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-4.5  0.   2. ]  to  [-4.  0.  2.]
+Slicing  [-3.5  0.   2. ]  to  [-4.  0.  2.]
+Processing BZ [-4  0  2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-4.  0.  2.]  to  [-4.   0.   1.5]
+Slicing  [-4.  0.  2.]  to  [-4.   0.   2.5]
+
+Generating Report for BZ [-4  0  2]
+
+Combining all 2 BZ
+
+BZ [-4  0  2] done. Total time elapsed 00:04:02
+Processing BZ [-4  0  1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-4.  -0.5  1. ]  to  [-4.  0.  1.]
+Slicing  [-4.   0.5  1. ]  to  [-4.  0.  1.]
+Processing BZ [-4  0  1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-4.  0.  1.]  to  [-4.5  0.   1. ]
+Slicing  [-4.  0.  1.]  to  [-3.5  0.   1. ]
+Processing BZ [-4  0  1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-4.5  0.   1. ]  to  [-5.  0.  1.]
+Slicing  [-3.5  0.   1. ]  to  [-3.  0.  1.]
+Processing BZ [-4  0  1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-5.  0.  1.]  to  [-4.5  0.   1. ]
+Slicing  [-3.  0.  1.]  to  [-3.5  0.   1. ]
+Processing BZ [-4  0  1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-4.5  0.   1. ]  to  [-4.  0.  1.]
+Slicing  [-3.5  0.   1. ]  to  [-4.  0.  1.]
+Processing BZ [-4  0  1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-4.  0.  1.]  to  [-4.   0.   0.5]
+Slicing  [-4.  0.  1.]  to  [-4.   0.   1.5]
+
+
+Processed: 48/792 (6.06%) | Elapsed: 00:04:00 | BZ Folding estimated remaining time: 01:02:11
+
+
+
+Generating Report for BZ [-4  0  1]
+
+Combining all 3 BZ
+
+BZ [-4  0  1] done. Total time elapsed 00:05:04
+Processing BZ [-4  0  0], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-4.  -0.5  0. ]  to  [-4.  0.  0.]
+Slicing  [-4.   0.5  0. ]  to  [-4.  0.  0.]
+Processing BZ [-4  0  0], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-4.  0.  0.]  to  [-4.5  0.   0. ]
+Slicing  [-4.  0.  0.]  to  [-3.5  0.   0. ]
+Processing BZ [-4  0  0], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-4.5  0.   0. ]  to  [-5.  0.  0.]
+Slicing  [-3.5  0.   0. ]  to  [-3.  0.  0.]
+Processing BZ [-4  0  0], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-5.  0.  0.]  to  [-4.5  0.   0. ]
+Slicing  [-3.  0.  0.]  to  [-3.5  0.   0. ]
+Processing BZ [-4  0  0], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-4.5  0.   0. ]  to  [-4.  0.  0.]
+Slicing  [-3.5  0.   0. ]  to  [-4.  0.  0.]
+Processing BZ [-4  0  0], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-4.  0.  0.]  to  [-4.   0.  -0.5]
+Slicing  [-4.  0.  0.]  to  [-4.   0.   0.5]
+
+Generating Report for BZ [-4  0  0]
+
+Combining all 4 BZ
+
+BZ [-4  0  0] done. Total time elapsed 00:06:08
+Processing BZ [-3  0  2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-3.  -0.5  2. ]  to  [-3.  0.  2.]
+Slicing  [-3.   0.5  2. ]  to  [-3.  0.  2.]
+Processing BZ [-3  0  2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-3.  0.  2.]  to  [-3.5  0.   2. ]
+Slicing  [-3.  0.  2.]  to  [-2.5  0.   2. ]
+
+
+Processed: 64/792 (8.08%) | Elapsed: 00:05:29 | BZ Folding estimated remaining time: 01:02:32
+
+
+Processing BZ [-3  0  2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-3.5  0.   2. ]  to  [-4.  0.  2.]
+Slicing  [-2.5  0.   2. ]  to  [-2.  0.  2.]
+Processing BZ [-3  0  2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-4.  0.  2.]  to  [-3.5  0.   2. ]
+Slicing  [-2.  0.  2.]  to  [-2.5  0.   2. ]
+Processing BZ [-3  0  2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-3.5  0.   2. ]  to  [-3.  0.  2.]
+Slicing  [-2.5  0.   2. ]  to  [-3.  0.  2.]
+Processing BZ [-3  0  2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-3.  0.  2.]  to  [-3.   0.   1.5]
+Slicing  [-3.  0.  2.]  to  [-3.   0.   2.5]
+
+Generating Report for BZ [-3  0  2]
+
+Combining all 5 BZ
+
+BZ [-3  0  2] done. Total time elapsed 00:07:10
+Processing BZ [-3  0 -1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-3.  -0.5 -1. ]  to  [-3.  0. -1.]
+Slicing  [-3.   0.5 -1. ]  to  [-3.  0. -1.]
+Processing BZ [-3  0 -1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-3.  0. -1.]  to  [-3.5  0.  -1. ]
+Slicing  [-3.  0. -1.]  to  [-2.5  0.  -1. ]
+Processing BZ [-3  0 -1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-3.5  0.  -1. ]  to  [-4.  0. -1.]
+Slicing  [-2.5  0.  -1. ]  to  [-2.  0. -1.]
+Processing BZ [-3  0 -1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-4.  0. -1.]  to  [-3.5  0.  -1. ]
+Slicing  [-2.  0. -1.]  to  [-2.5  0.  -1. ]
+
+
+Processed: 80/792 (10.10%) | Elapsed: 00:06:49 | BZ Folding estimated remaining time: 01:00:46
+
+
+Processing BZ [-3  0 -1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-3.5  0.  -1. ]  to  [-3.  0. -1.]
+Slicing  [-2.5  0.  -1. ]  to  [-3.  0. -1.]
+Processing BZ [-3  0 -1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-3.  0. -1.]  to  [-3.   0.  -1.5]
+Slicing  [-3.  0. -1.]  to  [-3.   0.  -0.5]
+
+Generating Report for BZ [-3  0 -1]
+
+Combining all 6 BZ
+
+BZ [-3  0 -1] done. Total time elapsed 00:08:12
+Processing BZ [-3  0  1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-3.  -0.5  1. ]  to  [-3.  0.  1.]
+Slicing  [-3.   0.5  1. ]  to  [-3.  0.  1.]
+Processing BZ [-3  0  1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-3.  0.  1.]  to  [-3.5  0.   1. ]
+Slicing  [-3.  0.  1.]  to  [-2.5  0.   1. ]
+Processing BZ [-3  0  1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-3.5  0.   1. ]  to  [-4.  0.  1.]
+Slicing  [-2.5  0.   1. ]  to  [-2.  0.  1.]
+Processing BZ [-3  0  1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-4.  0.  1.]  to  [-3.5  0.   1. ]
+Slicing  [-2.  0.  1.]  to  [-2.5  0.   1. ]
+Processing BZ [-3  0  1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-3.5  0.   1. ]  to  [-3.  0.  1.]
+Slicing  [-2.5  0.   1. ]  to  [-3.  0.  1.]
+Processing BZ [-3  0  1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-3.  0.  1.]  to  [-3.   0.   0.5]
+Slicing  [-3.  0.  1.]  to  [-3.   0.   1.5]
+
+
+Processed: 96/792 (12.12%) | Elapsed: 00:08:10 | BZ Folding estimated remaining time: 00:59:19
+
+
+
+Generating Report for BZ [-3  0  1]
+
+Combining all 7 BZ
+
+BZ [-3  0  1] done. Total time elapsed 00:09:16
+Processing BZ [-2  0  2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-2.  -0.5  2. ]  to  [-2.  0.  2.]
+Slicing  [-2.   0.5  2. ]  to  [-2.  0.  2.]
+Processing BZ [-2  0  2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-2.  0.  2.]  to  [-2.5  0.   2. ]
+Slicing  [-2.  0.  2.]  to  [-1.5  0.   2. ]
+Processing BZ [-2  0  2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-2.5  0.   2. ]  to  [-3.  0.  2.]
+Slicing  [-1.5  0.   2. ]  to  [-1.  0.  2.]
+Processing BZ [-2  0  2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-3.  0.  2.]  to  [-2.5  0.   2. ]
+Slicing  [-1.  0.  2.]  to  [-1.5  0.   2. ]
+Processing BZ [-2  0  2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-2.5  0.   2. ]  to  [-2.  0.  2.]
+Slicing  [-1.5  0.   2. ]  to  [-2.  0.  2.]
+Processing BZ [-2  0  2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-2.  0.  2.]  to  [-2.   0.   1.5]
+Slicing  [-2.  0.  2.]  to  [-2.   0.   2.5]
+
+Generating Report for BZ [-2  0  2]
+
+Combining all 8 BZ
+
+BZ [-2  0  2] done. Total time elapsed 00:10:18
+Processing BZ [-2  0  1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-2.  -0.5  1. ]  to  [-2.  0.  1.]
+Slicing  [-2.   0.5  1. ]  to  [-2.  0.  1.]
+Processing BZ [-2  0  1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-2.  0.  1.]  to  [-2.5  0.   1. ]
+
+
+Processed: 111/792 (14.02%) | Elapsed: 00:09:35 | BZ Folding estimated remaining time: 00:58:51
+
+
+Slicing  [-2.  0.  1.]  to  [-1.5  0.   1. ]
+Processing BZ [-2  0  1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-2.5  0.   1. ]  to  [-3.  0.  1.]
+Slicing  [-1.5  0.   1. ]  to  [-1.  0.  1.]
+Processing BZ [-2  0  1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-3.  0.  1.]  to  [-2.5  0.   1. ]
+Slicing  [-1.  0.  1.]  to  [-1.5  0.   1. ]
+Processing BZ [-2  0  1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-2.5  0.   1. ]  to  [-2.  0.  1.]
+Slicing  [-1.5  0.   1. ]  to  [-2.  0.  1.]
+Processing BZ [-2  0  1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-2.  0.  1.]  to  [-2.   0.   0.5]
+Slicing  [-2.  0.  1.]  to  [-2.   0.   1.5]
+
+Generating Report for BZ [-2  0  1]
+
+Combining all 9 BZ
+
+BZ [-2  0  1] done. Total time elapsed 00:11:22
+Processing BZ [-1  0  2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-1.  -0.5  2. ]  to  [-1.  0.  2.]
+Slicing  [-1.   0.5  2. ]  to  [-1.  0.  2.]
+Processing BZ [-1  0  2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-1.  0.  2.]  to  [-1.5  0.   2. ]
+Slicing  [-1.  0.  2.]  to  [-0.5  0.   2. ]
+Processing BZ [-1  0  2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-1.5  0.   2. ]  to  [-2.  0.  2.]
+Slicing  [-0.5  0.   2. ]  to  [0. 0. 2.]
+Processing BZ [-1  0  2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-2.  0.  2.]  to  [-1.5  0.   2. ]
+
+
+Processed: 127/792 (16.04%) | Elapsed: 00:10:58 | BZ Folding estimated remaining time: 00:57:27
+
+
+Slicing  [0. 0. 2.]  to  [-0.5  0.   2. ]
+Processing BZ [-1  0  2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-1.5  0.   2. ]  to  [-1.  0.  2.]
+Slicing  [-0.5  0.   2. ]  to  [-1.  0.  2.]
+Processing BZ [-1  0  2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-1.  0.  2.]  to  [-1.   0.   1.5]
+Slicing  [-1.  0.  2.]  to  [-1.   0.   2.5]
+
+Generating Report for BZ [-1  0  2]
+
+Combining all 10 BZ
+
+BZ [-1  0  2] done. Total time elapsed 00:12:27
+Processing BZ [-3  0  0], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-3.  -0.5  0. ]  to  [-3.  0.  0.]
+Slicing  [-3.   0.5  0. ]  to  [-3.  0.  0.]
+Processing BZ [-3  0  0], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-3.  0.  0.]  to  [-3.5  0.   0. ]
+Slicing  [-3.  0.  0.]  to  [-2.5  0.   0. ]
+Processing BZ [-3  0  0], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-3.5  0.   0. ]  to  [-4.  0.  0.]
+Slicing  [-2.5  0.   0. ]  to  [-2.  0.  0.]
+Processing BZ [-3  0  0], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-4.  0.  0.]  to  [-3.5  0.   0. ]
+Slicing  [-2.  0.  0.]  to  [-2.5  0.   0. ]
+Processing BZ [-3  0  0], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-3.5  0.   0. ]  to  [-3.  0.  0.]
+Slicing  [-2.5  0.   0. ]  to  [-3.  0.  0.]
+Processing BZ [-3  0  0], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-3.  0.  0.]  to  [-3.   0.  -0.5]
+
+
+Processed: 143/792 (18.06%) | Elapsed: 00:12:21 | BZ Folding estimated remaining time: 00:56:04
+
+
+Slicing  [-3.  0.  0.]  to  [-3.   0.   0.5]
+
+Generating Report for BZ [-3  0  0]
+
+Combining all 11 BZ
+
+BZ [-3  0  0] done. Total time elapsed 00:13:32
+Processing BZ [-1  0  1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-1.  -0.5  1. ]  to  [-1.  0.  1.]
+Slicing  [-1.   0.5  1. ]  to  [-1.  0.  1.]
+Processing BZ [-1  0  1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-1.  0.  1.]  to  [-1.5  0.   1. ]
+Slicing  [-1.  0.  1.]  to  [-0.5  0.   1. ]
+Processing BZ [-1  0  1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-1.5  0.   1. ]  to  [-2.  0.  1.]
+Slicing  [-0.5  0.   1. ]  to  [0. 0. 1.]
+Processing BZ [-1  0  1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-2.  0.  1.]  to  [-1.5  0.   1. ]
+Slicing  [0. 0. 1.]  to  [-0.5  0.   1. ]
+Processing BZ [-1  0  1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-1.5  0.   1. ]  to  [-1.  0.  1.]
+Slicing  [-0.5  0.   1. ]  to  [-1.  0.  1.]
+Processing BZ [-1  0  1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-1.  0.  1.]  to  [-1.   0.   0.5]
+Slicing  [-1.  0.  1.]  to  [-1.   0.   1.5]
+
+Generating Report for BZ [-1  0  1]
+
+Combining all 12 BZ
+
+BZ [-1  0  1] done. Total time elapsed 00:14:44
+Processing BZ [-5  0  2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-5.  -0.5  2. ]  to  [-5.  0.  2.]
+Slicing  [-5.   0.5  2. ]  to  [-5.  0.  2.]
+Processing BZ [-5  0  2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-5.  0.  2.]  to  [-5.5  0.   2. ]
+
+
+Processed: 159/792 (20.08%) | Elapsed: 00:14:01 | BZ Folding estimated remaining time: 00:55:48
+
+
+Slicing  [-5.  0.  2.]  to  [-4.5  0.   2. ]
+Processing BZ [-5  0  2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-5.5  0.   2. ]  to  [-6.  0.  2.]
+Slicing  [-4.5  0.   2. ]  to  [-4.  0.  2.]
+Processing BZ [-5  0  2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-6.  0.  2.]  to  [-5.5  0.   2. ]
+Slicing  [-4.  0.  2.]  to  [-4.5  0.   2. ]
+Processing BZ [-5  0  2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-5.5  0.   2. ]  to  [-5.  0.  2.]
+Slicing  [-4.5  0.   2. ]  to  [-5.  0.  2.]
+Processing BZ [-5  0  2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-5.  0.  2.]  to  [-5.   0.   1.5]
+Slicing  [-5.  0.  2.]  to  [-5.   0.   2.5]
+
+Generating Report for BZ [-5  0  2]
+
+Combining all 13 BZ
+
+BZ [-5  0  2] done. Total time elapsed 00:15:49
+Processing BZ [-2  0 -1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-2.  -0.5 -1. ]  to  [-2.  0. -1.]
+Slicing  [-2.   0.5 -1. ]  to  [-2.  0. -1.]
+Processing BZ [-2  0 -1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-2.  0. -1.]  to  [-2.5  0.  -1. ]
+Slicing  [-2.  0. -1.]  to  [-1.5  0.  -1. ]
+Processing BZ [-2  0 -1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-2.5  0.  -1. ]  to  [-3.  0. -1.]
+Slicing  [-1.5  0.  -1. ]  to  [-1.  0. -1.]
+Processing BZ [-2  0 -1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-3.  0. -1.]  to  [-2.5  0.  -1. ]
+
+
+Processed: 175/792 (22.10%) | Elapsed: 00:15:26 | BZ Folding estimated remaining time: 00:54:25
+
+
+Slicing  [-1.  0. -1.]  to  [-1.5  0.  -1. ]
+Processing BZ [-2  0 -1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-2.5  0.  -1. ]  to  [-2.  0. -1.]
+Slicing  [-1.5  0.  -1. ]  to  [-2.  0. -1.]
+Processing BZ [-2  0 -1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-2.  0. -1.]  to  [-2.   0.  -1.5]
+Slicing  [-2.  0. -1.]  to  [-2.   0.  -0.5]
+
+Generating Report for BZ [-2  0 -1]
+
+Combining all 14 BZ
+
+BZ [-2  0 -1] done. Total time elapsed 00:16:57
+Processing BZ [0 0 2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [ 0.  -0.5  2. ]  to  [0. 0. 2.]
+Slicing  [0.  0.5 2. ]  to  [0. 0. 2.]
+Processing BZ [0 0 2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [0. 0. 2.]  to  [-0.5  0.   2. ]
+Slicing  [0. 0. 2.]  to  [0.5 0.  2. ]
+Processing BZ [0 0 2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-0.5  0.   2. ]  to  [-1.  0.  2.]
+Slicing  [0.5 0.  2. ]  to  [1. 0. 2.]
+Processing BZ [0 0 2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-1.  0.  2.]  to  [-0.5  0.   2. ]
+Slicing  [1. 0. 2.]  to  [0.5 0.  2. ]
+Processing BZ [0 0 2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-0.5  0.   2. ]  to  [0. 0. 2.]
+Slicing  [0.5 0.  2. ]  to  [0. 0. 2.]
+Processing BZ [0 0 2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [0. 0. 2.]  to  [0.  0.  1.5]
+
+
+Processed: 191/792 (24.12%) | Elapsed: 00:16:52 | BZ Folding estimated remaining time: 00:53:06
+
+
+Slicing  [0. 0. 2.]  to  [0.  0.  2.5]
+
+Generating Report for BZ [0 0 2]
+
+Combining all 15 BZ
+
+BZ [0 0 2] done. Total time elapsed 00:18:06
+Processing BZ [-7  0  1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-7.  -0.5  1. ]  to  [-7.  0.  1.]
+Slicing  [-7.   0.5  1. ]  to  [-7.  0.  1.]
+Processing BZ [-7  0  1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-7.  0.  1.]  to  [-7.5  0.   1. ]
+Slicing  [-7.  0.  1.]  to  [-6.5  0.   1. ]
+Processing BZ [-7  0  1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-7.5  0.   1. ]  to  [-8.  0.  1.]
+Slicing  [-6.5  0.   1. ]  to  [-6.  0.  1.]
+Processing BZ [-7  0  1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-8.  0.  1.]  to  [-7.5  0.   1. ]
+Slicing  [-6.  0.  1.]  to  [-6.5  0.   1. ]
+Processing BZ [-7  0  1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-7.5  0.   1. ]  to  [-7.  0.  1.]
+Slicing  [-6.5  0.   1. ]  to  [-7.  0.  1.]
+Processing BZ [-7  0  1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-7.  0.  1.]  to  [-7.   0.   0.5]
+Slicing  [-7.  0.  1.]  to  [-7.   0.   1.5]
+
+Generating Report for BZ [-7  0  1]
+
+Combining all 16 BZ
+
+BZ [-7  0  1] done. Total time elapsed 00:19:14
+Processing BZ [0 0 1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [ 0.  -0.5  1. ]  to  [0. 0. 1.]
+Slicing  [0.  0.5 1. ]  to  [0. 0. 1.]
+
+
+Processed: 206/792 (26.01%) | Elapsed: 00:18:26 | BZ Folding estimated remaining time: 00:52:28
+
+
+Processing BZ [0 0 1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [0. 0. 1.]  to  [-0.5  0.   1. ]
+Slicing  [0. 0. 1.]  to  [0.5 0.  1. ]
+Processing BZ [0 0 1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-0.5  0.   1. ]  to  [-1.  0.  1.]
+Slicing  [0.5 0.  1. ]  to  [1. 0. 1.]
+Processing BZ [0 0 1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-1.  0.  1.]  to  [-0.5  0.   1. ]
+Slicing  [1. 0. 1.]  to  [0.5 0.  1. ]
+Processing BZ [0 0 1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-0.5  0.   1. ]  to  [0. 0. 1.]
+Slicing  [0.5 0.  1. ]  to  [0. 0. 1.]
+Processing BZ [0 0 1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [0. 0. 1.]  to  [0.  0.  0.5]
+Slicing  [0. 0. 1.]  to  [0.  0.  1.5]
+
+Generating Report for BZ [0 0 1]
+
+Combining all 17 BZ
+
+BZ [0 0 1] done. Total time elapsed 00:20:21
+Processing BZ [-2  0  3], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-2.  -0.5  3. ]  to  [-2.  0.  3.]
+Slicing  [-2.   0.5  3. ]  to  [-2.  0.  3.]
+Processing BZ [-2  0  3], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-2.  0.  3.]  to  [-2.5  0.   3. ]
+Slicing  [-2.  0.  3.]  to  [-1.5  0.   3. ]
+Processing BZ [-2  0  3], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-2.5  0.   3. ]  to  [-3.  0.  3.]
+Slicing  [-1.5  0.   3. ]  to  [-1.  0.  3.]
+
+
+Processed: 222/792 (28.03%) | Elapsed: 00:19:52 | BZ Folding estimated remaining time: 00:51:01
+
+
+Processing BZ [-2  0  3], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-3.  0.  3.]  to  [-2.5  0.   3. ]
+Slicing  [-1.  0.  3.]  to  [-1.5  0.   3. ]
+Processing BZ [-2  0  3], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-2.5  0.   3. ]  to  [-2.  0.  3.]
+Slicing  [-1.5  0.   3. ]  to  [-2.  0.  3.]
+Processing BZ [-2  0  3], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-2.  0.  3.]  to  [-2.   0.   2.5]
+Slicing  [-2.  0.  3.]  to  [-2.   0.   3.5]
+
+Generating Report for BZ [-2  0  3]
+
+Combining all 18 BZ
+
+BZ [-2  0  3] done. Total time elapsed 00:21:28
+Processing BZ [-2  0  0], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-2.  -0.5  0. ]  to  [-2.  0.  0.]
+Slicing  [-2.   0.5  0. ]  to  [-2.  0.  0.]
+Processing BZ [-2  0  0], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-2.  0.  0.]  to  [-2.5  0.   0. ]
+Slicing  [-2.  0.  0.]  to  [-1.5  0.   0. ]
+Processing BZ [-2  0  0], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-2.5  0.   0. ]  to  [-3.  0.  0.]
+Slicing  [-1.5  0.   0. ]  to  [-1.  0.  0.]
+Processing BZ [-2  0  0], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-3.  0.  0.]  to  [-2.5  0.   0. ]
+Slicing  [-1.  0.  0.]  to  [-1.5  0.   0. ]
+Processing BZ [-2  0  0], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-2.5  0.   0. ]  to  [-2.  0.  0.]
+Slicing  [-1.5  0.   0. ]  to  [-2.  0.  0.]
+
+
+Processed: 238/792 (30.05%) | Elapsed: 00:21:16 | BZ Folding estimated remaining time: 00:49:31
+
+
+Processing BZ [-2  0  0], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-2.  0.  0.]  to  [-2.   0.  -0.5]
+Slicing  [-2.  0.  0.]  to  [-2.   0.   0.5]
+
+Generating Report for BZ [-2  0  0]
+
+Combining all 19 BZ
+
+BZ [-2  0  0] done. Total time elapsed 00:22:35
+Processing BZ [-6  0  2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-6.  -0.5  2. ]  to  [-6.  0.  2.]
+Slicing  [-6.   0.5  2. ]  to  [-6.  0.  2.]
+Processing BZ [-6  0  2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-6.  0.  2.]  to  [-6.5  0.   2. ]
+Slicing  [-6.  0.  2.]  to  [-5.5  0.   2. ]
+Processing BZ [-6  0  2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-6.5  0.   2. ]  to  [-7.  0.  2.]
+Slicing  [-5.5  0.   2. ]  to  [-5.  0.  2.]
+Processing BZ [-6  0  2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-7.  0.  2.]  to  [-6.5  0.   2. ]
+Slicing  [-5.  0.  2.]  to  [-5.5  0.   2. ]
+Processing BZ [-6  0  2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-6.5  0.   2. ]  to  [-6.  0.  2.]
+Slicing  [-5.5  0.   2. ]  to  [-6.  0.  2.]
+Processing BZ [-6  0  2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-6.  0.  2.]  to  [-6.   0.   1.5]
+Slicing  [-6.  0.  2.]  to  [-6.   0.   2.5]
+
+Generating Report for BZ [-6  0  2]
+
+Combining all 20 BZ
+
+BZ [-6  0  2] done. Total time elapsed 00:23:43
+Processing BZ [-7  0  0], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-7.  -0.5  0. ]  to  [-7.  0.  0.]
+Slicing  [-7.   0.5  0. ]  to  [-7.  0.  0.]
+
+
+Processed: 254/792 (32.07%) | Elapsed: 00:22:56 | BZ Folding estimated remaining time: 00:48:35
+
+
+Processing BZ [-7  0  0], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-7.  0.  0.]  to  [-7.5  0.   0. ]
+Slicing  [-7.  0.  0.]  to  [-6.5  0.   0. ]
+Processing BZ [-7  0  0], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-7.5  0.   0. ]  to  [-8.  0.  0.]
+Slicing  [-6.5  0.   0. ]  to  [-6.  0.  0.]
+Processing BZ [-7  0  0], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-8.  0.  0.]  to  [-7.5  0.   0. ]
+Slicing  [-6.  0.  0.]  to  [-6.5  0.   0. ]
+Processing BZ [-7  0  0], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-7.5  0.   0. ]  to  [-7.  0.  0.]
+Slicing  [-6.5  0.   0. ]  to  [-7.  0.  0.]
+Processing BZ [-7  0  0], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-7.  0.  0.]  to  [-7.   0.  -0.5]
+Slicing  [-7.  0.  0.]  to  [-7.   0.   0.5]
+
+Generating Report for BZ [-7  0  0]
+
+Combining all 21 BZ
+
+BZ [-7  0  0] done. Total time elapsed 00:24:53
+Processing BZ [-1  0  3], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-1.  -0.5  3. ]  to  [-1.  0.  3.]
+Slicing  [-1.   0.5  3. ]  to  [-1.  0.  3.]
+Processing BZ [-1  0  3], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-1.  0.  3.]  to  [-1.5  0.   3. ]
+Slicing  [-1.  0.  3.]  to  [-0.5  0.   3. ]
+Processing BZ [-1  0  3], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-1.5  0.   3. ]  to  [-2.  0.  3.]
+Slicing  [-0.5  0.   3. ]  to  [0. 0. 3.]
+
+
+Processed: 270/792 (34.09%) | Elapsed: 00:24:25 | BZ Folding estimated remaining time: 00:47:13
+
+
+Processing BZ [-1  0  3], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-2.  0.  3.]  to  [-1.5  0.   3. ]
+Slicing  [0. 0. 3.]  to  [-0.5  0.   3. ]
+Processing BZ [-1  0  3], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-1.5  0.   3. ]  to  [-1.  0.  3.]
+Slicing  [-0.5  0.   3. ]  to  [-1.  0.  3.]
+Processing BZ [-1  0  3], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-1.  0.  3.]  to  [-1.   0.   2.5]
+Slicing  [-1.  0.  3.]  to  [-1.   0.   3.5]
+
+Generating Report for BZ [-1  0  3]
+
+Combining all 22 BZ
+
+BZ [-1  0  3] done. Total time elapsed 00:26:04
+Processing BZ [1 0 2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [ 1.  -0.5  2. ]  to  [1. 0. 2.]
+Slicing  [1.  0.5 2. ]  to  [1. 0. 2.]
+Processing BZ [1 0 2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [1. 0. 2.]  to  [0.5 0.  2. ]
+Slicing  [1. 0. 2.]  to  [1.5 0.  2. ]
+Processing BZ [1 0 2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [0.5 0.  2. ]  to  [0. 0. 2.]
+Slicing  [1.5 0.  2. ]  to  [2. 0. 2.]
+Processing BZ [1 0 2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [0. 0. 2.]  to  [0.5 0.  2. ]
+Slicing  [2. 0. 2.]  to  [1.5 0.  2. ]
+Processing BZ [1 0 2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [0.5 0.  2. ]  to  [1. 0. 2.]
+Slicing  [1.5 0.  2. ]  to  [1. 0. 2.]
+
+
+Processed: 286/792 (36.11%) | Elapsed: 00:25:54 | BZ Folding estimated remaining time: 00:45:50
+
+
+Processing BZ [1 0 2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [1. 0. 2.]  to  [1.  0.  1.5]
+Slicing  [1. 0. 2.]  to  [1.  0.  2.5]
+
+Generating Report for BZ [1 0 2]
+
+Combining all 23 BZ
+
+BZ [1 0 2] done. Total time elapsed 00:27:15
+Processing BZ [-1  0 -1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-1.  -0.5 -1. ]  to  [-1.  0. -1.]
+Slicing  [-1.   0.5 -1. ]  to  [-1.  0. -1.]
+Processing BZ [-1  0 -1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-1.  0. -1.]  to  [-1.5  0.  -1. ]
+Slicing  [-1.  0. -1.]  to  [-0.5  0.  -1. ]
+Processing BZ [-1  0 -1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-1.5  0.  -1. ]  to  [-2.  0. -1.]
+Slicing  [-0.5  0.  -1. ]  to  [ 0.  0. -1.]
+Processing BZ [-1  0 -1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-2.  0. -1.]  to  [-1.5  0.  -1. ]
+Slicing  [ 0.  0. -1.]  to  [-0.5  0.  -1. ]
+Processing BZ [-1  0 -1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-1.5  0.  -1. ]  to  [-1.  0. -1.]
+Slicing  [-0.5  0.  -1. ]  to  [-1.  0. -1.]
+Processing BZ [-1  0 -1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-1.  0. -1.]  to  [-1.   0.  -1.5]
+Slicing  [-1.  0. -1.]  to  [-1.   0.  -0.5]
+
+Generating Report for BZ [-1  0 -1]
+
+Combining all 24 BZ
+
+BZ [-1  0 -1] done. Total time elapsed 00:28:25
+Processing BZ [-8  0  0], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-8.  -0.5  0. ]  to  [-8.  0.  0.]
+
+
+Processed: 301/792 (38.01%) | Elapsed: 00:27:34 | BZ Folding estimated remaining time: 00:44:58
+
+
+Slicing  [-8.   0.5  0. ]  to  [-8.  0.  0.]
+Processing BZ [-8  0  0], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-8.  0.  0.]  to  [-8.5  0.   0. ]
+Slicing  [-8.  0.  0.]  to  [-7.5  0.   0. ]
+Processing BZ [-8  0  0], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-8.5  0.   0. ]  to  [-9.  0.  0.]
+Slicing  [-7.5  0.   0. ]  to  [-7.  0.  0.]
+Processing BZ [-8  0  0], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-9.  0.  0.]  to  [-8.5  0.   0. ]
+Slicing  [-7.  0.  0.]  to  [-7.5  0.   0. ]
+Processing BZ [-8  0  0], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-8.5  0.   0. ]  to  [-8.  0.  0.]
+Slicing  [-7.5  0.   0. ]  to  [-8.  0.  0.]
+Processing BZ [-8  0  0], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-8.  0.  0.]  to  [-8.   0.  -0.5]
+Slicing  [-8.  0.  0.]  to  [-8.   0.   0.5]
+
+Generating Report for BZ [-8  0  0]
+
+Combining all 25 BZ
+
+BZ [-8  0  0] done. Total time elapsed 00:29:33
+Processing BZ [-6  0  0], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-6.  -0.5  0. ]  to  [-6.  0.  0.]
+Slicing  [-6.   0.5  0. ]  to  [-6.  0.  0.]
+Processing BZ [-6  0  0], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-6.  0.  0.]  to  [-6.5  0.   0. ]
+Slicing  [-6.  0.  0.]  to  [-5.5  0.   0. ]
+Processing BZ [-6  0  0], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-6.5  0.   0. ]  to  [-7.  0.  0.]
+
+
+Processed: 317/792 (40.03%) | Elapsed: 00:28:59 | BZ Folding estimated remaining time: 00:43:26
+
+
+Slicing  [-5.5  0.   0. ]  to  [-5.  0.  0.]
+Processing BZ [-6  0  0], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-7.  0.  0.]  to  [-6.5  0.   0. ]
+Slicing  [-5.  0.  0.]  to  [-5.5  0.   0. ]
+Processing BZ [-6  0  0], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-6.5  0.   0. ]  to  [-6.  0.  0.]
+Slicing  [-5.5  0.   0. ]  to  [-6.  0.  0.]
+Processing BZ [-6  0  0], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-6.  0.  0.]  to  [-6.   0.  -0.5]
+Slicing  [-6.  0.  0.]  to  [-6.   0.   0.5]
+
+Generating Report for BZ [-6  0  0]
+
+Combining all 26 BZ
+
+BZ [-6  0  0] done. Total time elapsed 00:30:41
+Processing BZ [-5  0  0], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-5.  -0.5  0. ]  to  [-5.  0.  0.]
+Slicing  [-5.   0.5  0. ]  to  [-5.  0.  0.]
+Processing BZ [-5  0  0], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-5.  0.  0.]  to  [-5.5  0.   0. ]
+Slicing  [-5.  0.  0.]  to  [-4.5  0.   0. ]
+Processing BZ [-5  0  0], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-5.5  0.   0. ]  to  [-6.  0.  0.]
+Slicing  [-4.5  0.   0. ]  to  [-4.  0.  0.]
+Processing BZ [-5  0  0], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-6.  0.  0.]  to  [-5.5  0.   0. ]
+Slicing  [-4.  0.  0.]  to  [-4.5  0.   0. ]
+Processing BZ [-5  0  0], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-5.5  0.   0. ]  to  [-5.  0.  0.]
+
+
+Processed: 333/792 (42.05%) | Elapsed: 00:30:26 | BZ Folding estimated remaining time: 00:41:57
+
+
+Slicing  [-4.5  0.   0. ]  to  [-5.  0.  0.]
+Processing BZ [-5  0  0], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-5.  0.  0.]  to  [-5.   0.  -0.5]
+Slicing  [-5.  0.  0.]  to  [-5.   0.   0.5]
+
+Generating Report for BZ [-5  0  0]
+
+Combining all 27 BZ
+
+BZ [-5  0  0] done. Total time elapsed 00:31:52
+Processing BZ [-3  0  3], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-3.  -0.5  3. ]  to  [-3.  0.  3.]
+Slicing  [-3.   0.5  3. ]  to  [-3.  0.  3.]
+Processing BZ [-3  0  3], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-3.  0.  3.]  to  [-3.5  0.   3. ]
+Slicing  [-3.  0.  3.]  to  [-2.5  0.   3. ]
+Processing BZ [-3  0  3], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-3.5  0.   3. ]  to  [-4.  0.  3.]
+Slicing  [-2.5  0.   3. ]  to  [-2.  0.  3.]
+Processing BZ [-3  0  3], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-4.  0.  3.]  to  [-3.5  0.   3. ]
+Slicing  [-2.  0.  3.]  to  [-2.5  0.   3. ]
+Processing BZ [-3  0  3], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-3.5  0.   3. ]  to  [-3.  0.  3.]
+Slicing  [-2.5  0.   3. ]  to  [-3.  0.  3.]
+Processing BZ [-3  0  3], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-3.  0.  3.]  to  [-3.   0.   2.5]
+Slicing  [-3.  0.  3.]  to  [-3.   0.   3.5]
+
+Generating Report for BZ [-3  0  3]
+
+Combining all 28 BZ
+
+BZ [-3  0  3] done. Total time elapsed 00:33:02
+Processing BZ [-1  0  0], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-1.  -0.5  0. ]  to  [-1.  0.  0.]
+
+
+Processed: 349/792 (44.07%) | Elapsed: 00:32:11 | BZ Folding estimated remaining time: 00:40:51
+
+
+Slicing  [-1.   0.5  0. ]  to  [-1.  0.  0.]
+Processing BZ [-1  0  0], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-1.  0.  0.]  to  [-1.5  0.   0. ]
+Slicing  [-1.  0.  0.]  to  [-0.5  0.   0. ]
+Processing BZ [-1  0  0], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-1.5  0.   0. ]  to  [-2.  0.  0.]
+Slicing  [-0.5  0.   0. ]  to  [0. 0. 0.]
+Processing BZ [-1  0  0], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-2.  0.  0.]  to  [-1.5  0.   0. ]
+Slicing  [0. 0. 0.]  to  [-0.5  0.   0. ]
+Processing BZ [-1  0  0], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-1.5  0.   0. ]  to  [-1.  0.  0.]
+Slicing  [-0.5  0.   0. ]  to  [-1.  0.  0.]
+Processing BZ [-1  0  0], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-1.  0.  0.]  to  [-1.   0.  -0.5]
+Slicing  [-1.  0.  0.]  to  [-1.   0.   0.5]
+
+Generating Report for BZ [-1  0  0]
+
+Combining all 29 BZ
+
+BZ [-1  0  0] done. Total time elapsed 00:34:14
+Processing BZ [1 0 1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [ 1.  -0.5  1. ]  to  [1. 0. 1.]
+Slicing  [1.  0.5 1. ]  to  [1. 0. 1.]
+Processing BZ [1 0 1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [1. 0. 1.]  to  [0.5 0.  1. ]
+Slicing  [1. 0. 1.]  to  [1.5 0.  1. ]
+Processing BZ [1 0 1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [0.5 0.  1. ]  to  [0. 0. 1.]
+
+
+Processed: 365/792 (46.09%) | Elapsed: 00:33:41 | BZ Folding estimated remaining time: 00:39:24
+
+
+Slicing  [1.5 0.  1. ]  to  [2. 0. 1.]
+Processing BZ [1 0 1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [0. 0. 1.]  to  [0.5 0.  1. ]
+Slicing  [2. 0. 1.]  to  [1.5 0.  1. ]
+Processing BZ [1 0 1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [0.5 0.  1. ]  to  [1. 0. 1.]
+Slicing  [1.5 0.  1. ]  to  [1. 0. 1.]
+Processing BZ [1 0 1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [1. 0. 1.]  to  [1.  0.  0.5]
+Slicing  [1. 0. 1.]  to  [1.  0.  1.5]
+
+Generating Report for BZ [1 0 1]
+
+Combining all 30 BZ
+
+BZ [1 0 1] done. Total time elapsed 00:35:32
+Processing BZ [-8  0  1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-8.  -0.5  1. ]  to  [-8.  0.  1.]
+Slicing  [-8.   0.5  1. ]  to  [-8.  0.  1.]
+Processing BZ [-8  0  1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-8.  0.  1.]  to  [-8.5  0.   1. ]
+Slicing  [-8.  0.  1.]  to  [-7.5  0.   1. ]
+Processing BZ [-8  0  1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-8.5  0.   1. ]  to  [-9.  0.  1.]
+Slicing  [-7.5  0.   1. ]  to  [-7.  0.  1.]
+Processing BZ [-8  0  1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-9.  0.  1.]  to  [-8.5  0.   1. ]
+Slicing  [-7.  0.  1.]  to  [-7.5  0.   1. ]
+Processing BZ [-8  0  1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-8.5  0.   1. ]  to  [-8.  0.  1.]
+
+
+Processed: 381/792 (48.11%) | Elapsed: 00:35:18 | BZ Folding estimated remaining time: 00:38:04
+
+
+Slicing  [-7.5  0.   1. ]  to  [-8.  0.  1.]
+Processing BZ [-8  0  1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-8.  0.  1.]  to  [-8.   0.   0.5]
+Slicing  [-8.  0.  1.]  to  [-8.   0.   1.5]
+
+Generating Report for BZ [-8  0  1]
+
+Combining all 31 BZ
+
+BZ [-8  0  1] done. Total time elapsed 00:36:43
+Processing BZ [-4  0  3], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-4.  -0.5  3. ]  to  [-4.  0.  3.]
+Slicing  [-4.   0.5  3. ]  to  [-4.  0.  3.]
+Processing BZ [-4  0  3], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-4.  0.  3.]  to  [-4.5  0.   3. ]
+Slicing  [-4.  0.  3.]  to  [-3.5  0.   3. ]
+Processing BZ [-4  0  3], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-4.5  0.   3. ]  to  [-5.  0.  3.]
+Slicing  [-3.5  0.   3. ]  to  [-3.  0.  3.]
+Processing BZ [-4  0  3], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-5.  0.  3.]  to  [-4.5  0.   3. ]
+Slicing  [-3.  0.  3.]  to  [-3.5  0.   3. ]
+Processing BZ [-4  0  3], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-4.5  0.   3. ]  to  [-4.  0.  3.]
+Slicing  [-3.5  0.   3. ]  to  [-4.  0.  3.]
+Processing BZ [-4  0  3], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-4.  0.  3.]  to  [-4.   0.   2.5]
+Slicing  [-4.  0.  3.]  to  [-4.   0.   3.5]
+
+
+Processed: 396/792 (50.00%) | Elapsed: 00:36:42 | BZ Folding estimated remaining time: 00:36:42
+
+
+
+Generating Report for BZ [-4  0  3]
+
+Combining all 32 BZ
+
+BZ [-4  0  3] done. Total time elapsed 00:37:56
+Processing BZ [0 0 3], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [ 0.  -0.5  3. ]  to  [0. 0. 3.]
+Slicing  [0.  0.5 3. ]  to  [0. 0. 3.]
+Processing BZ [0 0 3], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [0. 0. 3.]  to  [-0.5  0.   3. ]
+Slicing  [0. 0. 3.]  to  [0.5 0.  3. ]
+Processing BZ [0 0 3], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-0.5  0.   3. ]  to  [-1.  0.  3.]
+Slicing  [0.5 0.  3. ]  to  [1. 0. 3.]
+Processing BZ [0 0 3], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-1.  0.  3.]  to  [-0.5  0.   3. ]
+Slicing  [1. 0. 3.]  to  [0.5 0.  3. ]
+Processing BZ [0 0 3], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-0.5  0.   3. ]  to  [0. 0. 3.]
+Slicing  [0.5 0.  3. ]  to  [0. 0. 3.]
+Processing BZ [0 0 3], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [0. 0. 3.]  to  [0.  0.  2.5]
+Slicing  [0. 0. 3.]  to  [0.  0.  3.5]
+
+Generating Report for BZ [0 0 3]
+
+Combining all 33 BZ
+
+BZ [0 0 3] done. Total time elapsed 00:39:10
+Processing BZ [-7  0  2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-7.  -0.5  2. ]  to  [-7.  0.  2.]
+Slicing  [-7.   0.5  2. ]  to  [-7.  0.  2.]
+Processing BZ [-7  0  2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-7.  0.  2.]  to  [-7.5  0.   2. ]
+Slicing  [-7.  0.  2.]  to  [-6.5  0.   2. ]
+
+
+Processed: 412/792 (52.02%) | Elapsed: 00:38:31 | BZ Folding estimated remaining time: 00:35:32
+
+
+Processing BZ [-7  0  2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-7.5  0.   2. ]  to  [-8.  0.  2.]
+Slicing  [-6.5  0.   2. ]  to  [-6.  0.  2.]
+Processing BZ [-7  0  2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-8.  0.  2.]  to  [-7.5  0.   2. ]
+Slicing  [-6.  0.  2.]  to  [-6.5  0.   2. ]
+Processing BZ [-7  0  2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-7.5  0.   2. ]  to  [-7.  0.  2.]
+Slicing  [-6.5  0.   2. ]  to  [-7.  0.  2.]
+Processing BZ [-7  0  2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-7.  0.  2.]  to  [-7.   0.   1.5]
+Slicing  [-7.  0.  2.]  to  [-7.   0.   2.5]
+
+Generating Report for BZ [-7  0  2]
+
+Combining all 34 BZ
+
+BZ [-7  0  2] done. Total time elapsed 00:40:20
+Processing BZ [-4  0 -1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-4.  -0.5 -1. ]  to  [-4.  0. -1.]
+Slicing  [-4.   0.5 -1. ]  to  [-4.  0. -1.]
+Processing BZ [-4  0 -1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-4.  0. -1.]  to  [-4.5  0.  -1. ]
+Slicing  [-4.  0. -1.]  to  [-3.5  0.  -1. ]
+Processing BZ [-4  0 -1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-4.5  0.  -1. ]  to  [-5.  0. -1.]
+Slicing  [-3.5  0.  -1. ]  to  [-3.  0. -1.]
+Processing BZ [-4  0 -1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-5.  0. -1.]  to  [-4.5  0.  -1. ]
+Slicing  [-3.  0. -1.]  to  [-3.5  0.  -1. ]
+
+
+Processed: 428/792 (54.04%) | Elapsed: 00:40:00 | BZ Folding estimated remaining time: 00:34:01
+
+
+Processing BZ [-4  0 -1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-4.5  0.  -1. ]  to  [-4.  0. -1.]
+Slicing  [-3.5  0.  -1. ]  to  [-4.  0. -1.]
+Processing BZ [-4  0 -1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-4.  0. -1.]  to  [-4.   0.  -1.5]
+Slicing  [-4.  0. -1.]  to  [-4.   0.  -0.5]
+
+Generating Report for BZ [-4  0 -1]
+
+Combining all 35 BZ
+
+BZ [-4  0 -1] done. Total time elapsed 00:41:37
+Processing BZ [ 0  0 -1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [ 0.  -0.5 -1. ]  to  [ 0.  0. -1.]
+Slicing  [ 0.   0.5 -1. ]  to  [ 0.  0. -1.]
+Processing BZ [ 0  0 -1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [ 0.  0. -1.]  to  [-0.5  0.  -1. ]
+Slicing  [ 0.  0. -1.]  to  [ 0.5  0.  -1. ]
+Processing BZ [ 0  0 -1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-0.5  0.  -1. ]  to  [-1.  0. -1.]
+Slicing  [ 0.5  0.  -1. ]  to  [ 1.  0. -1.]
+Processing BZ [ 0  0 -1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-1.  0. -1.]  to  [-0.5  0.  -1. ]
+Slicing  [ 1.  0. -1.]  to  [ 0.5  0.  -1. ]
+Processing BZ [ 0  0 -1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-0.5  0.  -1. ]  to  [ 0.  0. -1.]
+Slicing  [ 0.5  0.  -1. ]  to  [ 0.  0. -1.]
+Processing BZ [ 0  0 -1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [ 0.  0. -1.]  to  [ 0.   0.  -1.5]
+Slicing  [ 0.  0. -1.]  to  [ 0.   0.  -0.5]
+
+
+Processed: 444/792 (56.06%) | Elapsed: 00:41:39 | BZ Folding estimated remaining time: 00:32:38
+
+
+
+Generating Report for BZ [ 0  0 -1]
+
+Combining all 36 BZ
+
+BZ [ 0  0 -1] done. Total time elapsed 00:42:52
+Processing BZ [-5  0  3], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-5.  -0.5  3. ]  to  [-5.  0.  3.]
+Slicing  [-5.   0.5  3. ]  to  [-5.  0.  3.]
+Processing BZ [-5  0  3], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-5.  0.  3.]  to  [-5.5  0.   3. ]
+Slicing  [-5.  0.  3.]  to  [-4.5  0.   3. ]
+Processing BZ [-5  0  3], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-5.5  0.   3. ]  to  [-6.  0.  3.]
+Slicing  [-4.5  0.   3. ]  to  [-4.  0.  3.]
+Processing BZ [-5  0  3], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-6.  0.  3.]  to  [-5.5  0.   3. ]
+Slicing  [-4.  0.  3.]  to  [-4.5  0.   3. ]
+Processing BZ [-5  0  3], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-5.5  0.   3. ]  to  [-5.  0.  3.]
+Slicing  [-4.5  0.   3. ]  to  [-5.  0.  3.]
+Processing BZ [-5  0  3], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-5.  0.  3.]  to  [-5.   0.   2.5]
+Slicing  [-5.  0.  3.]  to  [-5.   0.   3.5]
+
+Generating Report for BZ [-5  0  3]
+
+Combining all 37 BZ
+
+BZ [-5  0  3] done. Total time elapsed 00:44:09
+Processing BZ [1 0 3], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [ 1.  -0.5  3. ]  to  [1. 0. 3.]
+Slicing  [1.  0.5 3. ]  to  [1. 0. 3.]
+Processing BZ [1 0 3], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [1. 0. 3.]  to  [0.5 0.  3. ]
+Slicing  [1. 0. 3.]  to  [1.5 0.  3. ]
+
+
+Processed: 460/792 (58.08%) | Elapsed: 00:43:30 | BZ Folding estimated remaining time: 00:31:24
+
+
+Processing BZ [1 0 3], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [0.5 0.  3. ]  to  [0. 0. 3.]
+Slicing  [1.5 0.  3. ]  to  [2. 0. 3.]
+Processing BZ [1 0 3], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [0. 0. 3.]  to  [0.5 0.  3. ]
+Slicing  [2. 0. 3.]  to  [1.5 0.  3. ]
+Processing BZ [1 0 3], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [0.5 0.  3. ]  to  [1. 0. 3.]
+Slicing  [1.5 0.  3. ]  to  [1. 0. 3.]
+Processing BZ [1 0 3], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [1. 0. 3.]  to  [1.  0.  2.5]
+Slicing  [1. 0. 3.]  to  [1.  0.  3.5]
+
+Generating Report for BZ [1 0 3]
+
+Combining all 38 BZ
+
+BZ [1 0 3] done. Total time elapsed 00:45:21
+Processing BZ [0 0 0], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [ 0.  -0.5  0. ]  to  [0. 0. 0.]
+Slicing  [0.  0.5 0. ]  to  [0. 0. 0.]
+Processing BZ [0 0 0], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [0. 0. 0.]  to  [-0.5  0.   0. ]
+Slicing  [0. 0. 0.]  to  [0.5 0.  0. ]
+Processing BZ [0 0 0], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-0.5  0.   0. ]  to  [-1.  0.  0.]
+Slicing  [0.5 0.  0. ]  to  [1. 0. 0.]
+Processing BZ [0 0 0], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-1.  0.  0.]  to  [-0.5  0.   0. ]
+Slicing  [1. 0. 0.]  to  [0.5 0.  0. ]
+
+
+Processed: 476/792 (60.10%) | Elapsed: 00:45:02 | BZ Folding estimated remaining time: 00:29:53
+
+
+Processing BZ [0 0 0], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-0.5  0.   0. ]  to  [0. 0. 0.]
+Slicing  [0.5 0.  0. ]  to  [0. 0. 0.]
+Processing BZ [0 0 0], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [0. 0. 0.]  to  [ 0.   0.  -0.5]
+Slicing  [0. 0. 0.]  to  [0.  0.  0.5]
+
+Generating Report for BZ [0 0 0]
+
+Combining all 39 BZ
+
+BZ [0 0 0] done. Total time elapsed 00:46:36
+Processing BZ [2 0 2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [ 2.  -0.5  2. ]  to  [2. 0. 2.]
+Slicing  [2.  0.5 2. ]  to  [2. 0. 2.]
+Processing BZ [2 0 2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [2. 0. 2.]  to  [1.5 0.  2. ]
+Slicing  [2. 0. 2.]  to  [2.5 0.  2. ]
+Processing BZ [2 0 2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [1.5 0.  2. ]  to  [1. 0. 2.]
+Slicing  [2.5 0.  2. ]  to  [3. 0. 2.]
+Processing BZ [2 0 2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [1. 0. 2.]  to  [1.5 0.  2. ]
+Slicing  [3. 0. 2.]  to  [2.5 0.  2. ]
+Processing BZ [2 0 2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [1.5 0.  2. ]  to  [2. 0. 2.]
+Slicing  [2.5 0.  2. ]  to  [2. 0. 2.]
+Processing BZ [2 0 2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [2. 0. 2.]  to  [2.  0.  1.5]
+Slicing  [2. 0. 2.]  to  [2.  0.  2.5]
+
+
+Processed: 492/792 (62.12%) | Elapsed: 00:46:33 | BZ Folding estimated remaining time: 00:28:23
+
+
+
+Generating Report for BZ [2 0 2]
+
+Combining all 40 BZ
+
+BZ [2 0 2] done. Total time elapsed 00:47:48
+Processing BZ [-9  0  0], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-9.  -0.5  0. ]  to  [-9.  0.  0.]
+Slicing  [-9.   0.5  0. ]  to  [-9.  0.  0.]
+Processing BZ [-9  0  0], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-9.  0.  0.]  to  [-9.5  0.   0. ]
+Slicing  [-9.  0.  0.]  to  [-8.5  0.   0. ]
+Processing BZ [-9  0  0], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-9.5  0.   0. ]  to  [-10.   0.   0.]
+Slicing  [-8.5  0.   0. ]  to  [-8.  0.  0.]
+Processing BZ [-9  0  0], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-10.   0.   0.]  to  [-9.5  0.   0. ]
+Slicing  [-8.  0.  0.]  to  [-8.5  0.   0. ]
+Processing BZ [-9  0  0], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-9.5  0.   0. ]  to  [-9.  0.  0.]
+Slicing  [-8.5  0.   0. ]  to  [-9.  0.  0.]
+Processing BZ [-9  0  0], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-9.  0.  0.]  to  [-9.   0.  -0.5]
+Slicing  [-9.  0.  0.]  to  [-9.   0.   0.5]
+
+Generating Report for BZ [-9  0  0]
+
+Combining all 41 BZ
+
+BZ [-9  0  0] done. Total time elapsed 00:49:05
+Processing BZ [-7 -1  1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-7.  -1.5  1. ]  to  [-7. -1.  1.]
+Slicing  [-7.  -0.5  1. ]  to  [-7. -1.  1.]
+Processing BZ [-7 -1  1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-7. -1.  1.]  to  [-7.5 -1.   1. ]
+
+
+Processed: 507/792 (64.02%) | Elapsed: 00:48:22 | BZ Folding estimated remaining time: 00:27:11
+
+
+Slicing  [-7. -1.  1.]  to  [-6.5 -1.   1. ]
+Processing BZ [-7 -1  1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-7.5 -1.   1. ]  to  [-8. -1.  1.]
+Slicing  [-6.5 -1.   1. ]  to  [-6. -1.  1.]
+Processing BZ [-7 -1  1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-8. -1.  1.]  to  [-7.5 -1.   1. ]
+Slicing  [-6. -1.  1.]  to  [-6.5 -1.   1. ]
+Processing BZ [-7 -1  1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-7.5 -1.   1. ]  to  [-7. -1.  1.]
+Slicing  [-6.5 -1.   1. ]  to  [-7. -1.  1.]
+Processing BZ [-7 -1  1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-7. -1.  1.]  to  [-7.  -1.   0.5]
+Slicing  [-7. -1.  1.]  to  [-7.  -1.   1.5]
+
+Generating Report for BZ [-7 -1  1]
+
+Combining all 42 BZ
+
+BZ [-7 -1  1] done. Total time elapsed 00:50:20
+Processing BZ [-6 -1  2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-6.  -1.5  2. ]  to  [-6. -1.  2.]
+Slicing  [-6.  -0.5  2. ]  to  [-6. -1.  2.]
+Processing BZ [-6 -1  2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-6. -1.  2.]  to  [-6.5 -1.   2. ]
+Slicing  [-6. -1.  2.]  to  [-5.5 -1.   2. ]
+Processing BZ [-6 -1  2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-6.5 -1.   2. ]  to  [-7. -1.  2.]
+Slicing  [-5.5 -1.   2. ]  to  [-5. -1.  2.]
+Processing BZ [-6 -1  2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-7. -1.  2.]  to  [-6.5 -1.   2. ]
+
+
+Processed: 523/792 (66.04%) | Elapsed: 00:49:55 | BZ Folding estimated remaining time: 00:25:40
+
+
+Slicing  [-5. -1.  2.]  to  [-5.5 -1.   2. ]
+Processing BZ [-6 -1  2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-6.5 -1.   2. ]  to  [-6. -1.  2.]
+Slicing  [-5.5 -1.   2. ]  to  [-6. -1.  2.]
+Processing BZ [-6 -1  2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-6. -1.  2.]  to  [-6.  -1.   1.5]
+Slicing  [-6. -1.  2.]  to  [-6.  -1.   2.5]
+
+Generating Report for BZ [-6 -1  2]
+
+Combining all 43 BZ
+
+BZ [-6 -1  2] done. Total time elapsed 00:51:37
+Processing BZ [-5 -1  2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-5.  -1.5  2. ]  to  [-5. -1.  2.]
+Slicing  [-5.  -0.5  2. ]  to  [-5. -1.  2.]
+Processing BZ [-5 -1  2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-5. -1.  2.]  to  [-5.5 -1.   2. ]
+Slicing  [-5. -1.  2.]  to  [-4.5 -1.   2. ]
+Processing BZ [-5 -1  2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-5.5 -1.   2. ]  to  [-6. -1.  2.]
+Slicing  [-4.5 -1.   2. ]  to  [-4. -1.  2.]
+Processing BZ [-5 -1  2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-6. -1.  2.]  to  [-5.5 -1.   2. ]
+Slicing  [-4. -1.  2.]  to  [-4.5 -1.   2. ]
+Processing BZ [-5 -1  2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-5.5 -1.   2. ]  to  [-5. -1.  2.]
+Slicing  [-4.5 -1.   2. ]  to  [-5. -1.  2.]
+Processing BZ [-5 -1  2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-5. -1.  2.]  to  [-5.  -1.   1.5]
+
+
+Processed: 539/792 (68.06%) | Elapsed: 00:51:30 | BZ Folding estimated remaining time: 00:24:10
+
+
+Slicing  [-5. -1.  2.]  to  [-5.  -1.   2.5]
+
+Generating Report for BZ [-5 -1  2]
+
+Combining all 44 BZ
+
+BZ [-5 -1  2] done. Total time elapsed 00:52:50
+Processing BZ [-4 -1  2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-4.  -1.5  2. ]  to  [-4. -1.  2.]
+Slicing  [-4.  -0.5  2. ]  to  [-4. -1.  2.]
+Processing BZ [-4 -1  2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-4. -1.  2.]  to  [-4.5 -1.   2. ]
+Slicing  [-4. -1.  2.]  to  [-3.5 -1.   2. ]
+Processing BZ [-4 -1  2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-4.5 -1.   2. ]  to  [-5. -1.  2.]
+Slicing  [-3.5 -1.   2. ]  to  [-3. -1.  2.]
+Processing BZ [-4 -1  2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-5. -1.  2.]  to  [-4.5 -1.   2. ]
+Slicing  [-3. -1.  2.]  to  [-3.5 -1.   2. ]
+Processing BZ [-4 -1  2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-4.5 -1.   2. ]  to  [-4. -1.  2.]
+Slicing  [-3.5 -1.   2. ]  to  [-4. -1.  2.]
+Processing BZ [-4 -1  2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-4. -1.  2.]  to  [-4.  -1.   1.5]
+Slicing  [-4. -1.  2.]  to  [-4.  -1.   2.5]
+
+Generating Report for BZ [-4 -1  2]
+
+Combining all 45 BZ
+
+BZ [-4 -1  2] done. Total time elapsed 00:54:09
+Processing BZ [-2 -1  3], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-2.  -1.5  3. ]  to  [-2. -1.  3.]
+Slicing  [-2.  -0.5  3. ]  to  [-2. -1.  3.]
+Processing BZ [-2 -1  3], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-2. -1.  3.]  to  [-2.5 -1.   3. ]
+
+
+Processed: 555/792 (70.08%) | Elapsed: 00:53:27 | BZ Folding estimated remaining time: 00:22:49
+
+
+Slicing  [-2. -1.  3.]  to  [-1.5 -1.   3. ]
+Processing BZ [-2 -1  3], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-2.5 -1.   3. ]  to  [-3. -1.  3.]
+Slicing  [-1.5 -1.   3. ]  to  [-1. -1.  3.]
+Processing BZ [-2 -1  3], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-3. -1.  3.]  to  [-2.5 -1.   3. ]
+Slicing  [-1. -1.  3.]  to  [-1.5 -1.   3. ]
+Processing BZ [-2 -1  3], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-2.5 -1.   3. ]  to  [-2. -1.  3.]
+Slicing  [-1.5 -1.   3. ]  to  [-2. -1.  3.]
+Processing BZ [-2 -1  3], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-2. -1.  3.]  to  [-2.  -1.   2.5]
+Slicing  [-2. -1.  3.]  to  [-2.  -1.   3.5]
+
+Generating Report for BZ [-2 -1  3]
+
+Combining all 46 BZ
+
+BZ [-2 -1  3] done. Total time elapsed 00:55:22
+Processing BZ [-1  0 -2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-1.  -0.5 -2. ]  to  [-1.  0. -2.]
+Slicing  [-1.   0.5 -2. ]  to  [-1.  0. -2.]
+Processing BZ [-1  0 -2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-1.  0. -2.]  to  [-1.5  0.  -2. ]
+Slicing  [-1.  0. -2.]  to  [-0.5  0.  -2. ]
+Processing BZ [-1  0 -2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-1.5  0.  -2. ]  to  [-2.  0. -2.]
+Slicing  [-0.5  0.  -2. ]  to  [ 0.  0. -2.]
+Processing BZ [-1  0 -2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-2.  0. -2.]  to  [-1.5  0.  -2. ]
+
+
+Processed: 571/792 (72.10%) | Elapsed: 00:54:58 | BZ Folding estimated remaining time: 00:21:16
+
+
+Slicing  [ 0.  0. -2.]  to  [-0.5  0.  -2. ]
+Processing BZ [-1  0 -2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-1.5  0.  -2. ]  to  [-1.  0. -2.]
+Slicing  [-0.5  0.  -2. ]  to  [-1.  0. -2.]
+Processing BZ [-1  0 -2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-1.  0. -2.]  to  [-1.   0.  -2.5]
+Slicing  [-1.  0. -2.]  to  [-1.   0.  -1.5]
+
+Generating Report for BZ [-1  0 -2]
+
+Combining all 47 BZ
+
+BZ [-1  0 -2] done. Total time elapsed 00:56:43
+Processing BZ [2 0 1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [ 2.  -0.5  1. ]  to  [2. 0. 1.]
+Slicing  [2.  0.5 1. ]  to  [2. 0. 1.]
+Processing BZ [2 0 1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [2. 0. 1.]  to  [1.5 0.  1. ]
+Slicing  [2. 0. 1.]  to  [2.5 0.  1. ]
+Processing BZ [2 0 1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [1.5 0.  1. ]  to  [1. 0. 1.]
+Slicing  [2.5 0.  1. ]  to  [3. 0. 1.]
+Processing BZ [2 0 1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [1. 0. 1.]  to  [1.5 0.  1. ]
+Slicing  [3. 0. 1.]  to  [2.5 0.  1. ]
+Processing BZ [2 0 1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [1.5 0.  1. ]  to  [2. 0. 1.]
+Slicing  [2.5 0.  1. ]  to  [2. 0. 1.]
+Processing BZ [2 0 1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [2. 0. 1.]  to  [2.  0.  0.5]
+
+
+Processed: 587/792 (74.12%) | Elapsed: 00:56:37 | BZ Folding estimated remaining time: 00:19:46
+
+
+Slicing  [2. 0. 1.]  to  [2.  0.  1.5]
+
+Generating Report for BZ [2 0 1]
+
+Combining all 48 BZ
+
+BZ [2 0 1] done. Total time elapsed 00:58:03
+Processing BZ [-6 -1  1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-6.  -1.5  1. ]  to  [-6. -1.  1.]
+Slicing  [-6.  -0.5  1. ]  to  [-6. -1.  1.]
+Processing BZ [-6 -1  1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-6. -1.  1.]  to  [-6.5 -1.   1. ]
+Slicing  [-6. -1.  1.]  to  [-5.5 -1.   1. ]
+Processing BZ [-6 -1  1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-6.5 -1.   1. ]  to  [-7. -1.  1.]
+Slicing  [-5.5 -1.   1. ]  to  [-5. -1.  1.]
+Processing BZ [-6 -1  1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-7. -1.  1.]  to  [-6.5 -1.   1. ]
+Slicing  [-5. -1.  1.]  to  [-5.5 -1.   1. ]
+Processing BZ [-6 -1  1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-6.5 -1.   1. ]  to  [-6. -1.  1.]
+Slicing  [-5.5 -1.   1. ]  to  [-6. -1.  1.]
+Processing BZ [-6 -1  1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-6. -1.  1.]  to  [-6.  -1.   0.5]
+Slicing  [-6. -1.  1.]  to  [-6.  -1.   1.5]
+
+Generating Report for BZ [-6 -1  1]
+
+Combining all 49 BZ
+
+BZ [-6 -1  1] done. Total time elapsed 00:59:22
+Processing BZ [-1 -1  3], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-1.  -1.5  3. ]  to  [-1. -1.  3.]
+Slicing  [-1.  -0.5  3. ]  to  [-1. -1.  3.]
+
+
+Processed: 602/792 (76.01%) | Elapsed: 00:58:35 | BZ Folding estimated remaining time: 00:18:29
+
+
+Processing BZ [-1 -1  3], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-1. -1.  3.]  to  [-1.5 -1.   3. ]
+Slicing  [-1. -1.  3.]  to  [-0.5 -1.   3. ]
+Processing BZ [-1 -1  3], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-1.5 -1.   3. ]  to  [-2. -1.  3.]
+Slicing  [-0.5 -1.   3. ]  to  [ 0. -1.  3.]
+Processing BZ [-1 -1  3], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-2. -1.  3.]  to  [-1.5 -1.   3. ]
+Slicing  [ 0. -1.  3.]  to  [-0.5 -1.   3. ]
+Processing BZ [-1 -1  3], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-1.5 -1.   3. ]  to  [-1. -1.  3.]
+Slicing  [-0.5 -1.   3. ]  to  [-1. -1.  3.]
+Processing BZ [-1 -1  3], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-1. -1.  3.]  to  [-1.  -1.   2.5]
+Slicing  [-1. -1.  3.]  to  [-1.  -1.   3.5]
+
+Generating Report for BZ [-1 -1  3]
+
+Combining all 50 BZ
+
+BZ [-1 -1  3] done. Total time elapsed 01:00:40
+Processing BZ [-8 -1  1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-8.  -1.5  1. ]  to  [-8. -1.  1.]
+Slicing  [-8.  -0.5  1. ]  to  [-8. -1.  1.]
+Processing BZ [-8 -1  1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-8. -1.  1.]  to  [-8.5 -1.   1. ]
+Slicing  [-8. -1.  1.]  to  [-7.5 -1.   1. ]
+Processing BZ [-8 -1  1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-8.5 -1.   1. ]  to  [-9. -1.  1.]
+Slicing  [-7.5 -1.   1. ]  to  [-7. -1.  1.]
+
+
+Processed: 618/792 (78.03%) | Elapsed: 01:00:12 | BZ Folding estimated remaining time: 00:16:57
+
+
+Processing BZ [-8 -1  1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-9. -1.  1.]  to  [-8.5 -1.   1. ]
+Slicing  [-7. -1.  1.]  to  [-7.5 -1.   1. ]
+Processing BZ [-8 -1  1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-8.5 -1.   1. ]  to  [-8. -1.  1.]
+Slicing  [-7.5 -1.   1. ]  to  [-8. -1.  1.]
+Processing BZ [-8 -1  1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-8. -1.  1.]  to  [-8.  -1.   0.5]
+Slicing  [-8. -1.  1.]  to  [-8.  -1.   1.5]
+
+Generating Report for BZ [-8 -1  1]
+
+Combining all 51 BZ
+
+BZ [-8 -1  1] done. Total time elapsed 01:01:57
+Processing BZ [-8 -1  0], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-8.  -1.5  0. ]  to  [-8. -1.  0.]
+Slicing  [-8.  -0.5  0. ]  to  [-8. -1.  0.]
+Processing BZ [-8 -1  0], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-8. -1.  0.]  to  [-8.5 -1.   0. ]
+Slicing  [-8. -1.  0.]  to  [-7.5 -1.   0. ]
+Processing BZ [-8 -1  0], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-8.5 -1.   0. ]  to  [-9. -1.  0.]
+Slicing  [-7.5 -1.   0. ]  to  [-7. -1.  0.]
+Processing BZ [-8 -1  0], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-9. -1.  0.]  to  [-8.5 -1.   0. ]
+Slicing  [-7. -1.  0.]  to  [-7.5 -1.   0. ]
+Processing BZ [-8 -1  0], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-8.5 -1.   0. ]  to  [-8. -1.  0.]
+Slicing  [-7.5 -1.   0. ]  to  [-8. -1.  0.]
+
+
+Processed: 634/792 (80.05%) | Elapsed: 01:01:47 | BZ Folding estimated remaining time: 00:15:23
+
+
+Processing BZ [-8 -1  0], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-8. -1.  0.]  to  [-8.  -1.  -0.5]
+Slicing  [-8. -1.  0.]  to  [-8.  -1.   0.5]
+
+Generating Report for BZ [-8 -1  0]
+
+Combining all 52 BZ
+
+BZ [-8 -1  0] done. Total time elapsed 01:03:19
+Processing BZ [-5 -1  1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-5.  -1.5  1. ]  to  [-5. -1.  1.]
+Slicing  [-5.  -0.5  1. ]  to  [-5. -1.  1.]
+Processing BZ [-5 -1  1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-5. -1.  1.]  to  [-5.5 -1.   1. ]
+Slicing  [-5. -1.  1.]  to  [-4.5 -1.   1. ]
+Processing BZ [-5 -1  1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-5.5 -1.   1. ]  to  [-6. -1.  1.]
+Slicing  [-4.5 -1.   1. ]  to  [-4. -1.  1.]
+Processing BZ [-5 -1  1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-6. -1.  1.]  to  [-5.5 -1.   1. ]
+Slicing  [-4. -1.  1.]  to  [-4.5 -1.   1. ]
+Processing BZ [-5 -1  1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-5.5 -1.   1. ]  to  [-5. -1.  1.]
+Slicing  [-4.5 -1.   1. ]  to  [-5. -1.  1.]
+Processing BZ [-5 -1  1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-5. -1.  1.]  to  [-5.  -1.   0.5]
+Slicing  [-5. -1.  1.]  to  [-5.  -1.   1.5]
+
+Generating Report for BZ [-5 -1  1]
+
+Combining all 53 BZ
+
+BZ [-5 -1  1] done. Total time elapsed 01:04:34
+Processing BZ [-3 -1  3], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-3.  -1.5  3. ]  to  [-3. -1.  3.]
+Slicing  [-3.  -0.5  3. ]  to  [-3. -1.  3.]
+
+
+Processed: 650/792 (82.07%) | Elapsed: 01:03:48 | BZ Folding estimated remaining time: 00:13:56
+
+
+Processing BZ [-3 -1  3], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-3. -1.  3.]  to  [-3.5 -1.   3. ]
+Slicing  [-3. -1.  3.]  to  [-2.5 -1.   3. ]
+Processing BZ [-3 -1  3], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-3.5 -1.   3. ]  to  [-4. -1.  3.]
+Slicing  [-2.5 -1.   3. ]  to  [-2. -1.  3.]
+Processing BZ [-3 -1  3], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-4. -1.  3.]  to  [-3.5 -1.   3. ]
+Slicing  [-2. -1.  3.]  to  [-2.5 -1.   3. ]
+Processing BZ [-3 -1  3], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-3.5 -1.   3. ]  to  [-3. -1.  3.]
+Slicing  [-2.5 -1.   3. ]  to  [-3. -1.  3.]
+Processing BZ [-3 -1  3], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-3. -1.  3.]  to  [-3.  -1.   2.5]
+Slicing  [-3. -1.  3.]  to  [-3.  -1.   3.5]
+
+Generating Report for BZ [-3 -1  3]
+
+Combining all 54 BZ
+
+BZ [-3 -1  3] done. Total time elapsed 01:05:59
+Processing BZ [-3 -1  2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-3.  -1.5  2. ]  to  [-3. -1.  2.]
+Slicing  [-3.  -0.5  2. ]  to  [-3. -1.  2.]
+Processing BZ [-3 -1  2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-3. -1.  2.]  to  [-3.5 -1.   2. ]
+Slicing  [-3. -1.  2.]  to  [-2.5 -1.   2. ]
+Processing BZ [-3 -1  2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-3.5 -1.   2. ]  to  [-4. -1.  2.]
+Slicing  [-2.5 -1.   2. ]  to  [-2. -1.  2.]
+
+
+Processed: 666/792 (84.09%) | Elapsed: 01:05:30 | BZ Folding estimated remaining time: 00:12:23
+
+
+Processing BZ [-3 -1  2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-4. -1.  2.]  to  [-3.5 -1.   2. ]
+Slicing  [-2. -1.  2.]  to  [-2.5 -1.   2. ]
+Processing BZ [-3 -1  2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-3.5 -1.   2. ]  to  [-3. -1.  2.]
+Slicing  [-2.5 -1.   2. ]  to  [-3. -1.  2.]
+Processing BZ [-3 -1  2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-3. -1.  2.]  to  [-3.  -1.   1.5]
+Slicing  [-3. -1.  2.]  to  [-3.  -1.   2.5]
+
+Generating Report for BZ [-3 -1  2]
+
+Combining all 55 BZ
+
+BZ [-3 -1  2] done. Total time elapsed 01:07:16
+Processing BZ [-7 -1  2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-7.  -1.5  2. ]  to  [-7. -1.  2.]
+Slicing  [-7.  -0.5  2. ]  to  [-7. -1.  2.]
+Processing BZ [-7 -1  2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-7. -1.  2.]  to  [-7.5 -1.   2. ]
+Slicing  [-7. -1.  2.]  to  [-6.5 -1.   2. ]
+Processing BZ [-7 -1  2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-7.5 -1.   2. ]  to  [-8. -1.  2.]
+Slicing  [-6.5 -1.   2. ]  to  [-6. -1.  2.]
+Processing BZ [-7 -1  2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-8. -1.  2.]  to  [-7.5 -1.   2. ]
+Slicing  [-6. -1.  2.]  to  [-6.5 -1.   2. ]
+Processing BZ [-7 -1  2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-7.5 -1.   2. ]  to  [-7. -1.  2.]
+Slicing  [-6.5 -1.   2. ]  to  [-7. -1.  2.]
+
+
+Processed: 682/792 (86.11%) | Elapsed: 01:07:06 | BZ Folding estimated remaining time: 00:10:49
+
+
+Processing BZ [-7 -1  2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-7. -1.  2.]  to  [-7.  -1.   1.5]
+Slicing  [-7. -1.  2.]  to  [-7.  -1.   2.5]
+
+Generating Report for BZ [-7 -1  2]
+
+Combining all 56 BZ
+
+BZ [-7 -1  2] done. Total time elapsed 01:08:35
+Processing BZ [-4 -1  3], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-4.  -1.5  3. ]  to  [-4. -1.  3.]
+Slicing  [-4.  -0.5  3. ]  to  [-4. -1.  3.]
+Processing BZ [-4 -1  3], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-4. -1.  3.]  to  [-4.5 -1.   3. ]
+Slicing  [-4. -1.  3.]  to  [-3.5 -1.   3. ]
+Processing BZ [-4 -1  3], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-4.5 -1.   3. ]  to  [-5. -1.  3.]
+Slicing  [-3.5 -1.   3. ]  to  [-3. -1.  3.]
+Processing BZ [-4 -1  3], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-5. -1.  3.]  to  [-4.5 -1.   3. ]
+Slicing  [-3. -1.  3.]  to  [-3.5 -1.   3. ]
+Processing BZ [-4 -1  3], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-4.5 -1.   3. ]  to  [-4. -1.  3.]
+Slicing  [-3.5 -1.   3. ]  to  [-4. -1.  3.]
+Processing BZ [-4 -1  3], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-4. -1.  3.]  to  [-4.  -1.   2.5]
+Slicing  [-4. -1.  3.]  to  [-4.  -1.   3.5]
+
+Generating Report for BZ [-4 -1  3]
+
+Combining all 57 BZ
+
+BZ [-4 -1  3] done. Total time elapsed 01:09:57
+Processing BZ [-2 -1  2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-2.  -1.5  2. ]  to  [-2. -1.  2.]
+
+
+Processed: 697/792 (88.01%) | Elapsed: 01:09:06 | BZ Folding estimated remaining time: 00:09:25
+
+
+Slicing  [-2.  -0.5  2. ]  to  [-2. -1.  2.]
+Processing BZ [-2 -1  2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-2. -1.  2.]  to  [-2.5 -1.   2. ]
+Slicing  [-2. -1.  2.]  to  [-1.5 -1.   2. ]
+Processing BZ [-2 -1  2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-2.5 -1.   2. ]  to  [-3. -1.  2.]
+Slicing  [-1.5 -1.   2. ]  to  [-1. -1.  2.]
+Processing BZ [-2 -1  2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-3. -1.  2.]  to  [-2.5 -1.   2. ]
+Slicing  [-1. -1.  2.]  to  [-1.5 -1.   2. ]
+Processing BZ [-2 -1  2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-2.5 -1.   2. ]  to  [-2. -1.  2.]
+Slicing  [-1.5 -1.   2. ]  to  [-2. -1.  2.]
+Processing BZ [-2 -1  2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-2. -1.  2.]  to  [-2.  -1.   1.5]
+Slicing  [-2. -1.  2.]  to  [-2.  -1.   2.5]
+
+Generating Report for BZ [-2 -1  2]
+
+Combining all 58 BZ
+
+BZ [-2 -1  2] done. Total time elapsed 01:11:15
+Processing BZ [-2  0 -2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-2.  -0.5 -2. ]  to  [-2.  0. -2.]
+Slicing  [-2.   0.5 -2. ]  to  [-2.  0. -2.]
+Processing BZ [-2  0 -2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-2.  0. -2.]  to  [-2.5  0.  -2. ]
+Slicing  [-2.  0. -2.]  to  [-1.5  0.  -2. ]
+Processing BZ [-2  0 -2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-2.5  0.  -2. ]  to  [-3.  0. -2.]
+
+
+Processed: 713/792 (90.03%) | Elapsed: 01:10:42 | BZ Folding estimated remaining time: 00:07:50
+
+
+Slicing  [-1.5  0.  -2. ]  to  [-1.  0. -2.]
+Processing BZ [-2  0 -2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-3.  0. -2.]  to  [-2.5  0.  -2. ]
+Slicing  [-1.  0. -2.]  to  [-1.5  0.  -2. ]
+Processing BZ [-2  0 -2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-2.5  0.  -2. ]  to  [-2.  0. -2.]
+Slicing  [-1.5  0.  -2. ]  to  [-2.  0. -2.]
+Processing BZ [-2  0 -2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-2.  0. -2.]  to  [-2.   0.  -2.5]
+Slicing  [-2.  0. -2.]  to  [-2.   0.  -1.5]
+
+Generating Report for BZ [-2  0 -2]
+
+Combining all 59 BZ
+
+BZ [-2  0 -2] done. Total time elapsed 01:12:36
+Processing BZ [-9  0  1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-9.  -0.5  1. ]  to  [-9.  0.  1.]
+Slicing  [-9.   0.5  1. ]  to  [-9.  0.  1.]
+Processing BZ [-9  0  1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-9.  0.  1.]  to  [-9.5  0.   1. ]
+Slicing  [-9.  0.  1.]  to  [-8.5  0.   1. ]
+Processing BZ [-9  0  1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-9.5  0.   1. ]  to  [-10.   0.   1.]
+Slicing  [-8.5  0.   1. ]  to  [-8.  0.  1.]
+Processing BZ [-9  0  1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-10.   0.   1.]  to  [-9.5  0.   1. ]
+Slicing  [-8.  0.  1.]  to  [-8.5  0.   1. ]
+Processing BZ [-9  0  1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-9.5  0.   1. ]  to  [-9.  0.  1.]
+
+
+Processed: 729/792 (92.05%) | Elapsed: 01:12:23 | BZ Folding estimated remaining time: 00:06:15
+
+
+Slicing  [-8.5  0.   1. ]  to  [-9.  0.  1.]
+Processing BZ [-9  0  1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-9.  0.  1.]  to  [-9.   0.   0.5]
+Slicing  [-9.  0.  1.]  to  [-9.   0.   1.5]
+
+Generating Report for BZ [-9  0  1]
+
+Combining all 60 BZ
+
+BZ [-9  0  1] done. Total time elapsed 01:14:02
+Processing BZ [-8  0  2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-8.  -0.5  2. ]  to  [-8.  0.  2.]
+Slicing  [-8.   0.5  2. ]  to  [-8.  0.  2.]
+Processing BZ [-8  0  2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-8.  0.  2.]  to  [-8.5  0.   2. ]
+Slicing  [-8.  0.  2.]  to  [-7.5  0.   2. ]
+Processing BZ [-8  0  2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-8.5  0.   2. ]  to  [-9.  0.  2.]
+Slicing  [-7.5  0.   2. ]  to  [-7.  0.  2.]
+Processing BZ [-8  0  2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-9.  0.  2.]  to  [-8.5  0.   2. ]
+Slicing  [-7.  0.  2.]  to  [-7.5  0.   2. ]
+Processing BZ [-8  0  2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-8.5  0.   2. ]  to  [-8.  0.  2.]
+Slicing  [-7.5  0.   2. ]  to  [-8.  0.  2.]
+Processing BZ [-8  0  2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-8.  0.  2.]  to  [-8.   0.   1.5]
+Slicing  [-8.  0.  2.]  to  [-8.   0.   2.5]
+
+Generating Report for BZ [-8  0  2]
+
+Combining all 61 BZ
+
+BZ [-8  0  2] done. Total time elapsed 01:15:29
+Processing BZ [-7  0 -1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-7.  -0.5 -1. ]  to  [-7.  0. -1.]
+
+
+Processed: 745/792 (94.07%) | Elapsed: 01:14:37 | BZ Folding estimated remaining time: 00:04:42
+
+
+Slicing  [-7.   0.5 -1. ]  to  [-7.  0. -1.]
+Processing BZ [-7  0 -1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-7.  0. -1.]  to  [-7.5  0.  -1. ]
+Slicing  [-7.  0. -1.]  to  [-6.5  0.  -1. ]
+Processing BZ [-7  0 -1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-7.5  0.  -1. ]  to  [-8.  0. -1.]
+Slicing  [-6.5  0.  -1. ]  to  [-6.  0. -1.]
+Processing BZ [-7  0 -1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-8.  0. -1.]  to  [-7.5  0.  -1. ]
+Slicing  [-6.  0. -1.]  to  [-6.5  0.  -1. ]
+Processing BZ [-7  0 -1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-7.5  0.  -1. ]  to  [-7.  0. -1.]
+Slicing  [-6.5  0.  -1. ]  to  [-7.  0. -1.]
+Processing BZ [-7  0 -1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-7.  0. -1.]  to  [-7.   0.  -1.5]
+Slicing  [-7.  0. -1.]  to  [-7.   0.  -0.5]
+
+Generating Report for BZ [-7  0 -1]
+
+Combining all 62 BZ
+
+BZ [-7  0 -1] done. Total time elapsed 01:16:51
+Processing BZ [-4 -1  1], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-4.  -1.5  1. ]  to  [-4. -1.  1.]
+Slicing  [-4.  -0.5  1. ]  to  [-4. -1.  1.]
+Processing BZ [-4 -1  1], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-4. -1.  1.]  to  [-4.5 -1.   1. ]
+Slicing  [-4. -1.  1.]  to  [-3.5 -1.   1. ]
+Processing BZ [-4 -1  1], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-4.5 -1.   1. ]  to  [-5. -1.  1.]
+
+
+Processed: 761/792 (96.09%) | Elapsed: 01:16:19 | BZ Folding estimated remaining time: 00:03:06
+
+
+Slicing  [-3.5 -1.   1. ]  to  [-3. -1.  1.]
+Processing BZ [-4 -1  1], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-5. -1.  1.]  to  [-4.5 -1.   1. ]
+Slicing  [-3. -1.  1.]  to  [-3.5 -1.   1. ]
+Processing BZ [-4 -1  1], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-4.5 -1.   1. ]  to  [-4. -1.  1.]
+Slicing  [-3.5 -1.   1. ]  to  [-4. -1.  1.]
+Processing BZ [-4 -1  1], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-4. -1.  1.]  to  [-4.  -1.   0.5]
+Slicing  [-4. -1.  1.]  to  [-4.  -1.   1.5]
+
+Generating Report for BZ [-4 -1  1]
+
+Combining all 63 BZ
+
+BZ [-4 -1  1] done. Total time elapsed 01:18:17
+Processing BZ [ 0 -1  3], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [ 0.  -1.5  3. ]  to  [ 0. -1.  3.]
+Slicing  [ 0.  -0.5  3. ]  to  [ 0. -1.  3.]
+Processing BZ [ 0 -1  3], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [ 0. -1.  3.]  to  [-0.5 -1.   3. ]
+Slicing  [ 0. -1.  3.]  to  [ 0.5 -1.   3. ]
+Processing BZ [ 0 -1  3], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-0.5 -1.   3. ]  to  [-1. -1.  3.]
+Slicing  [ 0.5 -1.   3. ]  to  [ 1. -1.  3.]
+Processing BZ [ 0 -1  3], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-1. -1.  3.]  to  [-0.5 -1.   3. ]
+Slicing  [ 1. -1.  3.]  to  [ 0.5 -1.   3. ]
+Processing BZ [ 0 -1  3], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-0.5 -1.   3. ]  to  [ 0. -1.  3.]
+
+
+Processed: 777/792 (98.11%) | Elapsed: 01:18:02 | BZ Folding estimated remaining time: 00:01:30
+
+
+Slicing  [ 0.5 -1.   3. ]  to  [ 0. -1.  3.]
+Processing BZ [ 0 -1  3], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [ 0. -1.  3.]  to  [ 0.  -1.   2.5]
+Slicing  [ 0. -1.  3.]  to  [ 0.  -1.   3.5]
+
+Generating Report for BZ [ 0 -1  3]
+
+Combining all 64 BZ
+
+BZ [ 0 -1  3] done. Total time elapsed 01:19:44
+Processing BZ [-1 -1  2], path segments from Y to Gamma
+
+2 symmetrically equivalent path segments
+[[ 0.  -0.5  0.   0.   0.   0. ]
+ [ 0.   0.5  0.   0.   0.   0. ]]
+Slicing  [-1.  -1.5  2. ]  to  [-1. -1.  2.]
+Slicing  [-1.  -0.5  2. ]  to  [-1. -1.  2.]
+Processing BZ [-1 -1  2], path segments from Gamma to X
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.  -0.5  0.   0. ]
+ [ 0.   0.   0.   0.5  0.   0. ]]
+Slicing  [-1. -1.  2.]  to  [-1.5 -1.   2. ]
+Slicing  [-1. -1.  2.]  to  [-0.5 -1.   2. ]
+Processing BZ [-1 -1  2], path segments from X to Gamma2
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.  -1.   0.   0. ]
+ [ 0.5  0.   0.   1.   0.   0. ]]
+Slicing  [-1.5 -1.   2. ]  to  [-2. -1.  2.]
+Slicing  [-0.5 -1.   2. ]  to  [ 0. -1.  2.]
+Processing BZ [-1 -1  2], path segments from Gamma2 to X
+
+2 symmetrically equivalent path segments
+[[-1.   0.   0.  -0.5  0.   0. ]
+ [ 1.   0.   0.   0.5  0.   0. ]]
+Slicing  [-2. -1.  2.]  to  [-1.5 -1.   2. ]
+Slicing  [ 0. -1.  2.]  to  [-0.5 -1.   2. ]
+Processing BZ [-1 -1  2], path segments from X to Gamma
+
+2 symmetrically equivalent path segments
+[[-0.5  0.   0.   0.   0.   0. ]
+ [ 0.5  0.   0.   0.   0.   0. ]]
+Slicing  [-1.5 -1.   2. ]  to  [-1. -1.  2.]
+Slicing  [-0.5 -1.   2. ]  to  [-1. -1.  2.]
+Processing BZ [-1 -1  2], path segments from Gamma to Z
+
+2 symmetrically equivalent path segments
+[[ 0.   0.   0.   0.   0.  -0.5]
+ [ 0.   0.   0.   0.   0.   0.5]]
+Slicing  [-1. -1.  2.]  to  [-1.  -1.   1.5]
+Slicing  [-1. -1.  2.]  to  [-1.  -1.   2.5]
+
+
+Processed: 792/792 (100.00%) | Elapsed: 01:19:44 | BZ Folding estimated remaining time: 00:00:00
+
+
+
+Generating Report for BZ [-1 -1  2]
+
+Combining all 65 BZ
+
+BZ [-1 -1  2] done. Total time elapsed 01:21:09
+
+Folded 66 BZ in 01:21:09
+
+Point Gamma [0. 0. 0.]
