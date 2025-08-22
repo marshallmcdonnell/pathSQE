@@ -6,7 +6,7 @@ The pathSQE software automates the analysis of single-crystal inelastic neutron 
 
 On any system with Git installed:
 
-git clone https://github.com/ajsable/pathSQE.git
+git clone https://github.com/delaire-lab-duke/pathSQE.git
 
 Alternatively, you can download and transfer the repository as a ZIP file.
 
@@ -26,7 +26,7 @@ conda activate pathSQE
 ### 3. Specify your dataset
 Edit define_data.py to point to your data.
 
-The provided version works out-of-the-box with a publicly available Si dataset measured on ARCS at 300 K.
+If run on the ORNL SNS analysis cluster, the provided version works out-of-the-box with a publicly available Si dataset measured at 300 K on ARCS at the SNS.
 
 ### 4. Set analysis parameters
 Edit pathSQE_input.py to configure the desired slicing paths, symmetry settings, temperature conditions, and output options.
