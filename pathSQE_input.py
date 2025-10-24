@@ -1,6 +1,6 @@
 ########################################################################################################
 # Define dictionary input file for running pathSQE
-# Author: Aiden Sable. August 2025.
+# Author: Aiden Sable. Oct 2025.
 ########################################################################################################
 
 
@@ -33,6 +33,7 @@ def define_pathSQE_params(**kwargs):
     # simulation details - POSCAR and FORCE_CONSTANTS required
     'perform simulations':False, # whether to perform analogous S(Q,E) simulations
     'supercell dimensions':[4,4,4], # supercell dimensions used to generate FORCE_CONSTANTS
+    'mesh':[11,11,11], # mesh sampling phonon calculation for Debye-Waller factor
     'use experimental coverage mask':True, # whether to impose experimental Q,E coverage mask on simulations
     'resolution blurring':(0.8,0.05,'ARCS'), # (E FWHM in meV, Q FWHM in rlu, optional instrument string for SNS); if instrument, E FWHM should be approx. elastic line FWHM
     

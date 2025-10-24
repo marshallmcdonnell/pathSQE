@@ -1,6 +1,6 @@
 ########################################################################################################
 # Driver script for running pathSQE main program in conjuction with a pathSQE input file
-# Author: Aiden Sable. August 2025.
+# Author: Aiden Sable. Oct 2025.
 ########################################################################################################
 
 # limit core usage to avoid extended Mantid consumption issues on shared clusters
@@ -204,8 +204,8 @@ def run_pathSQE(pathSQE_params, mde_data):
                     # make slice and evaluate quality based on filters
                     slice_utils_07142023.make_slice(mde_data[0], slice_desc, ASCII_slice_folder='', MD_slice_folder='')
                     if pathSQE_params['save individual slices']:
-                        SaveMD(mtd['_data'], Filename=os.path.join(all_individual_dir,'BZ{}_{}2{}_{}to{}_ID{}_data.nxs'.format(BZ_offset, path_seg[0], path_seg[1], pt1_array[j]+BZ_offset, pt2_array[j]+BZ_offset, sliceID)), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
-                        SaveMD(mtd['_norm'], Filename=os.path.join(all_individual_dir,'BZ{}_{}2{}_{}to{}_ID{}_norm.nxs'.format(BZ_offset, path_seg[0], path_seg[1], pt1_array[j]+BZ_offset, pt2_array[j]+BZ_offset, sliceID)), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
+                        SaveMD(mtd['_data'], Filename=os.path.join(all_individual_dir,'BZ{}_{}2{}_{}to{}_ID{}_data.nxs'.format(BZ_offset, path_seg[0], path_seg[1], pt1_array[j]+BZ_offset, pt2_array[j]+BZ_offset, sliceID)).replace("\\","/"), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
+                        SaveMD(mtd['_norm'], Filename=os.path.join(all_individual_dir,'BZ{}_{}2{}_{}to{}_ID{}_norm.nxs'.format(BZ_offset, path_seg[0], path_seg[1], pt1_array[j]+BZ_offset, pt2_array[j]+BZ_offset, sliceID)).replace("\\","/"), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
                     slice_good = pathSQE_filter_functions.evaluate_slice_quality(slice_name=slice_desc['Name'], filters=pathSQE_params['slice filter functions'], path_seg=path_seg)
                     all_sliceInfo_for_pathSeg.append((slice_desc['Name'],sliceID,slice_good))
 
@@ -274,12 +274,12 @@ def run_pathSQE(pathSQE_params, mde_data):
                 # Save the data for the last good slice (if any)
                 if good_slice_index is not None:
                     saveDir = os.path.join(slices_dir,'intraBZ_folded/')
-                    SaveMD(data, Filename=os.path.join(saveDir,'DataAndNorms/{}2{}_BZ{}_data.nxs'.format(path_seg[0], path_seg[1], BZ_offset)), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
-                    SaveMD(norm, Filename=os.path.join(saveDir,'DataAndNorms/{}2{}_BZ{}_norm.nxs'.format(path_seg[0], path_seg[1], BZ_offset)), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
+                    SaveMD(data, Filename=os.path.join(saveDir,'DataAndNorms/{}2{}_BZ{}_data.nxs'.format(path_seg[0], path_seg[1], BZ_offset)).replace("\\","/"), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
+                    SaveMD(norm, Filename=os.path.join(saveDir,'DataAndNorms/{}2{}_BZ{}_norm.nxs'.format(path_seg[0], path_seg[1], BZ_offset)).replace("\\","/"), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
 
                     output_ws = data / norm
                     name = '{}2{}_BZ{}_final.nxs'.format(path_seg[0], path_seg[1], BZ_offset)
-                    SaveMD(output_ws, Filename=os.path.join(saveDir,name), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
+                    SaveMD(output_ws, Filename=os.path.join(saveDir,name).replace("\\","/"), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
                     LoadMD(Filename=os.path.join(saveDir,name), OutputWorkspace=name, LoadHistory=False)
                     
                 all_sliceInfo_for_BZ.append(all_sliceInfo_for_pathSeg)
@@ -406,7 +406,7 @@ def run_pathSQE(pathSQE_params, mde_data):
                             symPt_slice_arrays.append(allSymPts_array[j])
                             symPt_slice_names_allTemp[k].append(slice_desc['Name'])
                             if pathSQE_params['save individual slices']:
-                                SaveMD(mtd[slice_desc['Name']], Filename=os.path.join(slices_dir,'all_individual/',slice_desc['Name']+'.nxs'), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
+                                SaveMD(mtd[slice_desc['Name']], Filename=os.path.join(slices_dir,'all_individual/',slice_desc['Name']+'.nxs').replace("\\","/"), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
                 
                     else:
                         # for other temps
@@ -417,7 +417,7 @@ def run_pathSQE(pathSQE_params, mde_data):
                         if np.count_nonzero((mtd[slice_desc['Name']].getSignalArray() != 0) & (~np.isnan(mtd[slice_desc['Name']].getSignalArray()))) > 5:     
                             symPt_slice_names_allTemp[k].append(slice_desc_temp2['Name'])
                             if pathSQE_params['save individual slices']:
-                                SaveMD(mtd[slice_desc_temp2['Name']], Filename=os.path.join(slices_dir,'all_individual/',slice_desc_temp2['Name']+'.nxs'), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
+                                SaveMD(mtd[slice_desc_temp2['Name']], Filename=os.path.join(slices_dir,'all_individual/',slice_desc_temp2['Name']+'.nxs').replace("\\","/"), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
                             
                     # Check if we should print an update
                     num_processed_slices += 1
@@ -450,7 +450,7 @@ def run_pathSQE(pathSQE_params, mde_data):
             seg_names.append(slice_desc['Name'])
             slice_utils_07142023.make_slice(mde_data[0], slice_desc, ASCII_slice_folder='', MD_slice_folder='')
             if pathSQE_params['save individual slices']:
-                SaveMD(slice_desc['Name'], Filename=os.path.join(slices_dir,'all_individual/{}_to_{}.nxs'.format(path_seg[0], path_seg[1])), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
+                SaveMD(slice_desc['Name'], Filename=os.path.join(slices_dir,'all_individual/{}_to_{}.nxs'.format(path_seg[0], path_seg[1])).replace("\\","/"), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
 
             # optionally do simulation workflow for analogous slice
             if pathSQE_params['perform simulations']:
@@ -521,7 +521,7 @@ def run_pathSQE(pathSQE_params, mde_data):
                     slice_utils_07142023.make_slice(mde_data[k], slice_desc, ASCII_slice_folder='', MD_slice_folder='') 
                     
                     if np.count_nonzero((mtd[slice_desc['Name']].getSignalArray() != 0) & (~np.isnan(mtd[slice_desc['Name']].getSignalArray()))) > 5 and pathSQE_params['save individual slices']:
-                        SaveMD(slice_desc['Name'], Filename=os.path.join(slices_dir,'all_individual/',slice_desc['Name']+'.nxs'), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
+                        SaveMD(slice_desc['Name'], Filename=os.path.join(slices_dir,'all_individual/',slice_desc['Name']+'.nxs').replace("\\","/"), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
             
                 else:
                     # for other temps
@@ -531,7 +531,7 @@ def run_pathSQE(pathSQE_params, mde_data):
                     slice_utils_07142023.make_slice(mde_data[k], slice_desc_temp2, ASCII_slice_folder='', MD_slice_folder='') 
                 
                     if np.count_nonzero((mtd[slice_desc['Name']].getSignalArray() != 0) & (~np.isnan(mtd[slice_desc['Name']].getSignalArray()))) > 5 and pathSQE_params['save individual slices']:     
-                        SaveMD(slice_desc_temp2['Name'], Filename=os.path.join(slices_dir,'all_individual/',slice_desc_temp2['Name']+'.nxs'), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
+                        SaveMD(slice_desc_temp2['Name'], Filename=os.path.join(slices_dir,'all_individual/',slice_desc_temp2['Name']+'.nxs').replace("\\","/"), SaveHistory=False, SaveInstrument=False, SaveSample=False, SaveLogs=False)
             
             pathSQE_plotting_and_reports.plot_simple_1d_pt(pathSQE_params, symPoint, symPt_init, slice_names)
 

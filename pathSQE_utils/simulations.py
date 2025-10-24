@@ -1,6 +1,8 @@
 import numpy as np
 import os
 import re
+from scipy.ndimage import gaussian_filter, gaussian_filter1d
+FWHM_TO_SIGMA = 1.0 / (2.0 * np.sqrt(2.0 * np.log(2.0)))  # ≈ 1/2.35482
 
 from . import Resolution as Res
 
@@ -162,8 +164,9 @@ def construct_sim_Qpts(pt1, pt2, q_diff, step_size, prim2mantid, BZ_offset=np.ar
 
     # Compute the projection of q_end onto q_start + q_diff * t
     total_distance = np.max(np.abs(q_end - q_start))
+    num_steps = int(np.ceil(total_distance / step_size)) # in mantid slices
+    num_steps *= 4 # for fine sim slice
     step_size = step_size / 4 # for finer sim                            # EDIT USED TO BE /2
-    num_steps = int(np.round(total_distance / step_size))
 
     # Generate Q points
     Qpoints = [q_start + i * step_size * q_diff for i in np.arange(0.5, num_steps)]
@@ -184,6 +187,7 @@ def construct_sim_Qpts(pt1, pt2, q_diff, step_size, prim2mantid, BZ_offset=np.ar
 
 def run(phonon, Qpoints, temperature, atomic_form_factor_func=None, scattering_lengths=None):
     from phonopy import load
+    import numpy as np
 
     # Transformation to the Q-points in reciprocal primitive basis vectors
     Q_prim = np.dot(Qpoints, phonon.primitive_matrix)
@@ -195,12 +199,37 @@ def run(phonon, Qpoints, temperature, atomic_form_factor_func=None, scattering_l
         scattering_lengths=scattering_lengths,
         freq_min=8e-2)
     dsf = phonon.dynamic_structure_factor
-    q_cartesian = np.dot(dsf.qpoints,
-                         np.linalg.inv(phonon.primitive.get_cell()).T)
+
+    # --- robustly get the primitive cell (3x3 real-space matrix) ---
+    # phonopy API changed: Primitive.get_cell() may be removed; try alternatives.
+    cell = None
+    # 1) old API: method get_cell()
+    if hasattr(phonon.primitive, "get_cell") and callable(phonon.primitive.get_cell):
+        cell = phonon.primitive.get_cell()
+    # 2) new-ish API: attribute .cell (PhonopyAtoms-like)
+    elif hasattr(phonon.primitive, "cell"):
+        cell = phonon.primitive.cell
+    # 3) phonon.unitcell or phonon.primitive.get_primitive() fallbacks
+    elif hasattr(phonon, "unitcell") and hasattr(phonon.unitcell, "cell"):
+        cell = phonon.unitcell.cell
+    elif hasattr(phonon.primitive, "get_primitive") and hasattr(phonon.primitive.get_primitive(), "cell"):
+        cell = phonon.primitive.get_primitive().cell
+
+    if cell is None:
+        # give a helpful error instead of a confusing AttributeError
+        raise AttributeError(
+            "Could not find primitive cell matrix on phonon.primitive. "
+            "Checked: get_cell(), .cell, phonon.unitcell.cell, primitive.get_primitive().cell. "
+            "Run `print(dir(phonon.primitive))` to inspect available attributes."
+        )
+
+    # Now compute q_cartesian using the found cell
+    q_cartesian = np.dot(dsf.qpoints, np.linalg.inv(np.asarray(cell)).T)
     distances = np.sqrt((q_cartesian ** 2).sum(axis=1))
 
-    SandE = np.array([dsf.frequencies,dsf.dynamic_structure_factors])
+    SandE = np.array([dsf.frequencies, dsf.dynamic_structure_factors])
     return SandE
+
 
 
 
@@ -229,7 +258,7 @@ def sim_SQE(pathSQE_params, Qpoint, Temperature):
     #print(Qpoints)
     # Mesh sampling phonon calculation is needed for Debye-Waller factor.
     # This must be done with is_mesh_symmetry=False and with_eigenvectors=True.
-    mesh = [11, 11, 11]
+    mesh =  pathSQE_params['mesh']
     phonon.run_mesh(mesh,
                     is_mesh_symmetry=False, # symmetry must be off
                     with_eigenvectors=True) # eigenvectors must be true
@@ -259,7 +288,7 @@ def SQE_to_1d_spectrum(pathSQE_params, output):
     E_min = float(pathSQE_params['E bins'].split(',')[0])
     E_max = float(pathSQE_params['E bins'].split(',')[2])
     
-    e_resolution = 1.177 * pathSQE_params['energy blurring sigma'] * float(pathSQE_params['E bins'].split(',')[1]) # gauss sigma to lorentz hwhm
+    e_resolution = 1.177 * pathSQE_params['resolution blurring'][0] * float(pathSQE_params['E bins'].split(',')[1]) # gauss sigma to lorentz hwhm
 
     # Tolerance for considering frequencies equal (0.1%)
     tolerance = 0.001
@@ -309,55 +338,90 @@ def SQE_to_1d_spectrum(pathSQE_params, output):
 
 
 
-def SQE_to_2d_spectrum(pathSQE_params, output): 
-    """
-    Bins simulated SQE data to a finer grid, applies smoothing, 
-    and then rebins to match experimental resolution.
+def _fwhm_phys_to_sigma_pixels(fwhm_phys, bin_width_phys):
+    """Convert physical FWHM -> sigma (pixels) given bin_width in same physical units."""
+    if fwhm_phys <= 0:
+        return 0.0
+    sigma_phys = fwhm_phys * FWHM_TO_SIGMA
+    return float(sigma_phys / bin_width_phys)
 
-    Parameters:
-    - pathSQE_params: dict, contains experimental binning information
-    - output: ndarray, simulated data (fine resolution)
 
-    Returns:
-    - BinnedSQE: ndarray, rebinned SQE to match experimental binning
-    """
-    from scipy.ndimage import gaussian_filter
 
+def SQE_to_2d_spectrum(pathSQE_params, output):
+    # Parse energy binning
     E_min = float(pathSQE_params['E bins'].split(',')[0])
-    E_max = float(pathSQE_params['E bins'].split(',')[2])
     E_step = float(pathSQE_params['E bins'].split(',')[1])
-    
-    nql_fine = output.shape[1]  # Fine Q resolution from simulation
-    finer_E_step = E_step / 4   # Simulated data has finer E step                           # THIS AND BELOW 2
-    nql = nql_fine // 4         # Experimental Q resolution (factor of 2 binning)
-    
-    # Generate energy bin edges
-    E_bin_edges = np.arange(E_min, E_max + E_step, E_step)
-    ne_exp = len(E_bin_edges) - 1
+    E_max = float(pathSQE_params['E bins'].split(',')[2])
+    # Fine grid parameters
+    nql_fine = int(output.shape[1])
+    finer_E_step = E_step / 4.0
+    # coarse Q bins (assumes factor 4 coarsening)
+    if nql_fine % 4 != 0:
+        raise ValueError("nql_fine must be divisible by 4 for current rebin strategy.")
+    nql = nql_fine // 4
 
-    # Fine binning storage
-    FineBinnedSQE = np.zeros((nql_fine, len(np.arange(E_min, E_max, finer_E_step))))
-    
-    # Step 1: Bin energy values finely
-    for ih in range(nql_fine):  # qpoints
-        for j in range(len(output[0, 0, :])):  # branches
-            energy_val = output[0][ih][j]
-            hist, _ = np.histogram([energy_val], bins=np.arange(E_min, E_max + finer_E_step, finer_E_step), weights=[output[1][ih][j]])
+    # energy centers & edges for fine grid
+    e_centers_fine = np.arange(E_min + 0.5 * finer_E_step, E_max, finer_E_step)
+    nE_fine = len(e_centers_fine)
+
+    # Fine bin accumulation
+    FineBinnedSQE = np.zeros((nql_fine, nE_fine), dtype=float)
+
+    # Build fine energy edges once
+    e_edges_fine = np.arange(E_min, E_max + finer_E_step, finer_E_step)
+
+    # Step 1: bin energies onto fine grid
+    for ih in range(nql_fine):
+        for j in range(output.shape[2]):  # branches
+            energy_val = output[0][ih, j]
+            weight = output[1][ih, j]
+            # histogram a single value into fine bins (fast enough here)
+            hist, _ = np.histogram([energy_val], bins=e_edges_fine, weights=[weight])
             FineBinnedSQE[ih, :] += hist
 
-    # Step 2: Apply Gaussian smoothing
-    FineBinnedSQE = gaussian_filter(FineBinnedSQE, sigma=(0.5, pathSQE_params['energy blurring sigma']*4))                               # THIS ONE
+    # Step 2: smoothing — read resolution blurring if present
+    # Expected: ('resolution blurring': (E_FWHM_meV, Q_FWHM_rlu, optional_instrument_string))
+    if 'resolution blurring' in pathSQE_params:
+        res = pathSQE_params['resolution blurring']
+        E_FWHM_meV = float(res[0]) if len(res) >= 1 else 0.0
+        Q_FWHM_rlu = float(res[1]) if len(res) >= 2 else 0.0
+        # Determine Q fine-bin width in r.l.u.
+        # Try to use provided qdim0 step size; assume it's the fine-step unless obviously coarse.
+        qdim0_step = float(pathSQE_params.get('qdim0 step size', 0.0))
+        if qdim0_step <= 0:
+            # fallback: assume coarse step and derive fine-step from nql & path extent if available
+            raise KeyError("Provide 'qdim0 step size' in pathSQE_params (Q step in r.l.u. per fine index).")
+        Q_bin_width = qdim0_step  # assume this is the fine-step (rlu per fine-index)
+        # Convert to pixels:
+        sigma_pixels_E = _fwhm_phys_to_sigma_pixels(E_FWHM_meV, finer_E_step)
+        sigma_pixels_Q = _fwhm_phys_to_sigma_pixels(Q_FWHM_rlu, Q_bin_width)
+    else:
+        sigma_pixels_E = 0.0
+        sigma_pixels_Q = 0.0
 
-    # Step 3: Rebin Q dimension (fine → coarse) using NumPy reshape and sum
-    CoarseBinnedSQE = FineBinnedSQE.reshape(nql, 4, -1).sum(axis=1)  # Sum pairs of adjacent fine Q bins             # THIS ALSO 2
+    # Apply 2D gaussian smoothing (axis order: Q axis=0, E axis=1)
+    # Choose mode to avoid losing edge intensity. 'nearest' usually preserves intensity at edges.
+    FineBinnedSQE_smoothed = gaussian_filter(
+        FineBinnedSQE,
+        sigma=(sigma_pixels_Q, sigma_pixels_E),
+        mode='nearest',
+        truncate=4.0
+    )
 
-    # Step 4: Rebin E dimension (fine → coarse) using NumPy histogram
-    BinnedSQE = np.zeros((nql, ne_exp))
+    # Step 3: Rebin Q (fine -> coarse)
+    CoarseBinnedSQE = FineBinnedSQE_smoothed.reshape(nql, 4, -1).sum(axis=1)
+
+    # Step 4: Rebin E using fine centers -> coarse edges
+    E_bin_edges = np.arange(E_min, E_max + E_step, E_step)
+    ne_exp = len(E_bin_edges) - 1
+    BinnedSQE = np.zeros((nql, ne_exp), dtype=float)
+    energy_centers_for_hist = e_centers_fine  # length matches CoarseBinnedSQE.shape[1]
     for ih in range(nql):
-        hist, _ = np.histogram(np.linspace(E_min, E_max, FineBinnedSQE.shape[1]), bins=E_bin_edges, weights=CoarseBinnedSQE[ih, :])
+        hist, _ = np.histogram(energy_centers_for_hist, bins=E_bin_edges, weights=CoarseBinnedSQE[ih, :])
         BinnedSQE[ih, :] = hist
 
     return BinnedSQE
+
 
 
 def SQE_to_2d_spectrum_advancedRes(pathSQE_params, output): 
@@ -410,9 +474,6 @@ def SQE_to_2d_spectrum_advancedRes(pathSQE_params, output):
             conv = resolution.Gauss(evalues, 0, E_phonon, 0, escale=2.4, qscale=1)
             
             FineBinnedSQE[ih, :] += intensity * conv
-
-    
-    from scipy.ndimage import gaussian_filter1d
 
     # Use ndimage Gaussian blur along the Q direction (axis 0)
     FineBinnedSQE = gaussian_filter1d(FineBinnedSQE, sigma=QResolution, axis=0, mode='nearest')
