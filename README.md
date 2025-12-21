@@ -48,14 +48,15 @@ An example of a symmetrized, folded I(q,E) from the publicly available Si datase
 
 If you use pathSQE in your research, please cite the following:
 
-> Aiden Sable, Andrei T. Savici, and Olivier Delaire.  
-> *pathSQE: An automated workflow for single-crystal inelastic neutron scattering data processing and analysis*.  
-> arXiv:XXXX.XXXXX [cond-mat.mtrl-sci], 2025.  
-
 BibTeX:
-@article{sable2025pathsqe,
-  title={pathSQE: An automated workflow for single-crystal inelastic neutron scattering data processing and analysis},
-  author={Sable, Aiden and Savici, Andrei T. and Delaire, Olivier},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
-  year={2025}
+@article{Sable2026pathSQE,
+  author       = {Sable, A. and Savici, A. T. and Linjawi, B. and Delaire, O.},
+  title        = {pathSQE: an automated workflow for single-crystal inelastic neutron scattering data processing and analysis},
+  journal      = {Journal of Applied Crystallography},
+  year         = {2026},
+  volume       = {59},
+  doi          = {10.1107/S1600576725011112},
+  url          = {https://doi.org/10.1107/S1600576725011112},
+  note         = {Advance online publication}
 }
+
