@@ -144,9 +144,10 @@ class ConstantResNoQResolution(Resolution):
 
     def Gauss(self, evalues, qvalues, ecenter, qcenter):
         Ne = 1.0 / np.sqrt(2 * np.pi * self.sigma() ** 2)
-        # Nq=1.0/np.sqrt(2*np.pi*self.sigmaq**2)
-        # delta_q=qvalues-qcenter
-        # q_square=np.dot(delta_q,delta_q)
+        # TODO: uncommented Nq and q_square so Res is 'defined'
+        Nq = 1.0 / np.sqrt(2 * np.pi * self.sigmaq**2)
+        delta_q = qvalues - qcenter
+        q_square = np.dot(delta_q, delta_q)
         Res = (
             Ne
             * np.exp(-((evalues - ecenter) ** 2) / (2 * self.sigma() ** 2))

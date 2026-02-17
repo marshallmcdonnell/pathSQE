@@ -35,7 +35,7 @@ class TestExampleDataLoading:
             # If file format is different, try alternative parsing
             with open(bz_coverage_file, "r") as f:
                 lines = f.readlines()
-                data_lines = [l.strip() for l in lines[1:] if l.strip()]
+                data_lines = [line.strip() for line in lines[1:] if line.strip()]
                 assert len(data_lines) > 0, "No data found in BZ coverage file"
 
     def test_bz_coverage_data_quality(self, bz_coverage_file):

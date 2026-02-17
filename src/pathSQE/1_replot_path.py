@@ -1,8 +1,9 @@
+# ruff: noqa: F405
 import os
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import Normalize
-from mantid.simpleapi import *
+from mantid.simpleapi import LoadMD, mtd
 from importlib.util import spec_from_file_location, module_from_spec
 
 # === USER CONFIGURATION ===

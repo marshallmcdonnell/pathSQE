@@ -1,5 +1,39 @@
 from __future__ import absolute_import, division, print_function
-from mantid.simpleapi import *
+
+from mantid import config
+from mantid.kernel import logger
+from mantid.simpleapi import (
+    CheckForSampleLogs,
+    CloneMDWorkspace,
+    CompressEvents,
+    ConvertToMD,
+    ConvertToMDMinMaxGlobal,
+    CropWorkspace,
+    CropWorkspaceForMDNorm,
+    DeleteWorkspaces,
+    DgsReduction,
+    ExponentialCorrection,
+    FilterBadPulses,
+    FilterByLogValue,
+    GetEi,
+    GetEiT0atSNS,
+    Load,
+    LoadEventNexus,
+    LoadMD,
+    LoadNexusMonitors,
+    MaskBTP,
+    MaskDetectors,
+    MergeMD,
+    mtd,
+    RotateInstrumentComponent,
+    SaveMD,
+    ScaleX,
+    SetGoniometer,
+    SetUB,
+    SuggestTibCNCS,
+    SuggestTibHYSPEC,
+)
+
 import glob
 import numpy
 import os
@@ -59,7 +93,7 @@ def reduce_data_to_MDE(data_set_list, compress_bg_events_tof=0):
             try:
                 print("Try loading MDE from " + fname)
                 LoadMD(fname, OutputWorkspace=data_mde_name, LoadHistory=False)
-            except:
+            except Exception:
                 print("Load MDE failed: generating combined MDE " + data_mde_name)
                 generate_mde(data_set)
         bg_mde_name = data_set["BackgroundMdeName"]
@@ -71,7 +105,7 @@ def reduce_data_to_MDE(data_set_list, compress_bg_events_tof=0):
                 try:
                     print("Try loading MDE from " + fname)
                     LoadMD(fname, OutputWorkspace=bg_mde_name, LoadHistory=False)
-                except:
+                except Exception:
                     print(
                         "Load background MDE failed: generating background MDE "
                         + bg_mde_name
@@ -156,7 +190,7 @@ def generate_mde(data_set):
     for num, run in enumerate(runs):
         try:
             iter(run)
-        except:
+        except Exception:
             run = [run]
         logger.warning("Processing runs {0}/{1}".format(num + 1, len(runs)))
         filenames = []
@@ -248,7 +282,7 @@ def generate_mde(data_set):
         perform_tib = False
         if tib_window is not None:
             perform_tib = True
-            if tib_window is "Default":
+            if tib_window == "Default":
                 # HYSPEC specific:
                 if inst_name == "HYSPEC":
                     if Ei == 15:
@@ -397,7 +431,7 @@ def generate_BG_mde(data_set, compress_events_tof):
 
     try:
         iter(runs)
-    except:
+    except Exception:
         runs = [runs]
     runs = list(flatten(runs))
     filenames = []
@@ -467,7 +501,7 @@ def generate_BG_mde(data_set, compress_events_tof):
     perform_tib = False
     if tib_window is not None:
         perform_tib = True
-        if tib_window is "Default":
+        if tib_window == "Default":
             # HYSPEC specific:
             if inst_name == "HYSPEC":
                 if Ei == 15:

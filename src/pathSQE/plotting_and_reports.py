@@ -5,7 +5,7 @@ from matplotlib.gridspec import GridSpec
 from matplotlib.colors import Normalize, SymLogNorm
 from matplotlib.cm import ScalarMappable, viridis
 from matplotlib.backends.backend_pdf import PdfPages
-from mantid.simpleapi import *
+from mantid.simpleapi import mtd, SaveMD
 
 from . import simulations
 from . import helper

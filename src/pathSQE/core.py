@@ -1,7 +1,7 @@
 import numpy as np
 import os
 import matplotlib.pyplot as plt
-from mantid.simpleapi import *
+from mantid.simpleapi import LoadMD, mtd, SaveMD
 from mantid.geometry import SpaceGroupFactory
 from . import slice_utils_07142023
 from . import helper
@@ -28,10 +28,10 @@ def find_BZ_with_data(mde_data, pathSQE_params, hkl_range=(-10, 10, -10, 10, -10
     # Generate all integer BZ centers in primitive basis
     Q_primitive = np.array(
         [
-            [h, k, l]
+            [h, k, l]  # noqa: F821
             for h in range(hkl_range[0], hkl_range[1] + 1)
             for k in range(hkl_range[2], hkl_range[3] + 1)
-            for l in range(hkl_range[4], hkl_range[5] + 1)
+            for l_val in range(hkl_range[4], hkl_range[5] + 1)
         ]
     )
 

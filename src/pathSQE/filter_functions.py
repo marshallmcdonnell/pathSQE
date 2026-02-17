@@ -1,5 +1,6 @@
 import numpy as np
-from mantid.simpleapi import *
+import os
+from mantid.simpleapi import mtd
 import matplotlib.pyplot as plt
 
 

@@ -1,7 +1,7 @@
 import os
 import re
 import numpy as np
-from mantid.simpleapi import *
+from mantid.simpleapi import LoadMD, mtd
 import matplotlib.pyplot as plt
 from matplotlib.colors import SymLogNorm
 

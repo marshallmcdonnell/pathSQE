@@ -1,6 +1,6 @@
 import numpy as np
 import os
-from mantid.simpleapi import *
+from mantid.simpleapi import mtd
 import time
 import re
 from seekpath.util import atoms_num_dict
@@ -11,7 +11,7 @@ from . import core
 def simple_read_poscar(fname):
     """Read a POSCAR file."""
     with open(fname) as f:
-        lines = [l.partition("!")[0] for l in f.readlines()]
+        lines = [line.partition("!")[0] for line in f.readlines()]
 
     alat = float(lines[1])
     v1 = [float(_) * alat for _ in lines[2].split()]

@@ -1,9 +1,18 @@
 import os
-from mantid.simpleapi import *
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.optimize import curve_fit
-from mantid.plots.datafunctions import *
+from mantid.simpleapi import (
+    Load,
+    LoadMD,
+    mtd,
+    SaveMD,
+    ApplyDetailedBalanceMD,
+    MDNorm,
+    SmoothMD,
+    DivideMD,
+    MinusMD,
+    FlippingRatioCorrectionMD,
+)
 import mantid
 
 
@@ -32,7 +41,7 @@ def make_slice(
     # Load normalization file from dataset description, if needed
     try:
         norm_file = data_set["NormalizationDataFile"].strip()
-    except:
+    except Exception:
         norm_file = None
     if norm_file:
         norm_ws_name = os.path.split(norm_file)[-1]
@@ -65,7 +74,7 @@ def make_slice(
     if is_chi:
         try:
             data_set["SampleLogVariables"]["Temperature"]
-        except:
+        except Exception:
             raise ValueError(
                 "For calculating chi'' one needs to set the temperature in the dataset definition. See example."
             )
@@ -90,10 +99,8 @@ def make_slice(
                     + "background MDE specified in data set is not loaded: try loading from "
                     + bg_mde_filename
                 )
-                LoadMD(
-                    bg_mde_filename, OutputWorkspace=data_mde_name, LoadHistory=False
-                )
-            except:
+                LoadMD(bg_mde_filename, OutputWorkspace=bg_mde_name, LoadHistory=False)
+            except Exception:
                 raise ValueError(
                     "BG MDE not found: please run the reduction on BG runs to make the BG MDE "
                     + bg_mde_name
@@ -202,8 +209,8 @@ def make_slices_FR_corrected(
         FR = float(FR_ds)
         FR = str(FR)
         var_names = ""
-    except:
-        FR, var_names = FR_ds.split(",", 1)
+    except Exception:
+        (",", 1)
 
     mde_SF = mtd[data_set_SF["MdeName"].strip()]
     mde_NSF = mtd[data_set_NSF["MdeName"].strip()]
@@ -289,49 +296,49 @@ def set_axes_parameters(ax, **axes_args):
     try:
         if "tight_axes" in axes_args and axes_args["tight_axes"] is not None:
             ax.autoscale(tight=axes_args["tight_axes"])
-    except Error as err:
+    except Exception as err:
         print(err)
 
     try:
         if "xrange" in axes_args and axes_args["xrange"] is not None:
             ax.set_xlim(axes_args["xrange"])
-    except Error as err:
+    except Exception as err:
         print(err)
 
     try:
         if "yrange" in axes_args and axes_args["yrange"] is not None:
             ax.set_ylim(axes_args["yrange"])
-    except Error as err:
+    except Exception as err:
         print(err)
 
     try:
         if "xtitle" in axes_args and axes_args["xtitle"] is not None:
             ax.set_xlabel(axes_args["xtitle"])
-    except Error as err:
+    except Exception as err:
         print(err)
 
     try:
         if "ytitle" in axes_args and axes_args["ytitle"] is not None:
             ax.set_ylabel(axes_args["ytitle"])
-    except Error as err:
+    except Exception as err:
         print(err)
 
     try:
         if "title" in axes_args and axes_args["title"] is not None:
             ax.set_title(axes_args["title"])
-    except Error as err:
+    except Exception as err:
         print(err)
 
     try:
         if "aspect_ratio" in axes_args and axes_args["aspect_ratio"] is not None:
             ax.set_aspect(axes_args["aspect_ratio"])
-    except Error as err:
+    except Exception as err:
         print(err)
 
     try:
         if "grid" in axes_args and axes_args["grid"] is not None:
             ax.grid(axes_args["grid"])
-    except Error as err:
+    except Exception as err:
         print(err)
 
 
@@ -351,6 +358,8 @@ def gauss(x, b, a, c, w):
     return y
 
 
+"""
+TODO: points_from_boundaries is not defined in this file.
 def subtract_incoherent(ws, q_range=None):
     (q, E), data_array, error_array = get_md_data(
         ws, get_normalization(ws), withError=True
@@ -379,6 +388,7 @@ def subtract_incoherent(ws, q_range=None):
         ws.getSignalArray()
         - np.tile(fitted, q.shape).reshape(ws.getSignalArray().shape)
     )
+"""
 
 
 def dim2array(d, center=True):
@@ -416,8 +426,8 @@ def SaveMDToAscii(ws, filename, IgnoreIntegrated=True, NumEvNorm=False, Format="
     dimarrays = [dim2array(d) for d in dims]
     try:
         newdimarrays = np.meshgrid(*dimarrays, indexing="ij")
-    except:
-        newdimarrays = dimarrays  # 1D arrays
+    except Exception:  # 1D arrays
+        newdimarrays = dimarrays
     # get data
     data = ws.getSignalArray() * 1.0
     err2 = ws.getErrorSquaredArray() * 1.0
