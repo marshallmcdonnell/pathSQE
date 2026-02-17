@@ -15,7 +15,7 @@ mantid = "*"  # conda-only dependency (not available on PyPI)
 pathSQE = {path = ".", editable = true}
 
 [feature.dev]
-dependencies = {pytest = "*", pytest-cov = "*", black = "*", flake8 = "*", isort = "*"}
+dependencies = {pytest = "*", pytest-cov = "*", ruff = "*"}
 
 [environments]
 default = []
