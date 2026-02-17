@@ -1,4 +1,5 @@
 """Unit tests for pathSQE.helper module"""
+
 import pytest
 import numpy as np
 import os
@@ -18,15 +19,9 @@ class TestSimpleReadPoscar:
         # Check cell structure
         assert len(cell) == 3
         assert len(cell[0]) == 3
-        np.testing.assert_array_almost_equal(
-            cell[0], [5.431, 0.0, 0.0]
-        )
-        np.testing.assert_array_almost_equal(
-            cell[1], [0.0, 5.431, 0.0]
-        )
-        np.testing.assert_array_almost_equal(
-            cell[2], [0.0, 0.0, 5.431]
-        )
+        np.testing.assert_array_almost_equal(cell[0], [5.431, 0.0, 0.0])
+        np.testing.assert_array_almost_equal(cell[1], [0.0, 5.431, 0.0])
+        np.testing.assert_array_almost_equal(cell[2], [0.0, 0.0, 5.431])
 
         # Check positions
         assert len(positions) == 2
@@ -187,9 +182,7 @@ class TestMakeSliceDesc:
 
     def test_make_slice_desc_basic(self):
         """Test basic slice description creation"""
-        pathSQE_params = {
-            "E bins": "-10,0.1,10"
-        }
+        pathSQE_params = {"E bins": "-10,0.1,10"}
         q_dims_and_bins = [
             [1, 0, 0],
             [0, 1, 0],

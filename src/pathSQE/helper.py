@@ -7,6 +7,7 @@ from seekpath.util import atoms_num_dict
 from mantid.geometry import SpaceGroupFactory
 from . import core
 
+
 def simple_read_poscar(fname):
     """Read a POSCAR file."""
     with open(fname) as f:
@@ -39,55 +40,61 @@ def simple_read_poscar(fname):
     return (cell, positions, atomic_numbers)
 
 
-
 def conv_to_desc_string(input_item):
     # works for np arrays, lists, and tuples
-    string = ''
+    string = ""
     for item in input_item:
-        string = string + str(item) +','
+        string = string + str(item) + ","
     string = string[:-1]
-    
-    return string
 
+    return string
 
 
 def make_slice_desc(pathSQE_params, q_dims_and_bins, point1, point2, path_seg):
     diff = point2 - point1
 
     # slice description with desired dims and bins and unique name
-    slice_desc={'QDimension0':conv_to_desc_string(q_dims_and_bins[0]),
-                'QDimension1':conv_to_desc_string(q_dims_and_bins[1]),
-                'QDimension2':conv_to_desc_string(q_dims_and_bins[2]),
-                'Dimension0Name':'QDimension0',
-                'Dimension0Binning':conv_to_desc_string(q_dims_and_bins[3]),
-                'Dimension1Name':'QDimension1',
-                'Dimension1Binning':conv_to_desc_string(q_dims_and_bins[4]),
-                'Dimension2Name':'QDimension2',
-                'Dimension2Binning':conv_to_desc_string(q_dims_and_bins[5]),
-                'Dimension3Name':'DeltaE',
-                'Dimension3Binning':pathSQE_params['E bins'],
-                'SymmetryOperations':'x,y,z',
-                'Name':'pathSQE_'+conv_to_desc_string(point1)+'_to_'+conv_to_desc_string(point2),
-                'qdim0_range':q_dims_and_bins[3],
-                'seg_start_name':path_seg[0],
-                'seg_end_name':path_seg[1],
-                'inv_angstrom_ratio':np.linalg.norm(diff)/0.5,
-                'good_slice':True}
+    slice_desc = {
+        "QDimension0": conv_to_desc_string(q_dims_and_bins[0]),
+        "QDimension1": conv_to_desc_string(q_dims_and_bins[1]),
+        "QDimension2": conv_to_desc_string(q_dims_and_bins[2]),
+        "Dimension0Name": "QDimension0",
+        "Dimension0Binning": conv_to_desc_string(q_dims_and_bins[3]),
+        "Dimension1Name": "QDimension1",
+        "Dimension1Binning": conv_to_desc_string(q_dims_and_bins[4]),
+        "Dimension2Name": "QDimension2",
+        "Dimension2Binning": conv_to_desc_string(q_dims_and_bins[5]),
+        "Dimension3Name": "DeltaE",
+        "Dimension3Binning": pathSQE_params["E bins"],
+        "SymmetryOperations": "x,y,z",
+        "Name": "pathSQE_"
+        + conv_to_desc_string(point1)
+        + "_to_"
+        + conv_to_desc_string(point2),
+        "qdim0_range": q_dims_and_bins[3],
+        "seg_start_name": path_seg[0],
+        "seg_end_name": path_seg[1],
+        "inv_angstrom_ratio": np.linalg.norm(diff) / 0.5,
+        "good_slice": True,
+    }
 
-    #slice_desc['Name'] = slice_desc['Name'].replace(',', '_').replace('.', '').replace('-','m')
-    
+    # slice_desc['Name'] = slice_desc['Name'].replace(',', '_').replace('.', '').replace('-','m')
+
     return slice_desc
 
 
-
 def find_matching_spacegroup(pathSQE_params):
-    query_spacegroup = pathSQE_params['space group']
-    print(f'Searching for spacegroup {query_spacegroup}')
+    query_spacegroup = pathSQE_params["space group"]
+    print(f"Searching for spacegroup {query_spacegroup}")
     spacegroup_list = SpaceGroupFactory.getAllSpaceGroupSymbols()
-    query_spacegroup = ''.join(query_spacegroup.split())  # Remove spacing from the query_spacegroup
+    query_spacegroup = "".join(
+        query_spacegroup.split()
+    )  # Remove spacing from the query_spacegroup
 
     for spacegroup in spacegroup_list:
-        stripped_spacegroup = ''.join(spacegroup.split())  # Remove spacing from the spacegroup in the list
+        stripped_spacegroup = "".join(
+            spacegroup.split()
+        )  # Remove spacing from the spacegroup in the list
         if query_spacegroup == stripped_spacegroup:
             print(f"Matching spacegroup found: {spacegroup}")
             print(SpaceGroupFactory.createSpaceGroup(spacegroup))
@@ -97,13 +104,12 @@ def find_matching_spacegroup(pathSQE_params):
     raise ValueError("No matching spacegroup found.")
 
 
-
 def get_next_sliceID(all_slices_dir):
     """
-    Searches the given directory for files matching the slice pattern and 
+    Searches the given directory for files matching the slice pattern and
     returns the next available unique slice ID (max existing + 1).
     """
-    slice_pattern = re.compile(r'_ID(\d+)_data\.nxs$')
+    slice_pattern = re.compile(r"_ID(\d+)_data\.nxs$")
     existing_ids = []
 
     if not os.path.isdir(all_slices_dir):
@@ -121,16 +127,15 @@ def get_next_sliceID(all_slices_dir):
         return 0
 
 
-
 def project_to_uv_plane(BZ_list, u, v):
     """
     Projects BZ centers onto the (u, v) plane.
-    
+
     Parameters:
         BZ_list: List of tuples, where each tuple contains (BZ center, coverage)
         u: First basis vector defining the plane
         v: Second basis vector defining the plane
-        
+
     Returns:
         np.array of projected (u, v) coordinates.
     """
@@ -144,7 +149,6 @@ def project_to_uv_plane(BZ_list, u, v):
     return BZ_uv
 
 
-
 def get_existing_BZ_counts(output_folder_path):
     """
     Retrieve BZ arrays that already have processed .nxs files and count occurrences.
@@ -156,20 +160,21 @@ def get_existing_BZ_counts(output_folder_path):
         dict: Mapping of tuple(BZ center) -> count of occurrences.
     """
     BZ_counts = {}
-    pattern = re.compile(r'_BZ\[(.*?)\]_final\.nxs$')  # Regex to capture the BZ array
+    pattern = re.compile(r"_BZ\[(.*?)\]_final\.nxs$")  # Regex to capture the BZ array
 
     for filename in os.listdir(output_folder_path):
         match = pattern.search(filename)
         if match:
             BZ_str = match.group(1)  # Extract array content inside brackets
             try:
-                BZ_array = tuple(float(x) for x in BZ_str.split())  # Convert to tuple for dict keys
+                BZ_array = tuple(
+                    float(x) for x in BZ_str.split()
+                )  # Convert to tuple for dict keys
                 BZ_counts[BZ_array] = BZ_counts.get(BZ_array, 0) + 1
             except ValueError:
                 print(f"Warning: Could not parse BZ array from filename '{filename}'")
 
     return BZ_counts
-
 
 
 def resume_analysis(BZ_list, output_folder_path, num_paths, all_slices_dir):
@@ -190,11 +195,10 @@ def resume_analysis(BZ_list, output_folder_path, num_paths, all_slices_dir):
     existing_BZ_counts = get_existing_BZ_counts(output_folder_path)
 
     # Determine which BZs are done vs. still needed
-    mask = np.array([
-        existing_BZ_counts.get(tuple(bz), 0) < num_paths
-        for bz in BZ_list
-    ])
-    
+    mask = np.array(
+        [existing_BZ_counts.get(tuple(bz), 0) < num_paths for bz in BZ_list]
+    )
+
     new_BZ_list = BZ_list[mask]
     removed_BZ = BZ_list[~mask]
 
@@ -202,19 +206,18 @@ def resume_analysis(BZ_list, output_folder_path, num_paths, all_slices_dir):
     print(removed_BZ.tolist())
 
     # Create valid tag strings like 'BZ[ 0  0 -6]'
-    removed_tags = {f'BZ{bz}' for bz in removed_BZ}
+    removed_tags = {f"BZ{bz}" for bz in removed_BZ}
 
     # Delete slice files not associated with a fully processed BZ
     if os.path.exists(all_slices_dir):
         for fname in os.listdir(all_slices_dir):
             full_path = os.path.join(all_slices_dir, fname)
-            if fname.endswith('.nxs'):
+            if fname.endswith(".nxs"):
                 keep = any(tag in fname for tag in removed_tags)
                 if not keep:
                     os.remove(full_path)
 
     return new_BZ_list, removed_BZ
-
 
 
 def count_total_bzfold_slices(pathSQE_params, BZ_list, mtd_spacegroup):
@@ -235,13 +238,23 @@ def count_total_bzfold_slices(pathSQE_params, BZ_list, mtd_spacegroup):
     unique_slices_per_BZ = 0  # Count slices for one BZ
 
     # Only iterate through path segments once (since they are the same for all BZs)
-    for path_seg in pathSQE_params['user defined Qpoints']['path']:
-        pt1_init = np.array(pathSQE_params['user defined Qpoints']['point_coords'][path_seg[0]])
-        pt2_init = np.array(pathSQE_params['user defined Qpoints']['point_coords'][path_seg[1]])
+    for path_seg in pathSQE_params["user defined Qpoints"]["path"]:
+        pt1_init = np.array(
+            pathSQE_params["user defined Qpoints"]["point_coords"][path_seg[0]]
+        )
+        pt2_init = np.array(
+            pathSQE_params["user defined Qpoints"]["point_coords"][path_seg[1]]
+        )
 
         # Generate unique paths for this segment
-        pt1_array, _ = core.generate_unique_paths(mtd_spacegroup, pt1_init, pt2_init, pathSQE_params)
-        print("\n{} {} symmetrically equivalent path segments".format(pt1_array.shape[0], path_seg))
+        pt1_array, _ = core.generate_unique_paths(
+            mtd_spacegroup, pt1_init, pt2_init, pathSQE_params
+        )
+        print(
+            "\n{} {} symmetrically equivalent path segments".format(
+                pt1_array.shape[0], path_seg
+            )
+        )
 
         # Add the number of unique paths generated (which corresponds to slices)
         unique_slices_per_BZ += pt1_array.shape[0]
@@ -250,7 +263,6 @@ def count_total_bzfold_slices(pathSQE_params, BZ_list, mtd_spacegroup):
     num_total_slices = unique_slices_per_BZ * num_BZ
 
     return num_total_slices
-
 
 
 def count_total_symPt_slices(pathSQE_params, BZ_list, mtd_spacegroup, num_datasets):
@@ -271,8 +283,10 @@ def count_total_symPt_slices(pathSQE_params, BZ_list, mtd_spacegroup, num_datase
     unique_slices_per_BZ = 0  # Count unique slices in a single BZ
 
     # Iterate over all defined 1D symmetry points
-    for symPoint in pathSQE_params['user defined Qpoints']['1d_points']:
-        symPt_init = np.array(pathSQE_params['user defined Qpoints']['point_coords'][symPoint])
+    for symPoint in pathSQE_params["user defined Qpoints"]["1d_points"]:
+        symPt_init = np.array(
+            pathSQE_params["user defined Qpoints"]["point_coords"][symPoint]
+        )
 
         # Find symmetry-equivalent points in a single BZ
         symPts_array = core.generate_unique_symPts(mtd_spacegroup, symPoint, symPt_init)
@@ -289,8 +303,9 @@ def count_total_symPt_slices(pathSQE_params, BZ_list, mtd_spacegroup, num_datase
     return num_total_slices
 
 
-
-def should_print_update(num_processed_slices, num_total_slices, last_update_step, update_percent=5):
+def should_print_update(
+    num_processed_slices, num_total_slices, last_update_step, update_percent=5
+):
     """
     Determines whether to print a progress update based on percentage completion.
 
@@ -307,7 +322,7 @@ def should_print_update(num_processed_slices, num_total_slices, last_update_step
     - new_update_step: int, updated progress checkpoint.
     """
     progress = (num_processed_slices / num_total_slices) * 100
-    
+
     # Always print after first slice
     if num_processed_slices == 1:
         return True, last_update_step
@@ -315,7 +330,7 @@ def should_print_update(num_processed_slices, num_total_slices, last_update_step
     # Print at each update_percent step
     if progress >= last_update_step + update_percent:
         return True, (last_update_step + update_percent)
-    
+
     return False, last_update_step
 
 
@@ -324,7 +339,6 @@ def format_time(seconds):
     h, rem = divmod(seconds, 3600)
     m, s = divmod(rem, 60)
     return f"{int(h):02d}:{int(m):02d}:{int(s):02d}"
-
 
 
 def print_progress(num_processed_slices, num_total_slices, fold_timer, processing_type):
@@ -338,42 +352,67 @@ def print_progress(num_processed_slices, num_total_slices, fold_timer, processin
     """
 
     elapsed_time = time.time() - fold_timer  # Time since start
-    avg_time_per_slice = elapsed_time / max(num_processed_slices, 1)  # Avoid division by zero
+    avg_time_per_slice = elapsed_time / max(
+        num_processed_slices, 1
+    )  # Avoid division by zero
     remaining_slices = num_total_slices - num_processed_slices
     estimated_remaining_time = remaining_slices * avg_time_per_slice
 
-    print(f"\n\nProcessed: {num_processed_slices}/{num_total_slices} "
-          f"({(num_processed_slices / num_total_slices) * 100:.2f}%) | "
-          f"Elapsed: {format_time(elapsed_time)} | "
-          f"{processing_type} estimated remaining time: {format_time(estimated_remaining_time)}\n\n")
-
+    print(
+        f"\n\nProcessed: {num_processed_slices}/{num_total_slices} "
+        f"({(num_processed_slices / num_total_slices) * 100:.2f}%) | "
+        f"Elapsed: {format_time(elapsed_time)} | "
+        f"{processing_type} estimated remaining time: {format_time(estimated_remaining_time)}\n\n"
+    )
 
 
 def make_slice_desc_1DSymPoints(pathSQE_params, symPoint, point):
     # slice description with desired dims and bins and unique name
-    slice_desc={'QDimension0':'1,0,0',
-                'QDimension1':'0,1,0',
-                'QDimension2':'0,0,1',
-                'Dimension0Name':'QDimension0',
-                'Dimension0Binning':conv_to_desc_string([point[0]-pathSQE_params['qdim0 step size'], point[0]+pathSQE_params['qdim0 step size']]),
-                'Dimension1Name':'QDimension1',
-                'Dimension1Binning':conv_to_desc_string([point[1]-pathSQE_params['qdim1 integration range'], point[1]+pathSQE_params['qdim1 integration range']]),
-                'Dimension2Name':'QDimension2',
-                'Dimension2Binning':conv_to_desc_string([point[2]-pathSQE_params['qdim2 integration range'], point[2]+pathSQE_params['qdim2 integration range']]),
-                'Dimension3Name':'DeltaE',
-                'Dimension3Binning':pathSQE_params['E bins'],
-                'Name':'pathSQE_{}point_{}'.format(symPoint, point)}
+    slice_desc = {
+        "QDimension0": "1,0,0",
+        "QDimension1": "0,1,0",
+        "QDimension2": "0,0,1",
+        "Dimension0Name": "QDimension0",
+        "Dimension0Binning": conv_to_desc_string(
+            [
+                point[0] - pathSQE_params["qdim0 step size"],
+                point[0] + pathSQE_params["qdim0 step size"],
+            ]
+        ),
+        "Dimension1Name": "QDimension1",
+        "Dimension1Binning": conv_to_desc_string(
+            [
+                point[1] - pathSQE_params["qdim1 integration range"],
+                point[1] + pathSQE_params["qdim1 integration range"],
+            ]
+        ),
+        "Dimension2Name": "QDimension2",
+        "Dimension2Binning": conv_to_desc_string(
+            [
+                point[2] - pathSQE_params["qdim2 integration range"],
+                point[2] + pathSQE_params["qdim2 integration range"],
+            ]
+        ),
+        "Dimension3Name": "DeltaE",
+        "Dimension3Binning": pathSQE_params["E bins"],
+        "Name": "pathSQE_{}point_{}".format(symPoint, point),
+    }
 
-    #slice_desc['Name'] = slice_desc['Name'].replace(',', '_').replace('.', '').replace('-','m')
-    
+    # slice_desc['Name'] = slice_desc['Name'].replace(',', '_').replace('.', '').replace('-','m')
+
     return slice_desc
 
 
-
-def adaptive_colorbars(slice_ws_names, pathSQE_params, percentile_min=10, percentile_max=95, elastic_frac_threshold=0.05):
+def adaptive_colorbars(
+    slice_ws_names,
+    pathSQE_params,
+    percentile_min=10,
+    percentile_max=95,
+    elastic_frac_threshold=0.05,
+):
     """
     Computes adaptive colorbar vmin and vmax based on percentiles of signal arrays from sliced workspaces.
-    
+
     Parameters:
         slice_ws_names (list of str): Names of the Mantid slice workspaces.
         pathSQE_params (dict): Dictionary containing keys:
@@ -382,14 +421,14 @@ def adaptive_colorbars(slice_ws_names, pathSQE_params, percentile_min=10, percen
         percentile_min (float): Lower percentile for colorbar scaling (e.g., 10).
         percentile_max (float): Upper percentile for colorbar scaling (e.g., 95).
         elastic_frac_threshold (float): Fraction of Ei used to define cutoff above the elastic line.
-    
+
     Returns:
         tuple: (vmin, vmax) values for consistent colorbar scaling.
     """
 
     # Extract energy bin step and incident energy
-    step = float(pathSQE_params['E bins'].split(',')[1])
-    Ei = pathSQE_params['T and Ei conditions'][0][1]
+    step = float(pathSQE_params["E bins"].split(",")[1])
+    Ei = pathSQE_params["T and Ei conditions"][0][1]
 
     # Use a fraction of Ei to define index above elastic line
     elastic_meV = elastic_frac_threshold * Ei
@@ -418,4 +457,3 @@ def adaptive_colorbars(slice_ws_names, pathSQE_params, percentile_min=10, percen
             print(f"Error processing segment {seg}: {e}")
 
     return pathMin, pathMax
-

@@ -1,4 +1,5 @@
 """Integration tests for pathSQE using example data from the repository"""
+
 import pytest
 import numpy as np
 import os
@@ -22,33 +23,34 @@ class TestExampleDataLoading:
 
     def test_bz_coverage_file_exists(self, bz_coverage_file):
         """Test that example BZ coverage file exists"""
-        assert bz_coverage_file.exists(), f"BZ coverage file not found at {bz_coverage_file}"
+        assert bz_coverage_file.exists(), (
+            f"BZ coverage file not found at {bz_coverage_file}"
+        )
 
     def test_load_bz_coverage_data(self, bz_coverage_file):
         """Test loading BZ coverage data from example"""
         # Attempt to load with header
         try:
             data = np.genfromtxt(
-                str(bz_coverage_file),
-                skip_header=1,
-                usecols=(0, 1),
-                ndmin=2
+                str(bz_coverage_file), skip_header=1, usecols=(0, 1), ndmin=2
             )
         except ValueError:
             # If file format is different, try alternative parsing
-            with open(bz_coverage_file, 'r') as f:
+            with open(bz_coverage_file, "r") as f:
                 lines = f.readlines()
                 data_lines = [l.strip() for l in lines[1:] if l.strip()]
                 assert len(data_lines) > 0, "No data found in BZ coverage file"
 
     def test_bz_coverage_data_quality(self, bz_coverage_file):
         """Test that BZ coverage data contains valid entries"""
-        with open(bz_coverage_file, 'r') as f:
+        with open(bz_coverage_file, "r") as f:
             lines = f.readlines()
 
         # Skip header
         data_lines = lines[1:]
-        assert len(data_lines) > 0, "BZ coverage file should contain at least one data line"
+        assert len(data_lines) > 0, (
+            "BZ coverage file should contain at least one data line"
+        )
 
         # Check that each line has data
         for line in data_lines:
@@ -67,42 +69,44 @@ class TestPathSQEInputFiles:
         input_files = list(examples_path.rglob("pathSQE_input.py"))
         define_files = list(examples_path.rglob("define_data.py"))
         bz_files = list(examples_path.rglob("BZ_coverage_sorted.txt"))
-        
-        return {
-            'input': input_files,
-            'define': define_files,
-            'bz': bz_files
-        }
+
+        return {"input": input_files, "define": define_files, "bz": bz_files}
 
     def test_example_input_files_exist(self, example_files):
         """Test that pathSQE_input.py files exist in examples"""
-        assert len(example_files['input']) > 0, "No pathSQE_input.py files found in examples"
+        assert len(example_files["input"]) > 0, (
+            "No pathSQE_input.py files found in examples"
+        )
 
     def test_example_define_files_exist(self, example_files):
         """Test that define_data.py files exist in examples"""
-        assert len(example_files['define']) > 0, "No define_data.py files found in examples"
+        assert len(example_files["define"]) > 0, (
+            "No define_data.py files found in examples"
+        )
 
     def test_example_bz_files_exist(self, example_files):
         """Test that BZ_coverage_sorted.txt files exist in examples"""
-        assert len(example_files['bz']) > 0, "No BZ_coverage_sorted.txt files found in examples"
+        assert len(example_files["bz"]) > 0, (
+            "No BZ_coverage_sorted.txt files found in examples"
+        )
 
     def test_pathsqe_input_valid_python(self, example_files):
         """Test that pathSQE_input.py files are valid Python"""
-        for input_file in example_files['input']:
-            with open(input_file, 'r') as f:
+        for input_file in example_files["input"]:
+            with open(input_file, "r") as f:
                 code = f.read()
             try:
-                compile(code, str(input_file), 'exec')
+                compile(code, str(input_file), "exec")
             except SyntaxError as e:
                 pytest.fail(f"Syntax error in {input_file}: {e}")
 
     def test_define_data_valid_python(self, example_files):
         """Test that define_data.py files are valid Python"""
-        for data_file in example_files['define']:
-            with open(data_file, 'r') as f:
+        for data_file in example_files["define"]:
+            with open(data_file, "r") as f:
                 code = f.read()
             try:
-                compile(code, str(data_file), 'exec')
+                compile(code, str(data_file), "exec")
             except SyntaxError as e:
                 pytest.fail(f"Syntax error in {data_file}: {e}")
 
@@ -137,14 +141,10 @@ class TestHelperWithExampleData:
         pathSQE_params = {
             "E bins": "0,0.5,80"  # From Si example
         }
-        
+
         # Example transformation matrix from Si documentation
-        prim_to_mantid = np.array([
-            [-1, 1, 1],
-            [1, -1, 1],
-            [1, 1, -1]
-        ])
-        
+        prim_to_mantid = np.array([[-1, 1, 1], [1, -1, 1], [1, 1, -1]])
+
         q_dims_and_bins = [
             prim_to_mantid[0],
             prim_to_mantid[1],
@@ -153,7 +153,7 @@ class TestHelperWithExampleData:
             [-0.5, 0.5, 0.5],
             [-0.5, 0.5, 0.5],
         ]
-        
+
         point1 = np.array([0.0, 0.0, 0.0])  # Gamma point
         point2 = np.array([0.0, 1.0, 0.0])  # X point
         path_seg = ("Gamma", "X")  # From Si example
@@ -191,7 +191,7 @@ class TestHelperWithExampleData:
             "L": [0.5, 0.5, 0.5],
             "W": [0.5, 1, 0],
             "K": [0.75, 0.75, 0],
-            "U": [0.25, 1, 0.25]
+            "U": [0.25, 1, 0.25],
         }
 
         path_segments = [

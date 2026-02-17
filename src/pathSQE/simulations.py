@@ -2,6 +2,7 @@ import numpy as np
 import os
 import re
 from scipy.ndimage import gaussian_filter, gaussian_filter1d
+
 FWHM_TO_SIGMA = 1.0 / (2.0 * np.sqrt(2.0 * np.log(2.0)))  # ≈ 1/2.35482
 
 from . import Resolution as Res
@@ -27,38 +28,48 @@ def load_previous_simulation_progress(output_folder, user_defined_Qpoints, remov
 
     # Convert removed_BZ to string format for easier matching in filenames
     removed_BZ_strs = {str(bz.tolist()) for bz in removed_BZ}
-    print('BZ strings for match:', removed_BZ_strs)
+    print("BZ strings for match:", removed_BZ_strs)
 
     # Initialize empty lists for each segment (but return [] if nothing is found)
-    num_segments = len(user_defined_Qpoints['path'])
+    num_segments = len(user_defined_Qpoints["path"])
     found_any_files = False  # Track if any valid files were found
     datas = [None] * num_segments
     norms = [None] * num_segments
 
     # Search for all BZ-related files in the output folder
     for filename in os.listdir(output_folder):
-        match = re.search(r'BZ(\[.*?\])_foldedSim_data.npz', filename)  # Extract BZ array from filename
+        match = re.search(
+            r"BZ(\[.*?\])_foldedSim_data.npz", filename
+        )  # Extract BZ array from filename
         if match:
-            print('Match found:', filename)
+            print("Match found:", filename)
             BZ_str = match.group(1)  # Extract the array portion inside brackets
-            BZ_array = np.array([float(x) for x in BZ_str.strip("[]").split()])  # Convert to array
+            BZ_array = np.array(
+                [float(x) for x in BZ_str.strip("[]").split()]
+            )  # Convert to array
 
             # Check if this BZ is fully processed
             if str(BZ_array.tolist()) in removed_BZ_strs:
                 data_path = os.path.join(output_folder, filename)
-                norm_path = data_path.replace("_foldedSim_data.npz", "_foldedSim_norm.npz")
+                norm_path = data_path.replace(
+                    "_foldedSim_data.npz", "_foldedSim_norm.npz"
+                )
 
-                print('Checking files:', data_path, norm_path)
+                print("Checking files:", data_path, norm_path)
 
                 if os.path.exists(data_path) and os.path.exists(norm_path):
-                    print('Files exist - loading data')
+                    print("Files exist - loading data")
                     found_any_files = True  # At least one file was found
 
                     with np.load(data_path, allow_pickle=True) as data_npz:
-                        data_arrays = [data_npz[key] for key in data_npz]  # Extract all arrays
+                        data_arrays = [
+                            data_npz[key] for key in data_npz
+                        ]  # Extract all arrays
 
                     with np.load(norm_path, allow_pickle=True) as norm_npz:
-                        norm_arrays = [norm_npz[key] for key in norm_npz]  # Extract all arrays
+                        norm_arrays = [
+                            norm_npz[key] for key in norm_npz
+                        ]  # Extract all arrays
 
                     # Add data to corresponding segment index
                     for seg_idx in range(num_segments):
@@ -71,12 +82,11 @@ def load_previous_simulation_progress(output_folder, user_defined_Qpoints, remov
 
     # If no valid files were found, return empty lists
     if not found_any_files:
-        print('No previous simulation data found.')
+        print("No previous simulation data found.")
         return [], []
 
-    print('Final data and norm lists populated')
+    print("Final data and norm lists populated")
     return datas, norms
-
 
 
 def determine_forces_file():
@@ -88,13 +98,16 @@ def determine_forces_file():
         forceconstants_file = None
         forcesets_file = "FORCE_SETS"
     else:
-        raise FileNotFoundError("Error: Neither FORCE_CONSTANTS nor FORCE_SETS found in the current directory.")
+        raise FileNotFoundError(
+            "Error: Neither FORCE_CONSTANTS nor FORCE_SETS found in the current directory."
+        )
 
     return forceconstants_file, forcesets_file
 
 
-
-def get_coherent_scattering_lengths(sample_formula, filename="pathSQE_utils/ScattLengths.txt"):
+def get_coherent_scattering_lengths(
+    sample_formula, filename="pathSQE_utils/ScattLengths.txt"
+):
     """
     Given a sample's chemical formula, find the corresponding coherent scattering lengths.
 
@@ -119,17 +132,19 @@ def get_coherent_scattering_lengths(sample_formula, filename="pathSQE_utils/Scat
             # Skip headers or malformed lines
             if line.startswith("atom_name") or line.strip() == "":
                 continue
-            
+
             parts = line.split()
             if len(parts) < 3:
                 continue  # Ensure enough columns exist
-            
+
             element = parts[0]  # First column is the element name
             coh_b = parts[1]  # Second column is the coherent scattering length
 
             # Some entries may have complex values; extract real part if needed
             try:
-                coh_b = float(coh_b.split("-")[0])  # Extract real part (ignoring imaginary)
+                coh_b = float(
+                    coh_b.split("-")[0]
+                )  # Extract real part (ignoring imaginary)
             except ValueError:
                 continue  # Skip if conversion fails (e.g., for weird formats)
 
@@ -137,13 +152,18 @@ def get_coherent_scattering_lengths(sample_formula, filename="pathSQE_utils/Scat
 
     # Extract scattering lengths for the sample elements
     sample_elements = sample_formula.split()
-    sample_scattering = {elem: coh_scatter_length[elem] for elem in sample_elements if elem in coh_scatter_length}
+    sample_scattering = {
+        elem: coh_scatter_length[elem]
+        for elem in sample_elements
+        if elem in coh_scatter_length
+    }
 
     return sample_scattering
 
 
-
-def construct_sim_Qpts(pt1, pt2, q_diff, step_size, prim2mantid, BZ_offset=np.array([0,0,0])):
+def construct_sim_Qpts(
+    pt1, pt2, q_diff, step_size, prim2mantid, BZ_offset=np.array([0, 0, 0])
+):
     """
     Constructs simulated Q points along the direction of q_diff.
 
@@ -164,17 +184,19 @@ def construct_sim_Qpts(pt1, pt2, q_diff, step_size, prim2mantid, BZ_offset=np.ar
 
     # Compute the projection of q_end onto q_start + q_diff * t
     total_distance = np.max(np.abs(q_end - q_start))
-    num_steps = int(np.ceil(total_distance / step_size)) # in mantid slices
-    num_steps *= 4 # for fine sim slice
-    step_size = step_size / 4 # for finer sim                            # EDIT USED TO BE /2
+    num_steps = int(np.ceil(total_distance / step_size))  # in mantid slices
+    num_steps *= 4  # for fine sim slice
+    step_size = (
+        step_size / 4
+    )  # for finer sim                            # EDIT USED TO BE /2
 
     # Generate Q points
     Qpoints = [q_start + i * step_size * q_diff for i in np.arange(0.5, num_steps)]
-    #print('len Q pts ', len(Qpoints), Qpoints[0], Qpoints[-1])
+    # print('len Q pts ', len(Qpoints), Qpoints[0], Qpoints[-1])
 
     # Avoid DW singularity at Q = [0,0,0]
     Qpoints = np.array(Qpoints)
-    #print('Q pt array shape ', Qpoints.shape)
+    # print('Q pt array shape ', Qpoints.shape)
     zero_index = np.where(norm(Qpoints, axis=1) == 0)[0]
     if zero_index.size > 0:
         Qpoints[zero_index[0]] = np.array([1e-6, 1e-6, 1e-6])
@@ -184,8 +206,9 @@ def construct_sim_Qpts(pt1, pt2, q_diff, step_size, prim2mantid, BZ_offset=np.ar
     return Qpoints
 
 
-
-def run(phonon, Qpoints, temperature, atomic_form_factor_func=None, scattering_lengths=None):
+def run(
+    phonon, Qpoints, temperature, atomic_form_factor_func=None, scattering_lengths=None
+):
     from phonopy import load
     import numpy as np
 
@@ -197,7 +220,8 @@ def run(phonon, Qpoints, temperature, atomic_form_factor_func=None, scattering_l
         temperature,
         atomic_form_factor_func=atomic_form_factor_func,
         scattering_lengths=scattering_lengths,
-        freq_min=8e-2)
+        freq_min=8e-2,
+    )
     dsf = phonon.dynamic_structure_factor
 
     # --- robustly get the primitive cell (3x3 real-space matrix) ---
@@ -212,7 +236,9 @@ def run(phonon, Qpoints, temperature, atomic_form_factor_func=None, scattering_l
     # 3) phonon.unitcell or phonon.primitive.get_primitive() fallbacks
     elif hasattr(phonon, "unitcell") and hasattr(phonon.unitcell, "cell"):
         cell = phonon.unitcell.cell
-    elif hasattr(phonon.primitive, "get_primitive") and hasattr(phonon.primitive.get_primitive(), "cell"):
+    elif hasattr(phonon.primitive, "get_primitive") and hasattr(
+        phonon.primitive.get_primitive(), "cell"
+    ):
         cell = phonon.primitive.get_primitive().cell
 
     if cell is None:
@@ -225,59 +251,56 @@ def run(phonon, Qpoints, temperature, atomic_form_factor_func=None, scattering_l
 
     # Now compute q_cartesian using the found cell
     q_cartesian = np.dot(dsf.qpoints, np.linalg.inv(np.asarray(cell)).T)
-    distances = np.sqrt((q_cartesian ** 2).sum(axis=1))
+    distances = np.sqrt((q_cartesian**2).sum(axis=1))
 
     SandE = np.array([dsf.frequencies, dsf.dynamic_structure_factors])
     return SandE
-
-
 
 
 def sim_SQE(pathSQE_params, Qpoint, Temperature):
     from phonopy import load
 
     #### START OF USER INPUTS #####
-    #print('Q pt ', Qpoint)   # needs to be a list of arrays so like [array([-1.5, -1.5,  0.5])] when printed
+    # print('Q pt ', Qpoint)   # needs to be a list of arrays so like [array([-1.5, -1.5,  0.5])] when printed
     ## Q inputs ##
-    primitive_cell = [[1,0,0],[0,1,0],[0,0,1]]
-    supercell = pathSQE_params['supercell dimensions']
+    primitive_cell = [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+    supercell = pathSQE_params["supercell dimensions"]
     forceconstants_file, forcesets_file = determine_forces_file()
 
     # Neutron coherent scattering length can be found at https://www.ncnr.nist.gov/resources/n-lengths/
-    coh_scatter_length = get_coherent_scattering_lengths(pathSQE_params['sample'])
+    coh_scatter_length = get_coherent_scattering_lengths(pathSQE_params["sample"])
     THz2meV = 4.1357
 
     #### END OF USER INPUTS ####
-    phonon = load(supercell_matrix=supercell,
-                  primitive_matrix=primitive_cell,
-                  unitcell_filename="POSCAR",
-                  force_sets_filename=forcesets_file,
-                  force_constants_filename=forceconstants_file
-                  )
+    phonon = load(
+        supercell_matrix=supercell,
+        primitive_matrix=primitive_cell,
+        unitcell_filename="POSCAR",
+        force_sets_filename=forcesets_file,
+        force_constants_filename=forceconstants_file,
+    )
 
-    #print(Qpoints)
+    # print(Qpoints)
     # Mesh sampling phonon calculation is needed for Debye-Waller factor.
     # This must be done with is_mesh_symmetry=False and with_eigenvectors=True.
-    mesh =  pathSQE_params['mesh']
-    phonon.run_mesh(mesh,
-                    is_mesh_symmetry=False, # symmetry must be off
-                    with_eigenvectors=True) # eigenvectors must be true
+    mesh = pathSQE_params["mesh"]
+    phonon.run_mesh(
+        mesh,
+        is_mesh_symmetry=False,  # symmetry must be off
+        with_eigenvectors=True,
+    )  # eigenvectors must be true
     temperature = Temperature
 
     # For INS, scattering length has to be given.
     # The following values is obtained at (Coh b)
     # https://www.nist.gov/ncnr/neutron-scattering-lengths-list
-    output = run(phonon,
-                 Qpoint,
-                 temperature,
-                 scattering_lengths=coh_scatter_length)
-    
+    output = run(phonon, Qpoint, temperature, scattering_lengths=coh_scatter_length)
+
     ## output has shape as (2,len(Qpoints),branches), the [0,:,:] is for frequency and the [1,:,:] is for SQE; The frequency is in THz unit
     for i in range(len(Qpoint)):
-        output[0,i,:] *= THz2meV
+        output[0, i, :] *= THz2meV
 
     return output
-
 
 
 def SQE_to_1d_spectrum(pathSQE_params, output):
@@ -285,10 +308,14 @@ def SQE_to_1d_spectrum(pathSQE_params, output):
     intensities = output[1, 0, :]
 
     # define spectral binning info
-    E_min = float(pathSQE_params['E bins'].split(',')[0])
-    E_max = float(pathSQE_params['E bins'].split(',')[2])
-    
-    e_resolution = 1.177 * pathSQE_params['resolution blurring'][0] * float(pathSQE_params['E bins'].split(',')[1]) # gauss sigma to lorentz hwhm
+    E_min = float(pathSQE_params["E bins"].split(",")[0])
+    E_max = float(pathSQE_params["E bins"].split(",")[2])
+
+    e_resolution = (
+        1.177
+        * pathSQE_params["resolution blurring"][0]
+        * float(pathSQE_params["E bins"].split(",")[1])
+    )  # gauss sigma to lorentz hwhm
 
     # Tolerance for considering frequencies equal (0.1%)
     tolerance = 0.001
@@ -302,9 +329,12 @@ def SQE_to_1d_spectrum(pathSQE_params, output):
         # Exclude frequencies less than 0.1 to avoid singularity at gamma
         if freq < 0.1:
             continue
-        
+
         # Check if the current frequency is sufficiently separated from existing unique frequencies
-        if all(abs(freq - existing_freq) > tolerance * existing_freq for existing_freq in unique_freq):
+        if all(
+            abs(freq - existing_freq) > tolerance * existing_freq
+            for existing_freq in unique_freq
+        ):
             # Find indices where the current frequency occurs in the original array
             indices = np.where(np.abs(frequencies - freq) / freq <= tolerance)[0]
             # Sum corresponding intensities for the current frequency
@@ -313,14 +343,13 @@ def SQE_to_1d_spectrum(pathSQE_params, output):
             unique_freq.append(freq)
             summed_intensities.append(total_intensity)
 
-
     # Convert lists to numpy arrays
     unique_freq = np.array(unique_freq)
     summed_intensities = np.array(summed_intensities)
-    
+
     # Generate frequency range
     freq_range = np.arange(E_min, E_max, 0.02)
-    
+
     # Initialize spectrum array
     spectrum = np.zeros(freq_range.shape)
     ind_spec = []
@@ -328,14 +357,12 @@ def SQE_to_1d_spectrum(pathSQE_params, output):
     # Iterate over each peak
     for freq, intensity in zip(unique_freq, summed_intensities):
         # Add the Gaussian function to the spectrum
-        #gaussian_peak = intensity * np.exp(-((freq_range - freq) / (2 * e_resolution)) ** 2)
+        # gaussian_peak = intensity * np.exp(-((freq_range - freq) / (2 * e_resolution)) ** 2)
         lorentzian_peak = intensity / (1 + ((freq_range - freq) / e_resolution) ** 2)
         ind_spec.append(lorentzian_peak)
         spectrum += lorentzian_peak
 
-
     return unique_freq, summed_intensities, freq_range, spectrum
-
 
 
 def _fwhm_phys_to_sigma_pixels(fwhm_phys, bin_width_phys):
@@ -346,12 +373,11 @@ def _fwhm_phys_to_sigma_pixels(fwhm_phys, bin_width_phys):
     return float(sigma_phys / bin_width_phys)
 
 
-
 def SQE_to_2d_spectrum(pathSQE_params, output):
     # Parse energy binning
-    E_min = float(pathSQE_params['E bins'].split(',')[0])
-    E_step = float(pathSQE_params['E bins'].split(',')[1])
-    E_max = float(pathSQE_params['E bins'].split(',')[2])
+    E_min = float(pathSQE_params["E bins"].split(",")[0])
+    E_step = float(pathSQE_params["E bins"].split(",")[1])
+    E_max = float(pathSQE_params["E bins"].split(",")[2])
     # Fine grid parameters
     nql_fine = int(output.shape[1])
     finer_E_step = E_step / 4.0
@@ -381,16 +407,18 @@ def SQE_to_2d_spectrum(pathSQE_params, output):
 
     # Step 2: smoothing — read resolution blurring if present
     # Expected: ('resolution blurring': (E_FWHM_meV, Q_FWHM_rlu, optional_instrument_string))
-    if 'resolution blurring' in pathSQE_params:
-        res = pathSQE_params['resolution blurring']
+    if "resolution blurring" in pathSQE_params:
+        res = pathSQE_params["resolution blurring"]
         E_FWHM_meV = float(res[0]) if len(res) >= 1 else 0.0
         Q_FWHM_rlu = float(res[1]) if len(res) >= 2 else 0.0
         # Determine Q fine-bin width in r.l.u.
         # Try to use provided qdim0 step size; assume it's the fine-step unless obviously coarse.
-        qdim0_step = float(pathSQE_params.get('qdim0 step size', 0.0))
+        qdim0_step = float(pathSQE_params.get("qdim0 step size", 0.0))
         if qdim0_step <= 0:
             # fallback: assume coarse step and derive fine-step from nql & path extent if available
-            raise KeyError("Provide 'qdim0 step size' in pathSQE_params (Q step in r.l.u. per fine index).")
+            raise KeyError(
+                "Provide 'qdim0 step size' in pathSQE_params (Q step in r.l.u. per fine index)."
+            )
         Q_bin_width = qdim0_step  # assume this is the fine-step (rlu per fine-index)
         # Convert to pixels:
         sigma_pixels_E = _fwhm_phys_to_sigma_pixels(E_FWHM_meV, finer_E_step)
@@ -404,8 +432,8 @@ def SQE_to_2d_spectrum(pathSQE_params, output):
     FineBinnedSQE_smoothed = gaussian_filter(
         FineBinnedSQE,
         sigma=(sigma_pixels_Q, sigma_pixels_E),
-        mode='nearest',
-        truncate=4.0
+        mode="nearest",
+        truncate=4.0,
     )
 
     # Step 3: Rebin Q (fine -> coarse)
@@ -417,16 +445,17 @@ def SQE_to_2d_spectrum(pathSQE_params, output):
     BinnedSQE = np.zeros((nql, ne_exp), dtype=float)
     energy_centers_for_hist = e_centers_fine  # length matches CoarseBinnedSQE.shape[1]
     for ih in range(nql):
-        hist, _ = np.histogram(energy_centers_for_hist, bins=E_bin_edges, weights=CoarseBinnedSQE[ih, :])
+        hist, _ = np.histogram(
+            energy_centers_for_hist, bins=E_bin_edges, weights=CoarseBinnedSQE[ih, :]
+        )
         BinnedSQE[ih, :] = hist
 
     return BinnedSQE
 
 
-
-def SQE_to_2d_spectrum_advancedRes(pathSQE_params, output): 
+def SQE_to_2d_spectrum_advancedRes(pathSQE_params, output):
     """
-    Bins simulated SQE data to a finer grid, applies smoothing, 
+    Bins simulated SQE data to a finer grid, applies smoothing,
     and then rebins to match experimental resolution.
 
     Parameters:
@@ -437,58 +466,67 @@ def SQE_to_2d_spectrum_advancedRes(pathSQE_params, output):
     - BinnedSQE: ndarray, rebinned SQE to match experimental binning
     """
 
-    res_params = pathSQE_params['resolution blurring']
+    res_params = pathSQE_params["resolution blurring"]
     ElasticFWHM = res_params[0]
-    QResolution = res_params[1]/(2.35*pathSQE_params['qdim0 step size'])
+    QResolution = res_params[1] / (2.35 * pathSQE_params["qdim0 step size"])
     ResolutionType = "instrument"
     InstrumentName = res_params[2]
-    IncidentEnergy = pathSQE_params['T and Ei conditions'][0][1]
+    IncidentEnergy = pathSQE_params["T and Ei conditions"][0][1]
 
-    E_min = float(pathSQE_params['E bins'].split(',')[0])
-    E_max = float(pathSQE_params['E bins'].split(',')[2])
-    E_step = float(pathSQE_params['E bins'].split(',')[1])
-    
+    E_min = float(pathSQE_params["E bins"].split(",")[0])
+    E_max = float(pathSQE_params["E bins"].split(",")[2])
+    E_step = float(pathSQE_params["E bins"].split(",")[1])
+
     nql_fine = output.shape[1]  # Fine Q resolution from simulation
-    finer_E_step = E_step / 4   # Simulated data has finer E step                           # THIS AND BELOW 2
-    nql = nql_fine // 4         # Experimental Q resolution (factor of 2 binning)
-    
+    finer_E_step = (
+        E_step / 4
+    )  # Simulated data has finer E step                           # THIS AND BELOW 2
+    nql = nql_fine // 4  # Experimental Q resolution (factor of 2 binning)
+
     # Generate energy bin edges
-    E_bin_edges = np.arange(E_min, E_max+E_step, E_step)
-    evalues = np.arange(E_min+0.5*finer_E_step, E_max, finer_E_step)
+    E_bin_edges = np.arange(E_min, E_max + E_step, E_step)
+    evalues = np.arange(E_min + 0.5 * finer_E_step, E_max, finer_E_step)
     ne_exp = len(E_bin_edges) - 1
 
     # Fine binning storage
     FineBinnedSQE = np.zeros((nql_fine, len(np.arange(E_min, E_max, finer_E_step))))
 
-    #create the resolution function object
-    inst = Res.Instrument(InstrumentName,ElasticFWHM,IncidentEnergy)
-    resolution = Res.Resolution(type=ResolutionType,inst=inst,sigmaq=QResolution)
+    # create the resolution function object
+    inst = Res.Instrument(InstrumentName, ElasticFWHM, IncidentEnergy)
+    resolution = Res.Resolution(type=ResolutionType, inst=inst, sigmaq=QResolution)
 
     # Energy binning with convolution
     for ih in range(nql_fine):  # q-points
         for j in range(len(output[0, 0, :])):  # phonon branches
             E_phonon = output[0][ih][j]  # in meV (already converted from THz)
             intensity = output[1][ih][j]
-            #print(ih, j, intensity)
-            
+            # print(ih, j, intensity)
+
             conv = resolution.Gauss(evalues, 0, E_phonon, 0, escale=2.4, qscale=1)
-            
+
             FineBinnedSQE[ih, :] += intensity * conv
 
     # Use ndimage Gaussian blur along the Q direction (axis 0)
-    FineBinnedSQE = gaussian_filter1d(FineBinnedSQE, sigma=QResolution, axis=0, mode='nearest')
+    FineBinnedSQE = gaussian_filter1d(
+        FineBinnedSQE, sigma=QResolution, axis=0, mode="nearest"
+    )
 
     # Step 3: Rebin Q dimension (fine → coarse) using NumPy reshape and sum
-    CoarseBinnedSQE = FineBinnedSQE.reshape(nql, 4, -1).sum(axis=1)  # Sum pairs of adjacent fine Q bins             # THIS ALSO 2
+    CoarseBinnedSQE = FineBinnedSQE.reshape(nql, 4, -1).sum(
+        axis=1
+    )  # Sum pairs of adjacent fine Q bins             # THIS ALSO 2
 
     # Step 4: Rebin E dimension (fine → coarse) using NumPy histogram
     BinnedSQE = np.zeros((nql, ne_exp))
     for ih in range(nql):
-        hist, _ = np.histogram(np.linspace(E_min, E_max, FineBinnedSQE.shape[1]), bins=E_bin_edges, weights=CoarseBinnedSQE[ih, :])
+        hist, _ = np.histogram(
+            np.linspace(E_min, E_max, FineBinnedSQE.shape[1]),
+            bins=E_bin_edges,
+            weights=CoarseBinnedSQE[ih, :],
+        )
         BinnedSQE[ih, :] = hist
 
     return BinnedSQE
-
 
 
 def fold_symmetric_simulations(all_sims_in_BZ):
@@ -508,25 +546,33 @@ def fold_symmetric_simulations(all_sims_in_BZ):
     for segment_sims in all_sims_in_BZ:
         # Ensure the segment contains at least one simulation
         if not segment_sims:
-            continue  
-        
+            continue
+
         # Initialize summed arrays with zeros
         summed_data = np.zeros_like(segment_sims[0])
         summed_norm = np.zeros_like(segment_sims[0])
 
         for sim in segment_sims:
-            norm = np.where(~np.isnan(sim), 1, 0)  # Norm is 1 where data is valid, 0 otherwise
+            norm = np.where(
+                ~np.isnan(sim), 1, 0
+            )  # Norm is 1 where data is valid, 0 otherwise
             sim_filled = np.nan_to_num(sim)  # Replace NaNs with zero for summation
-            
+
             summed_data += sim_filled
             summed_norm += norm
-        
+
         # Avoid division by zero by setting invalid norms to NaN
         summed_norm[summed_norm == 0] = np.nan
-        
+
         # Compute final folded data
         final_folded_data = summed_data / summed_norm
 
-        folded_results.append((np.nan_to_num(summed_data, nan=0.0), np.nan_to_num(summed_norm, nan=0.0), final_folded_data))
+        folded_results.append(
+            (
+                np.nan_to_num(summed_data, nan=0.0),
+                np.nan_to_num(summed_norm, nan=0.0),
+                final_folded_data,
+            )
+        )
 
     return folded_results

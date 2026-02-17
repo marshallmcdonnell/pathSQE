@@ -1,4 +1,5 @@
 """Pytest configuration and fixtures for pathSQE tests"""
+
 import pytest
 import numpy as np
 import tempfile

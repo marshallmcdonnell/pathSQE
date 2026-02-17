@@ -6,10 +6,15 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import SymLogNorm
 
 
-
 # Set global font sizes for consistency
-plt.rcParams.update({'font.size': 10, 'axes.labelsize': 10, 'xtick.labelsize': 10, 'ytick.labelsize': 10})
-
+plt.rcParams.update(
+    {
+        "font.size": 10,
+        "axes.labelsize": 10,
+        "xtick.labelsize": 10,
+        "ytick.labelsize": 10,
+    }
+)
 
 
 def build_search_regex(search_dict):
@@ -36,16 +41,18 @@ def build_search_regex(search_dict):
 
     return pattern
 
+
 def search_files(folder, search_dict):
     pattern = build_search_regex(search_dict)
     regex = re.compile(pattern)
     return [os.path.join(folder, f) for f in os.listdir(folder) if regex.match(f)]
 
+
 def load_and_normalize(file_path, ws_prefix="slice"):
     """Loads both data and norm for a given file and returns normalized workspace name."""
     norm_path = file_path.replace("_data.nxs", "_norm.nxs")
     base_name = os.path.splitext(os.path.basename(file_path))[0].replace("_data", "")
-    
+
     ws_data = f"{ws_prefix}_data_{base_name}"
     ws_norm = f"{ws_prefix}_norm_{base_name}"
     ws_plot = f"{ws_prefix}_plot_{base_name}"
@@ -55,8 +62,9 @@ def load_and_normalize(file_path, ws_prefix="slice"):
 
     # Divide to normalize
     ws_plot_obj = mtd[ws_data] / mtd[ws_norm]
-    
+
     return ws_plot_obj
+
 
 def batch_search_and_load(folder, search_terms):
     """Batch search and load slices using a list of flexible search dictionaries."""
@@ -103,10 +111,7 @@ def generate_search_terms(user_qpoints, BZ_offset, seg_name=None, sliceID=None):
         pt1 = np.array(user_qpoints["point_coords"][label1])
         pt2 = np.array(user_qpoints["point_coords"][label2])
 
-        entry = {
-            "pt1": BZ_offset + pt1,
-            "pt2": BZ_offset + pt2
-        }
+        entry = {"pt1": BZ_offset + pt1, "pt2": BZ_offset + pt2}
         if seg_name is not None:
             entry["seg_name"] = seg_name
         if sliceID is not None:
@@ -118,7 +123,7 @@ def generate_search_terms(user_qpoints, BZ_offset, seg_name=None, sliceID=None):
 
 
 ################################# Searching for specific slice IDs #########################################
-'''
+"""
 # Specific with IDs
 search_terms = [
     {"sliceID": 43},
@@ -128,37 +133,67 @@ search_terms = [
 
 folder = "/SNS/ARCS/IPTS-13861/shared/Aiden/comprehensive/pathSQE_testing_Ge/paperData2_5K_40meV/all_slices"
 plot_workspaces = batch_search_and_load(folder, search_terms)
-'''
+"""
 
 
 ################################# Searching for same path in many BZs #########################################
 # path search results in given BZ
 user_defined_Qpoints = {
-    "path": [('Gamma', 'X'), ('X', 'U'), ('K', 'Gamma'), ('Gamma', 'L'), ('L', 'W'), ('W', 'X')],
-    "1d_points": ['K', 'L'],
+    "path": [
+        ("Gamma", "X"),
+        ("X", "U"),
+        ("K", "Gamma"),
+        ("Gamma", "L"),
+        ("L", "W"),
+        ("W", "X"),
+    ],
+    "1d_points": ["K", "L"],
     "point_coords": {
-        'Gamma': [0.0, 0.0, 0.0], 'X': [0.0, 1.0, 0.0], 'L': [0.5, 0.5, 0.5],
-        'W': [0.5, 1.0, 0.0], 'K': [0.75, 0.75, 0.0], 'U': [0.25, 1.0, 0.25]
-    }
+        "Gamma": [0.0, 0.0, 0.0],
+        "X": [0.0, 1.0, 0.0],
+        "L": [0.5, 0.5, 0.5],
+        "W": [0.5, 1.0, 0.0],
+        "K": [0.75, 0.75, 0.0],
+        "U": [0.25, 1.0, 0.25],
+    },
 }
 folder = "/SNS/ARCS/IPTS-13861/shared/Aiden/comprehensive/pathSQE_testing_Ge/paperData2_5K_40meV/all_slices/"
 
 
-BZ_list = np.array([
-    [4., 2., 0.],    [2, 4, 0] ,    [4, 0, 0],    [2, 2, 0],
-    [4, -2, 0],    [3, 3, 1],    [3, -1, 1],    [2, 0, 0],
-    [3, 3, -1],    [3, 1, -1],    [3, 1, 1],    [5, -1, -1],
-    [5, 1, -1],    [1, 5, -1],    [3, -1, -1],    [1, 3, -1],
-    [1, 3, 1],    [0, 2, 0],    [4, 4, 0],    [5, -1, 1],
-    [1, 5, 1]
-])
+BZ_list = np.array(
+    [
+        [4.0, 2.0, 0.0],
+        [2, 4, 0],
+        [4, 0, 0],
+        [2, 2, 0],
+        [4, -2, 0],
+        [3, 3, 1],
+        [3, -1, 1],
+        [2, 0, 0],
+        [3, 3, -1],
+        [3, 1, -1],
+        [3, 1, 1],
+        [5, -1, -1],
+        [5, 1, -1],
+        [1, 5, -1],
+        [3, -1, -1],
+        [1, 3, -1],
+        [1, 3, 1],
+        [0, 2, 0],
+        [4, 4, 0],
+        [5, -1, 1],
+        [1, 5, 1],
+    ]
+)
 
 for BZ_offset in BZ_list:
     search_terms = generate_search_terms(user_defined_Qpoints, BZ_offset)
     plot_workspaces = batch_search_and_load(folder, search_terms)
 
     print(len(plot_workspaces))
-    plot_data = np.vstack([np.squeeze(data.getSignalArray()) for data in plot_workspaces])
+    plot_data = np.vstack(
+        [np.squeeze(data.getSignalArray()) for data in plot_workspaces]
+    )
     print(plot_data.shape)
 
     plt.figure(figsize=(4.25, 2.5))
@@ -173,9 +208,9 @@ for BZ_offset in BZ_list:
     # Create the plot with dynamic vmin and vmax
     cb = plt.pcolormesh(
         plot_data.T,
-        shading='auto',
-        cmap='viridis',
-        norm=SymLogNorm(linthresh=5e-4, vmin=vmin, vmax=vmax)
+        shading="auto",
+        cmap="viridis",
+        norm=SymLogNorm(linthresh=5e-4, vmin=vmin, vmax=vmax),
     )
 
     # Set X-axis ticks and labels
@@ -190,11 +225,15 @@ for BZ_offset in BZ_list:
 
     # Add colorbar
     cb = plt.colorbar(cb, shrink=0.8)
-    cb.set_label('Intensity (a.u.)', fontsize=8)
+    cb.set_label("Intensity (a.u.)", fontsize=8)
     cb.ax.tick_params(labelsize=6)
-    
+
     # Save figure
     plt.tight_layout()
-    plt.savefig("temp_searching/Ge_path_BZ{}.png".format(BZ_offset), dpi=600, bbox_inches="tight")
-    np.save('temp_searching/Ge_path_BZ{}.npy'.format(BZ_offset), plot_data)
+    plt.savefig(
+        "temp_searching/Ge_path_BZ{}.png".format(BZ_offset),
+        dpi=600,
+        bbox_inches="tight",
+    )
+    np.save("temp_searching/Ge_path_BZ{}.npy".format(BZ_offset), plot_data)
     plt.close()

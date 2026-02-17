@@ -15,6 +15,7 @@ def main():
     """Main entry point for pathSQE driver."""
     # Import and run pathSQE - this will be customized based on your needs
     from . import core
+
     print(f"pathSQE version {core.__dict__.get('__version__', '0.1.0')}")
     print("To use the driver, run the pathSQE_driver.py or configure your script here.")
 

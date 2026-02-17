@@ -1,4 +1,5 @@
 """Unit tests for pathSQE.Resolution module"""
+
 import pytest
 import numpy as np
 
