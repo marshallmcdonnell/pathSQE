@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 
 hbar = 6.58211899e-16 * 1e12 * 1e3  # eV*s * ps/s * meV/eV = meV*ps
@@ -90,22 +89,22 @@ class Resolution:
         self.sigmaq = sigmaq
         self.poly = poly
 
-        if type == "constant" and sigmaq != None:
+        if type == "constant" and sigmaq is not None:
             self.__class__ = ConstantRes
 
-        if type == "constant" and sigmaq == None:
+        if type == "constant" and sigmaq is None:
             self.__class__ = ConstantResNoQResolution
 
-        if type == "polynomial" and sigmaq != None:
+        if type == "polynomial" and sigmaq is not None:
             self.__class__ = PolynomialRes
 
-        if type == "polynomial" and sigmaq == None:
+        if type == "polynomial" and sigmaq is None:
             self.__class__ = PolynomialResNoQResolution
 
-        if type == "instrument" and sigmaq != None:
+        if type == "instrument" and sigmaq is not None:
             self.__class__ = InstrumentResolution
 
-        if type == "instrument" and sigmaq == None:
+        if type == "instrument" and sigmaq is None:
             self.__class__ = InstrumentResolutionNoQResolution
 
 
@@ -177,9 +176,9 @@ class PolynomialRes(Resolution):
 
     def Gauss(self, evalues, qvalues, ecenter, qcenter):
         Ne = 1.0 / np.sqrt(2 * np.pi * self.sigma(ecenter) ** 2)
-        Nq = 1.0 / np.sqrt(2 * np.pi * self.sigmaq**2)
+        1.0 / np.sqrt(2 * np.pi * self.sigmaq**2)
         delta_q = qvalues - qcenter
-        q_square = np.dot(delta_q, delta_q)
+        np.dot(delta_q, delta_q)
 
         Res = Ne * np.exp(
             -((evalues - ecenter) ** 2) / (2 * self.sigma(ecenter) ** 2)

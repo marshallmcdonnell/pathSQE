@@ -279,7 +279,7 @@ def count_total_symPt_slices(pathSQE_params, BZ_list, mtd_spacegroup, num_datase
     - total_slices: int, estimated total number of slices to be processed
     """
 
-    num_BZ = len(BZ_list)  # Number of BZs
+    len(BZ_list)  # Number of BZs
     unique_slices_per_BZ = 0  # Count unique slices in a single BZ
 
     # Iterate over all defined 1D symmetry points

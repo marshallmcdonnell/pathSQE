@@ -13,7 +13,6 @@ sys.path.insert(0, os.path.dirname(__file__))
 
 def main():
     """Main entry point for replot path utility."""
-    from . import plotting_and_reports
 
     print("Replot path utility loaded.")
     print("Configure this entry point as needed for your use case.")

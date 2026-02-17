@@ -3,8 +3,6 @@
 import pytest
 import numpy as np
 import os
-import tempfile
-from pathlib import Path
 
 from pathSQE import helper
 

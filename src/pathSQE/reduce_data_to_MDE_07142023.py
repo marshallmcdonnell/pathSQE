@@ -1,6 +1,5 @@
 from __future__ import absolute_import, division, print_function
 from mantid.simpleapi import *
-from mantid.api import MatrixWorkspace
 import glob
 import numpy
 import os
@@ -79,7 +78,7 @@ def reduce_data_to_MDE(data_set_list, compress_bg_events_tof=0):
                     )
                     generate_BG_mde(data_set, compress_bg_events_tof)
                 bkg_scale = data_set.get("BackgroundScaling", 1)
-                if bkg_scale == None:
+                if bkg_scale is None:
                     bkg_scale = 1
                 if bkg_scale > 0 and bkg_scale != 1:
                     bkg_handle = mtd[bg_mde_name]

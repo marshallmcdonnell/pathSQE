@@ -1,8 +1,5 @@
 """Unit tests for pathSQE.Resolution module"""
 
-import pytest
-import numpy as np
-
 from pathSQE.Resolution import Instrument, Resolution
 
 

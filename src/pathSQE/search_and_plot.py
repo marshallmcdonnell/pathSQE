@@ -55,7 +55,6 @@ def load_and_normalize(file_path, ws_prefix="slice"):
 
     ws_data = f"{ws_prefix}_data_{base_name}"
     ws_norm = f"{ws_prefix}_norm_{base_name}"
-    ws_plot = f"{ws_prefix}_plot_{base_name}"
 
     LoadMD(Filename=file_path, OutputWorkspace=ws_data, LoadHistory=False)
     LoadMD(Filename=norm_path, OutputWorkspace=ws_norm, LoadHistory=False)

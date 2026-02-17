@@ -1,8 +1,9 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.colors import LogNorm, Normalize
+from matplotlib.colors import Normalize
 from mantid.simpleapi import *
+from importlib.util import spec_from_file_location, module_from_spec
 
 # === USER CONFIGURATION ===
 
@@ -20,8 +21,6 @@ colormap = "plasma"
 
 
 # === LOAD INPUT FILE ===
-from importlib.util import spec_from_file_location, module_from_spec
-
 spec = spec_from_file_location("pathSQE_input", pathSQE_module_path)
 pathSQE_input = module_from_spec(spec)
 spec.loader.exec_module(pathSQE_input)

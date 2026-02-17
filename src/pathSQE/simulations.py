@@ -2,10 +2,9 @@ import numpy as np
 import os
 import re
 from scipy.ndimage import gaussian_filter, gaussian_filter1d
+from . import Resolution as Res
 
 FWHM_TO_SIGMA = 1.0 / (2.0 * np.sqrt(2.0 * np.log(2.0)))  # ≈ 1/2.35482
-
-from . import Resolution as Res
 
 
 def load_previous_simulation_progress(output_folder, user_defined_Qpoints, removed_BZ):
@@ -209,7 +208,6 @@ def construct_sim_Qpts(
 def run(
     phonon, Qpoints, temperature, atomic_form_factor_func=None, scattering_lengths=None
 ):
-    from phonopy import load
     import numpy as np
 
     # Transformation to the Q-points in reciprocal primitive basis vectors
@@ -251,7 +249,7 @@ def run(
 
     # Now compute q_cartesian using the found cell
     q_cartesian = np.dot(dsf.qpoints, np.linalg.inv(np.asarray(cell)).T)
-    distances = np.sqrt((q_cartesian**2).sum(axis=1))
+    np.sqrt((q_cartesian**2).sum(axis=1))
 
     SandE = np.array([dsf.frequencies, dsf.dynamic_structure_factors])
     return SandE

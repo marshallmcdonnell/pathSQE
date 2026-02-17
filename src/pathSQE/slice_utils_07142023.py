@@ -2,10 +2,8 @@ import os
 from mantid.simpleapi import *
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.colors import LogNorm
 from scipy.optimize import curve_fit
 from mantid.plots.datafunctions import *
-from mantid import plots
 import mantid
 
 
@@ -24,7 +22,7 @@ def make_slice(
 ):
     slice_name = slice_description["Name"].strip()
     mde_name = data_set["MdeName"].strip()
-    UB_dict = data_set.get("UBSetup")
+    data_set.get("UBSetup")
     mdnorm_parameters = {
         "InputWorkspace": mde_name,
         "OutputWorkspace": slice_name,
@@ -64,10 +62,9 @@ def make_slice(
     # transform to chi''
     is_chi = slice_description.get("ConvertToChi", False)
 
-    temperature = 0.0
     if is_chi:
         try:
-            temperature = data_set["SampleLogVariables"]["Temperature"]
+            data_set["SampleLogVariables"]["Temperature"]
         except:
             raise ValueError(
                 "For calculating chi'' one needs to set the temperature in the dataset definition. See example."
@@ -290,49 +287,49 @@ def plot_slice(slice_description, ax=None, cbar_label=None):
 
 def set_axes_parameters(ax, **axes_args):
     try:
-        if "tight_axes" in axes_args and axes_args["tight_axes"] != None:
+        if "tight_axes" in axes_args and axes_args["tight_axes"] is not None:
             ax.autoscale(tight=axes_args["tight_axes"])
     except Error as err:
         print(err)
 
     try:
-        if "xrange" in axes_args and axes_args["xrange"] != None:
+        if "xrange" in axes_args and axes_args["xrange"] is not None:
             ax.set_xlim(axes_args["xrange"])
     except Error as err:
         print(err)
 
     try:
-        if "yrange" in axes_args and axes_args["yrange"] != None:
+        if "yrange" in axes_args and axes_args["yrange"] is not None:
             ax.set_ylim(axes_args["yrange"])
     except Error as err:
         print(err)
 
     try:
-        if "xtitle" in axes_args and axes_args["xtitle"] != None:
+        if "xtitle" in axes_args and axes_args["xtitle"] is not None:
             ax.set_xlabel(axes_args["xtitle"])
     except Error as err:
         print(err)
 
     try:
-        if "ytitle" in axes_args and axes_args["ytitle"] != None:
+        if "ytitle" in axes_args and axes_args["ytitle"] is not None:
             ax.set_ylabel(axes_args["ytitle"])
     except Error as err:
         print(err)
 
     try:
-        if "title" in axes_args and axes_args["title"] != None:
+        if "title" in axes_args and axes_args["title"] is not None:
             ax.set_title(axes_args["title"])
     except Error as err:
         print(err)
 
     try:
-        if "aspect_ratio" in axes_args and axes_args["aspect_ratio"] != None:
+        if "aspect_ratio" in axes_args and axes_args["aspect_ratio"] is not None:
             ax.set_aspect(axes_args["aspect_ratio"])
     except Error as err:
         print(err)
 
     try:
-        if "grid" in axes_args and axes_args["grid"] != None:
+        if "grid" in axes_args and axes_args["grid"] is not None:
             ax.grid(axes_args["grid"])
     except Error as err:
         print(err)
@@ -477,7 +474,7 @@ def plot_w_parameters(
     sp_kw  (optional) is the keywords to pass through to the subplots command that makes the figure window
     """
     fig, ax = plt.subplots(ncols=2, subplot_kw={"projection": "mantid"}, **sp_kw)
-    c = plot_slice(slice_description, ax=ax[1], cbar_label="Intensity")
+    plot_slice(slice_description, ax=ax[1], cbar_label="Intensity")
     set_axes_parameters(ax[1], **slice_description["Axes_parameters"])
     ax[0].text(
         0.01,

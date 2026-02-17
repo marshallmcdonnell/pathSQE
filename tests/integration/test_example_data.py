@@ -2,7 +2,6 @@
 
 import pytest
 import numpy as np
-import os
 from pathlib import Path
 
 from pathSQE import helper
@@ -31,9 +30,7 @@ class TestExampleDataLoading:
         """Test loading BZ coverage data from example"""
         # Attempt to load with header
         try:
-            data = np.genfromtxt(
-                str(bz_coverage_file), skip_header=1, usecols=(0, 1), ndmin=2
-            )
+            np.genfromtxt(str(bz_coverage_file), skip_header=1, usecols=(0, 1), ndmin=2)
         except ValueError:
             # If file format is different, try alternative parsing
             with open(bz_coverage_file, "r") as f:

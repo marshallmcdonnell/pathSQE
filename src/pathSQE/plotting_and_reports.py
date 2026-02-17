@@ -3,10 +3,9 @@ import os
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
 from matplotlib.colors import Normalize, SymLogNorm
-from matplotlib.cm import ScalarMappable, coolwarm, viridis
+from matplotlib.cm import ScalarMappable, viridis
 from matplotlib.backends.backend_pdf import PdfPages
 from mantid.simpleapi import *
-from mantid import plots
 
 from . import simulations
 from . import helper
@@ -383,7 +382,7 @@ def IqE_to_SED(SED_ws, T, Ebins):
 def plot_SED_along_path_foldedBZ(foldedSegNames, dsl_fold, pathSQE_params):
     T = pathSQE_params["T and Ei conditions"][0][0]
     Ebins = pathSQE_params["E bins"]
-    Ei = pathSQE_params["T and Ei conditions"][0][1]
+    pathSQE_params["T and Ei conditions"][0][1]
     cma = "viridis"
 
     plt.rcParams["figure.dpi"] = 150
@@ -499,12 +498,12 @@ def generate_BZ_Report_1DSymPoints(
         colors = viridis(norm_z)
 
         # Plot scatter plot
-        scatter = ax_scatter.scatter(x, y, c=colors, s=marker_size, alpha=1)
+        ax_scatter.scatter(x, y, c=colors, s=marker_size, alpha=1)
 
         # Add color bar
         sm = ScalarMappable(norm=norm, cmap=viridis)
         sm.set_array([])
-        cbar = plt.colorbar(sm, ax=ax_scatter, label="Out-of-Plane Coord")
+        plt.colorbar(sm, ax=ax_scatter, label="Out-of-Plane Coord")
 
         # Set grid lines aligned with u and v
         x_half_integer_locs = np.arange(
@@ -1059,7 +1058,7 @@ def generate_BZ_Report_with_Sims(
                     if np.any(mask):
                         segMin = np.percentile(slice[mask], 10)
                         segMax = np.percentile(slice[mask], 97)
-                        exp_plot = axes[row_index, col_index].pcolormesh(
+                        axes[row_index, col_index].pcolormesh(
                             mtd[slice_name], vmin=segMin, vmax=segMax, rasterized=True
                         )
                         axes[row_index, col_index].set_title("ID {}".format(slice_ID))
@@ -1125,7 +1124,7 @@ def generate_BZ_Report_with_Sims(
                             segMax = np.percentile(sim_data[mask], 99)
 
                         if sim_data is not None:
-                            sim_plot = axes[row_index, col_index + 1].pcolormesh(
+                            axes[row_index, col_index + 1].pcolormesh(
                                 sim_data.T, vmin=segMin, vmax=segMax, rasterized=True
                             )
                             x_min_sim, x_max_sim = axes[
