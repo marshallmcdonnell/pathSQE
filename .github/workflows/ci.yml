@@ -18,10 +18,10 @@ jobs:
       run: pixi install -e dev
 
     - name: Lint and format check with ruff
-      run: pixi run ruff check src/ tests/
+      run: pixi run -e dev ruff check src/ tests/
 
     - name: Format check with ruff
-      run: pixi run ruff format --check src/ tests/
+      run: pixi run -e dev ruff format --check src/ tests/
 
   test:
     runs-on: ubuntu-latest
@@ -36,7 +36,7 @@ jobs:
       run: pixi install -e dev
 
     - name: Run unit tests
-      run: pixi run pytest tests/unit/ -v
+      run: pixi run -e dev pytest tests/unit/ -v
 
     - name: Run integration tests
-      run: pixi run pytest tests/integration/ -v
+      run: pixi run -e dev pytest tests/integration/ -v
