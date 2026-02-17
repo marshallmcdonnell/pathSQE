@@ -1,0 +1,22 @@
+# Pixi workspace configuration
+# Note: Python package metadata (description, version, etc.) is defined in pyproject.toml
+# This file only specifies conda-specific settings (channels, mantid, dev tools)
+
+[workspace]
+name = "pathSQE"
+channels = ["conda-forge", "mantid"]
+platforms = ["linux-64", "osx-64", "osx-arm64"]
+
+[dependencies]
+python = "3.11.*"
+mantid = "*"  # conda-only dependency (not available on PyPI)
+
+[pypi-dependencies]
+pathSQE = {path = ".", editable = true}
+
+[feature.dev]
+dependencies = {pytest = "*", pytest-cov = "*", black = "*", flake8 = "*", isort = "*"}
+
+[environments]
+default = []
+dev = {features = ["dev"]}

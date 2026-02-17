@@ -131,70 +131,71 @@ plot_workspaces = batch_search_and_load(folder, search_terms)
 '''
 
 
-################################# Searching for same path in many BZs #########################################
-# path search results in given BZ
-user_defined_Qpoints = {
-    "path": [('Gamma', 'X'), ('X', 'U'), ('K', 'Gamma'), ('Gamma', 'L'), ('L', 'W'), ('W', 'X')],
-    "1d_points": ['K', 'L'],
-    "point_coords": {
-        'Gamma': [0.0, 0.0, 0.0], 'X': [0.0, 1.0, 0.0], 'L': [0.5, 0.5, 0.5],
-        'W': [0.5, 1.0, 0.0], 'K': [0.75, 0.75, 0.0], 'U': [0.25, 1.0, 0.25]
+if __name__ == "__main__":
+    ################################# Searching for same path in many BZs #########################################
+    # path search results in given BZ
+    user_defined_Qpoints = {
+        "path": [('Gamma', 'X'), ('X', 'U'), ('K', 'Gamma'), ('Gamma', 'L'), ('L', 'W'), ('W', 'X')],
+        "1d_points": ['K', 'L'],
+        "point_coords": {
+            'Gamma': [0.0, 0.0, 0.0], 'X': [0.0, 1.0, 0.0], 'L': [0.5, 0.5, 0.5],
+            'W': [0.5, 1.0, 0.0], 'K': [0.75, 0.75, 0.0], 'U': [0.25, 1.0, 0.25]
+        }
     }
-}
-folder = "/SNS/ARCS/IPTS-13861/shared/Aiden/comprehensive/pathSQE_testing_Ge/paperData2_5K_40meV/all_slices/"
+    folder = "/SNS/ARCS/IPTS-13861/shared/Aiden/comprehensive/pathSQE_testing_Ge/paperData2_5K_40meV/all_slices/"
 
 
-BZ_list = np.array([
-    [4., 2., 0.],    [2, 4, 0] ,    [4, 0, 0],    [2, 2, 0],
-    [4, -2, 0],    [3, 3, 1],    [3, -1, 1],    [2, 0, 0],
-    [3, 3, -1],    [3, 1, -1],    [3, 1, 1],    [5, -1, -1],
-    [5, 1, -1],    [1, 5, -1],    [3, -1, -1],    [1, 3, -1],
-    [1, 3, 1],    [0, 2, 0],    [4, 4, 0],    [5, -1, 1],
-    [1, 5, 1]
-])
+    BZ_list = np.array([
+        [4., 2., 0.],    [2, 4, 0] ,    [4, 0, 0],    [2, 2, 0],
+        [4, -2, 0],    [3, 3, 1],    [3, -1, 1],    [2, 0, 0],
+        [3, 3, -1],    [3, 1, -1],    [3, 1, 1],    [5, -1, -1],
+        [5, 1, -1],    [1, 5, -1],    [3, -1, -1],    [1, 3, -1],
+        [1, 3, 1],    [0, 2, 0],    [4, 4, 0],    [5, -1, 1],
+        [1, 5, 1]
+    ])
 
-for BZ_offset in BZ_list:
-    search_terms = generate_search_terms(user_defined_Qpoints, BZ_offset)
-    plot_workspaces = batch_search_and_load(folder, search_terms)
+    for BZ_offset in BZ_list:
+        search_terms = generate_search_terms(user_defined_Qpoints, BZ_offset)
+        plot_workspaces = batch_search_and_load(folder, search_terms)
 
-    print(len(plot_workspaces))
-    plot_data = np.vstack([np.squeeze(data.getSignalArray()) for data in plot_workspaces])
-    print(plot_data.shape)
+        print(len(plot_workspaces))
+        plot_data = np.vstack([np.squeeze(data.getSignalArray()) for data in plot_workspaces])
+        print(plot_data.shape)
 
-    plt.figure(figsize=(4.25, 2.5))
+        plt.figure(figsize=(4.25, 2.5))
 
-    # Filter out NaNs and zeros
-    valid_vals = plot_data[np.isfinite(plot_data) & (plot_data != 0)]
+        # Filter out NaNs and zeros
+        valid_vals = plot_data[np.isfinite(plot_data) & (plot_data != 0)]
 
-    # Compute percentiles
-    vmin = np.percentile(valid_vals, 5)
-    vmax = np.percentile(valid_vals, 98)
+        # Compute percentiles
+        vmin = np.percentile(valid_vals, 5)
+        vmax = np.percentile(valid_vals, 98)
 
-    # Create the plot with dynamic vmin and vmax
-    cb = plt.pcolormesh(
-        plot_data.T,
-        shading='auto',
-        cmap='viridis',
-        norm=SymLogNorm(linthresh=5e-4, vmin=vmin, vmax=vmax)
-    )
+        # Create the plot with dynamic vmin and vmax
+        cb = plt.pcolormesh(
+            plot_data.T,
+            shading='auto',
+            cmap='viridis',
+            norm=SymLogNorm(linthresh=5e-4, vmin=vmin, vmax=vmax)
+        )
 
-    # Set X-axis ticks and labels
-    x_tick_positions = [0, 40, 50, 80, 100, 120, 140]
-    x_tick_labels = [r"$\Gamma$", "X", "U,K", r"$\Gamma$", "L", "W", "X"]
-    plt.xticks(ticks=x_tick_positions, labels=x_tick_labels, fontsize=12)
+        # Set X-axis ticks and labels
+        x_tick_positions = [0, 40, 50, 80, 100, 120, 140]
+        x_tick_labels = [r"$\Gamma$", "X", "U,K", r"$\Gamma$", "L", "W", "X"]
+        plt.xticks(ticks=x_tick_positions, labels=x_tick_labels, fontsize=12)
 
-    # Set Y-axis ticks and labels
-    y_tick_positions = [0, 20, 40, 60, 80]
-    y_tick_labels = [0, 10, 20, 30, 40]
-    plt.yticks(ticks=y_tick_positions, labels=y_tick_labels, fontsize=12)
+        # Set Y-axis ticks and labels
+        y_tick_positions = [0, 20, 40, 60, 80]
+        y_tick_labels = [0, 10, 20, 30, 40]
+        plt.yticks(ticks=y_tick_positions, labels=y_tick_labels, fontsize=12)
 
-    # Add colorbar
-    cb = plt.colorbar(cb, shrink=0.8)
-    cb.set_label('Intensity (a.u.)', fontsize=8)
-    cb.ax.tick_params(labelsize=6)
-    
-    # Save figure
-    plt.tight_layout()
-    plt.savefig("temp_searching/Ge_path_BZ{}.png".format(BZ_offset), dpi=600, bbox_inches="tight")
-    np.save('temp_searching/Ge_path_BZ{}.npy'.format(BZ_offset), plot_data)
-    plt.close()
+        # Add colorbar
+        cb = plt.colorbar(cb, shrink=0.8)
+        cb.set_label('Intensity (a.u.)', fontsize=8)
+        cb.ax.tick_params(labelsize=6)
+        
+        # Save figure
+        plt.tight_layout()
+        plt.savefig("temp_searching/Ge_path_BZ{}.png".format(BZ_offset), dpi=600, bbox_inches="tight")
+        np.save('temp_searching/Ge_path_BZ{}.npy'.format(BZ_offset), plot_data)
+        plt.close()
